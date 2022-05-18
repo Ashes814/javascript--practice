@@ -15,8 +15,19 @@ comment
 // [1,2].forEach(alert);
 // [1,2].forEach(alert);
 
-let my_first_js_variable;
+// let my_first_js_variable;
 
-my_first_js_variable = "Super Idol"
+// my_first_js_variable = "Super Idol"
 
-alert(my_first_js_variable)
+// alert(my_first_js_variable)
+"use strict"
+// let num = 5;
+// const code= 10087;
+// alert(num + code);
+// num = 22
+// code = 1
+let admin;
+let name;
+name = 'John';
+admin = name;
+alert(admin);
