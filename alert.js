@@ -85,10 +85,27 @@ comment
 // let result = (a + b < 4) ? "Below" : "Over"
 // alert(result)
 
-let message;
-let login = prompt("Enter login", )
-message = (login == 'Employee') ? "Hello" : 
-    (login == 'Director') ? "Greetings" :
-    (login == '') ? "No login" : ''
+// let message;
+// let login = prompt("Enter login", )
+// message = (login == 'Employee') ? "Hello" : 
+//     (login == 'Director') ? "Greetings" :
+//     (login == '') ? "No login" : ''
 
-alert(message)
+// alert(message)
+
+// alert(alert(1) && alert(2))
+let userInput = prompt("Who's there?", )
+if (userInput == 'Admin') {
+    let passWord = prompt("Enter your password:", )
+    if (passWord == 'TheMaster') {
+        alert("Welcome")
+    } else if (passWord) {
+        alert("Wrong Password")
+    } else {
+        alert("Canceled")
+    }
+} else if (userInput) {
+    alert("I don't Know you")
+} else {
+    alert("Canceled")
+}
