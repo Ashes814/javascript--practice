@@ -33,3 +33,9 @@ admin = name;
 alert(admin);
 
 const NAME = 'ZOW';
+let testNum = 1/0;
+let notSet
+alert(testNum)
+alert(notSet)
+
+prompt()
