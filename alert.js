@@ -24,18 +24,26 @@ comment
 // let num = 5;
 // const code= 10087;
 // alert(num + code);
-// num = 22
-// code = 1
-let admin;
-let name;
-name = 'John';
-admin = name;
-alert(admin);
+// // num = 22
+// // code = 1
+// let admin;
+// let name;
+// name = 'John';
+// admin = name;
+// alert(admin);
 
-const NAME = 'ZOW';
-let testNum = 1/0;
-let notSet
-alert(testNum)
-alert(notSet)
+// const NAME = 'ZOW';
+// let testNum = 1/0;
+// let notSet
+// alert(testNum)
+// alert(notSet)
 
-prompt()
+// let mua = prompt('eat rubbish', 'ss')
+// alert(mua)
+
+// let testConform = confirm("Are you OK?")
+
+// alert(testConform)
+
+let userName = prompt('Please give me your name', 'ZZZ')
+alert(`${userName} Super Cool!`)
