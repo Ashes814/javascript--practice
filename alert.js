@@ -61,6 +61,9 @@ comment
 // alert(undefined + 1)
 // alert(" \t \n" - 2)
 
-let a = prompt("First number?", 1);
-let b = prompt("Second number", 2);
-alert(Number(a) + Number(b)) ;
+// let a = prompt("First number?", 1);
+// let b = prompt("Second number", 2);
+// alert(Number(a) + Number(b)) ;
+
+alert(null == "\n0\n");
+alert(null === +"\n0\n");
