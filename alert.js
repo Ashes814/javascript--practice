@@ -65,5 +65,30 @@ comment
 // let b = prompt("Second number", 2);
 // alert(Number(a) + Number(b)) ;
 
-alert(null == "\n0\n");
-alert(null === +"\n0\n");
+// alert(null == "\n0\n");
+// alert(null === +"\n0\n");
+
+// let missMe = prompt("Did you miss me?", 'YES');
+// if (missMe == 'YES') {
+//     alert("Your are right")
+// } else if (missMe == 'NO') {
+//     alert("Your are death")
+// } else {
+//     alert("Oops another chance")
+// }
+// let jsName = prompt("enter name", 'ECMAScript');
+
+// (jsName == 'ECMAScript') ? 
+//     alert('Right') : alert("You don't know Javascript?")
+// let a = +prompt("a", )
+// let b = +prompt("b", )
+// let result = (a + b < 4) ? "Below" : "Over"
+// alert(result)
+
+let message;
+let login = prompt("Enter login", )
+message = (login == 'Employee') ? "Hello" : 
+    (login == 'Director') ? "Greetings" :
+    (login == '') ? "No login" : ''
+
+alert(message)
