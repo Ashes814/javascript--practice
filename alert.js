@@ -31,3 +31,5 @@ let name;
 name = 'John';
 admin = name;
 alert(admin);
+
+const NAME = 'ZOW';
