@@ -45,5 +45,22 @@ comment
 
 // alert(testConform)
 
-let userName = prompt('Please give me your name', 'ZZZ')
-alert(`${userName} Super Cool!`)
+// let userName = prompt('Please give me your name', 'ZZZ')
+// alert(`${userName} Super Cool!`)
+// alert("" - 1 + 0)
+// alert(true + false)
+// alert(6 / "3");
+// alert("2" / "3");
+// alert(4 + 5 + "px");
+// alert("$" + 4 + 5);
+// alert("4" - 2);
+// alert("4px" - 2);
+// alert(" -9 " + 5);
+// alert(" -9 " - 5);
+// alert(null + 1)
+// alert(undefined + 1)
+// alert(" \t \n" - 2)
+
+let a = prompt("First number?", 1);
+let b = prompt("Second number", 2);
+alert(Number(a) + Number(b)) ;
