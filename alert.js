@@ -172,17 +172,34 @@ comment
 //     alert("We hope that this page looks ok!")
 // }
 
-let a = +prompt("a?", '');
+// let a = +prompt("a?", '');
 
-switch (a) {
-    case 0:
-        alert(0);
-        break;
-    case 1:
-        alert(1);
-        break
-    case 2:
-    case 3:
-        alert('2,3')
-    break
+// switch (a) {
+//     case 0:
+//         alert(0);
+//         break;
+//     case 1:
+//         alert(1);
+//         break
+//     case 2:
+//     case 3:
+//         alert('2,3')
+//     break
+// }
+
+function checkAge(age) {
+    return (age>18) ? 'yse' : confirm("Do you have any permission?");
 }
+function min(a, b) {
+    return (a <= b) ? a : b
+}
+// let a = min(19, 20);
+// alert(checkAge(13));
+function pow(x, n) {
+    let powNumber = x**n
+    return powNumber
+}
+let x = +prompt("Please enter x", 100);
+let n = +prompt("Please enter n", 2);
+
+alert(pow(x, n))
