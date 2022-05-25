@@ -109,4 +109,42 @@ comment
 // } else {
 //     alert("Canceled")
 // }
-alert(null ?? null)
+// alert(null ?? null)
+
+// for (let i = 0; i <= 10; i++) {
+//     alert(i)
+// }
+// let i = 3;
+// while (i) {
+//     alert(--i)
+// }
+// for (let i = 2; i <= 10; i+=2) {
+//     alert(i)
+// }
+
+// let i = 0;
+// while (i < 3) {
+//     alert(`number ${i}!`);
+//     i++;
+// }
+
+let userInput = prompt("Please enter a number", 100);
+
+// while (userInput) {
+//     if (userInput > 100) break;
+//     userInput = prompt("Please enter a number", 100);
+
+// }
+
+for (let i = 2; i <= userInput; i++) {
+    let isPrime = 0
+    for (let j=2; j<i; j++) {
+        if (i % j == 0) {
+            isPrime++;
+            break;
+        }
+    }
+    if (isPrime == 0) {
+        alert(i);
+    }
+}
