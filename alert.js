@@ -94,18 +94,19 @@ comment
 // alert(message)
 
 // alert(alert(1) && alert(2))
-let userInput = prompt("Who's there?", )
-if (userInput == 'Admin') {
-    let passWord = prompt("Enter your password:", )
-    if (passWord == 'TheMaster') {
-        alert("Welcome")
-    } else if (passWord) {
-        alert("Wrong Password")
-    } else {
-        alert("Canceled")
-    }
-} else if (userInput) {
-    alert("I don't Know you")
-} else {
-    alert("Canceled")
-}
+// let userInput = prompt("Who's there?", )
+// if (userInput == 'Admin') {
+//     let passWord = prompt("Enter your password:", )
+//     if (passWord == 'TheMaster') {
+//         alert("Welcome")
+//     } else if (passWord) {
+//         alert("Wrong Password")
+//     } else {
+//         alert("Canceled")
+//     }
+// } else if (userInput) {
+//     alert("I don't Know you")
+// } else {
+//     alert("Canceled")
+// }
+alert(null ?? null)
