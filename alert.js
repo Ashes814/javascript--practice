@@ -187,19 +187,26 @@ comment
 //     break
 // }
 
-function checkAge(age) {
-    return (age>18) ? 'yse' : confirm("Do you have any permission?");
-}
-function min(a, b) {
-    return (a <= b) ? a : b
-}
-// let a = min(19, 20);
-// alert(checkAge(13));
-function pow(x, n) {
-    let powNumber = x**n
-    return powNumber
-}
-let x = +prompt("Please enter x", 100);
-let n = +prompt("Please enter n", 2);
+// function checkAge(age) {
+//     return (age>18) ? 'yse' : confirm("Do you have any permission?");
+// }
+// function min(a, b) {
+//     return (a <= b) ? a : b
+// }
+// // let a = min(19, 20);
+// // alert(checkAge(13));
+// function pow(x, n) {
+//     let powNumber = x**n
+//     return powNumber
+// }
+// let x = +prompt("Please enter x", 100);
+// let n = +prompt("Please enter n", 2);
 
-alert(pow(x, n))
+// alert(pow(x, n))
+
+let welcome; 
+
+welcome = (18 > 19) ? function() {alert('18' > '19')} :
+                      function() {alert('18' < '19')};
+                    
+alert(welcome());
