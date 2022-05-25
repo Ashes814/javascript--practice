@@ -128,23 +128,61 @@ comment
 //     i++;
 // }
 
-let userInput = prompt("Please enter a number", 100);
+// let userInput = prompt("Please enter a number", 100);
 
-// while (userInput) {
-//     if (userInput > 100) break;
-//     userInput = prompt("Please enter a number", 100);
+// // while (userInput) {
+// //     if (userInput > 100) break;
+// //     userInput = prompt("Please enter a number", 100);
 
+// // }
+
+// for (let i = 2; i <= userInput; i++) {
+//     let isPrime = 0
+//     for (let j=2; j<i; j++) {
+//         if (i % j == 0) {
+//             isPrime++;
+//             break;
+//         }
+//     }
+//     if (isPrime == 0) {
+//         alert(i);
+//     }
+// }
+// let a = 4;
+
+// switch (a) {
+//     case 3:
+//         alert("Too small.");
+//     case 4:
+//         alert('Exactly');
+//     case 5:
+//         alert("why 5");
+//     default:
+//         alert("Ohshit")
 // }
 
-for (let i = 2; i <= userInput; i++) {
-    let isPrime = 0
-    for (let j=2; j<i; j++) {
-        if (i % j == 0) {
-            isPrime++;
-            break;
-        }
-    }
-    if (isPrime == 0) {
-        alert(i);
-    }
+// let browser = 'Safffari';
+
+// if (browser == 'Edge') {
+//     alert("You've got the Edge!");
+// } else if (browser == 'Chrome' ||  browser == 'Firefox' 
+// || browser == 'Safari' || browser == 'Opera') {
+//     alert("Okay we support these browsers too");
+// } else {
+//     alert("We hope that this page looks ok!")
+// }
+
+let a = +prompt("a?", '');
+
+switch (a) {
+    case 0:
+        alert(0);
+        break;
+    case 1:
+        alert(1);
+        break
+    case 2:
+    case 3:
+        alert('2,3')
+    break
 }
