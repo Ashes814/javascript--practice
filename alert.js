@@ -204,9 +204,16 @@ comment
 
 // alert(pow(x, n))
 
-let welcome; 
+// let welcome; 
 
-welcome = (18 > 19) ? function() {alert('18' > '19')} :
-                      function() {alert('18' < '19')};
+// welcome = (18 > 19) ? function() {alert('18' > '19')} :
+//                       function() {alert('18' < '19')};
                     
-alert(welcome());
+// alert(welcome());
+
+let ask = (question, yes, no) => confirm(question) ? yes() : no();
+ask(
+    "Do you agree",
+    function() { alert("You agreed."); },
+    function() { alert("You canceled the execution."); }
+)
