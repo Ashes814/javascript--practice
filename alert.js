@@ -211,9 +211,10 @@ comment
                     
 // alert(welcome());
 
-// let ask = (question, yes, no) => confirm(question) ? yes() : no();
-// ask(
-//     "Do you agree",
-//     function() { alert("You agreed."); },
-//     function() { alert("You canceled the execution."); }
-// )
+let ask = (question, yes, no) => confirm(question) ? yes() : no();
+ask(
+    "Do you agree",
+    function() { alert("You agreed."); },
+    function() { alert("You canceled the execution."); }
+)
+let b = 10086; a = 222
