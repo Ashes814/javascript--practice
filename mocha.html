@@ -15,4 +15,25 @@
         let assert = chai.assert;
     </script>
 </head>
+
+<body>
+
+    <script>
+        function pow(a, b) {
+            return a**b
+        }
+    </script>
+
+    <!-- the script with tests (describe, it...) -->
+    <script src="mocha_test.js"></script>
+
+    <!-- the element with id="mocha" will contain test resuls -->
+    <div id="mocha"></div>
+
+    <!-- run tests! -->
+    <script>
+        mocha.run();
+    </script>
+</body>
+
 </html>
