@@ -1,7 +1,7 @@
 "use strict"
 
 describe("pow", function () {
-    beforeEach(() => alert("Testing started - before all tests"));
+    // beforeEach(() => alert("Testing started - before all tests"));
     
 
     describe("raises x to power 3", function() {
@@ -40,6 +40,12 @@ describe("pow", function () {
         // });
     });
 
-    afterEach(() => alert("Testing finished - after all tests"));
+    describe("test Nan", function() {
+        it('is na?', function() {
+            assert.isNaN(pow(2, -4))
+        });
+    });
+
+
 
 });
