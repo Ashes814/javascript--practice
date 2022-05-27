@@ -77,3 +77,52 @@
 //     }
 // };
 
+// let user = {name: "John"};
+// let admin = {name: "Robin"};
+
+// function sayHi() {
+//     alert(this.name);
+// }
+
+// user.f = sayHi;
+// admin.f = sayHi;
+
+// user.f()
+// admin.f()
+
+// function makeUser() {
+//     return {
+//         name: "John",
+//         ref(){
+//             return this
+//         }
+//     };
+// }
+
+// let user = makeUser();
+
+// alert(user.ref().name);
+
+// let calculator = {
+//     read() {
+//         let a = +prompt('Please enter a', 1);
+//         let b = +prompt('Please enter b', 1);
+//         this.a = a;
+//         this.b = b;
+//     },
+
+//     sum() {
+//         let s = this.a + this.b;
+//         return s;
+//     },
+
+//     mul() {
+//         let m = this.a * this.b
+//         return m;
+//     }
+
+// }
+// calculator.read();
+// alert(calculator.sum());
+// alert(calculator.mul());
+
