@@ -68,3 +68,12 @@
 // for (let key in salaries) {
 //     alert(salaries[key]);
 // }
+
+let user = {
+    name: "John",
+    sizes: {
+        height: 182,
+        width: 50
+    }
+};
+
