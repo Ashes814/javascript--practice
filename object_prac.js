@@ -126,22 +126,78 @@
 // alert(calculator.sum());
 // alert(calculator.mul());
 
-let ladder = {
-    step: 0,
-    up() {
-        this.step++;
-        return this;
-    },
+// let ladder = {
+//     step: 0,
+//     up() {
+//         this.step++;
+//         return this;
+//     },
 
-    down() {
-        this.step--;
-        return this;
-    },
+//     down() {
+//         this.step--;
+//         return this;
+//     },
 
-    showStep() {
-        alert(this.step);
-        return this;
+//     showStep() {
+//         alert(this.step);
+//         return this;
+//     }
+// }
+
+// ladder.up().up().down().showStep().down().showStep()
+// let obj = {name:'zzz'}
+// function A(name) {
+//     this.name = name;
+//     return obj;
+// }
+
+// function B(name) {
+//     this.name = name;
+//     return obj;
+// }
+
+// let a = new A('zow');
+// let b = new B('zow');
+
+// alert(a == b);
+
+// function Calculator() {
+//     this.read = function() {
+//         let a = +prompt('Please enter a', 1);
+//         let b = +prompt('Please enter b', 1);
+//         this.a = a;
+//         this.b = b;
+//     },
+
+//     this.sum = function() {
+//         let s = this.a + this.b;
+//         return s;
+//     },
+
+//     this.mul = function() {
+//         let m = this.a * this.b
+//         return m;
+//     }
+
+// }
+
+// let calculator = new Calculator()
+// calculator.read();
+// alert(calculator.sum());
+// alert(calculator.mul());
+
+function Accumulator(startingValue) {
+    this.value = startingValue;
+
+    this.read = function() {
+        let newValue = +prompt("Please enter new value", 10);
+        this.value += newValue;  
     }
 }
 
-ladder.up().up().down().showStep().down().showStep()
+let accumulator = new Accumulator(10);
+
+accumulator.read();
+accumulator.read();
+
+alert(accumulator.value);
