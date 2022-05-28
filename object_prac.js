@@ -218,15 +218,20 @@
 // otherUser[user] = 1
 // alert(otherUser[user])
 
-let user = {
-    name: 'ZOW',
-    money: -500,
+// let user = {
+//     name: 'ZOW',
+//     money: -500,
 
-    [Symbol.toPrimitive](hint) {
-        alert(`hint: ${hint}`);
-        return hint == 'string' ? `{name2: "${this.name}"}` : this.money;
-    }
-}
-alert(user);
-alert(+user);
-alert(user.valueOf());
+//     [Symbol.toPrimitive](hint) {
+//         alert(`hint: ${hint}`);
+//         return hint == 'string' ? `{name2: "${this.name}"}` : this.money;
+//     }
+// }
+// alert(user);
+// alert(+user);
+// alert(user.valueOf());
+
+let str = "Hello";
+str.test = 5;
+
+alert(str.test);
