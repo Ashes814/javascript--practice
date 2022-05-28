@@ -205,3 +205,11 @@
 // let user = {};
 // alert(user?.name?.a);
 // alert(user.name.a);
+
+let symid = Symbol("Super Idol!!");
+
+alert(symid.description);
+let user = {name:'me', [symid]:'yes'};
+
+alert(user.symid);
+alert(user[symid]);
