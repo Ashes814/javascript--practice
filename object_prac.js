@@ -206,10 +206,27 @@
 // alert(user?.name?.a);
 // alert(user.name.a);
 
-let symid = Symbol("Super Idol!!");
+// let symid = Symbol("Super Idol!!");
 
-alert(symid.description);
-let user = {name:'me', [symid]:'yes'};
+// alert(symid.description);
+// let user = {name:'me', [symid]:'yes'};
 
-alert(user.symid);
-alert(user[symid]);
+// // alert(user.symid);
+// // alert(user[symid]);
+// alert(user);
+// let otherUser = {};
+// otherUser[user] = 1
+// alert(otherUser[user])
+
+let user = {
+    name: 'ZOW',
+    money: -500,
+
+    [Symbol.toPrimitive](hint) {
+        alert(`hint: ${hint}`);
+        return hint == 'string' ? `{name2: "${this.name}"}` : this.money;
+    }
+}
+alert(user);
+alert(+user);
+alert(user.valueOf());
