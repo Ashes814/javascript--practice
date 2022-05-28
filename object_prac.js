@@ -186,18 +186,22 @@
 // alert(calculator.sum());
 // alert(calculator.mul());
 
-function Accumulator(startingValue) {
-    this.value = startingValue;
+// function Accumulator(startingValue) {
+//     this.value = startingValue;
 
-    this.read = function() {
-        let newValue = +prompt("Please enter new value", 10);
-        this.value += newValue;  
-    }
-}
+//     this.read = function() {
+//         let newValue = +prompt("Please enter new value", 10);
+//         this.value += newValue;  
+//     }
+// }
 
-let accumulator = new Accumulator(10);
+// let accumulator = new Accumulator(10);
 
-accumulator.read();
-accumulator.read();
+// accumulator.read();
+// accumulator.read();
 
-alert(accumulator.value);
+// alert(accumulator.value);
+
+// let user = {};
+// alert(user?.name?.a);
+// alert(user.name.a);
