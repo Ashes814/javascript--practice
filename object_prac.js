@@ -231,7 +231,40 @@
 // alert(+user);
 // alert(user.valueOf());
 
-let str = "Hello";
-str.test = 5;
+// let str = "Hello";
+// str.test = 5;
 
-alert(str.test);
+// alert(str.test);
+
+// alert(NaN === NaN);
+// alert(Object.is(NaN, NaN));
+
+// alert(parseInt('ff', 16));
+// function readNumber() {
+//     let num = 0;
+//     do {
+//         num = prompt('Please enter a number ("CANCEL" to cancel)', )
+//         if (num == "CANCEL") {
+//             break
+//         } else if (num == null) {
+//             break
+//         }
+//     } while ( !isFinite(num) )
+
+//     return num;
+
+// }
+
+// alert(`your number: ${readNumber()}`);
+
+function random(min, max) {
+    let randomNumber = Math.random();
+    return min + (max - min)*randomNumber;
+}
+
+function randomInteger(min, max) {
+    let randomNumber = random(min, max + 1);
+    return Math.floor(randomNumber);
+}
+
+alert(randomInteger(1, 5));
