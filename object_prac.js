@@ -284,3 +284,30 @@
 // // alert('sbss'.slice(1));
 // alert(ucFirst('s'));
 // alert('T'.slice(1));
+
+
+// function checkSpam(str) {
+//     let newStr = str.toLowerCase()
+//     if (newStr.includes(`viagra`, 0) || newStr.includes(`xxx`, 0)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// alert(checkSpam('buy ViAgRA now'));
+// alert(checkSpam('free xxxxx'));
+// alert(checkSpam("innocent rabbit"));
+// function truncate(str, maxLength) {
+//     let strLength = str.length;
+//     if (strLength > maxLength - 1) {
+//         let newStr = str.slice(0, maxLength) + '...';
+//         return newStr;
+//     } else {
+//         return str;
+//     }
+// }
+
+// alert(truncate("What I'd like to tell on this topic is:", 20));
+
+// alert(truncate("Hi everyone!", 20));
