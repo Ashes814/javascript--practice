@@ -311,3 +311,7 @@
 // alert(truncate("What I'd like to tell on this topic is:", 20));
 
 // alert(truncate("Hi everyone!", 20));
+function extractCurrencyValue(cur) {
+    return +cur.slice(1,);
+}
+alert( extractCurrencyValue('$120') === 120 );
