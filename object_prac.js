@@ -257,14 +257,15 @@
 
 // alert(`your number: ${readNumber()}`);
 
-function random(min, max) {
-    let randomNumber = Math.random();
-    return min + (max - min)*randomNumber;
-}
+// function random(min, max) {
+//     let randomNumber = Math.random();
+//     return min + (max - min)*randomNumber;
+// }
 
-function randomInteger(min, max) {
-    let randomNumber = random(min, max + 1);
-    return Math.floor(randomNumber);
-}
+// function randomInteger(min, max) {
+//     let randomNumber = random(min, max + 1);
+//     return Math.floor(randomNumber);
+// }
 
-alert(randomInteger(1, 5));
+// alert(randomInteger(1, 5));
+alert(`\u{1F60D}`.length);
