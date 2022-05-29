@@ -268,4 +268,19 @@
 // }
 
 // alert(randomInteger(1, 5));
-alert(`\u{1F60D}`.length);
+// alert(`ABCD`[1].toLowerCase());
+// // charCodeAt 不理解代理对，所以它给出了代理对的代码
+
+// alert( '𝒳'.charCodeAt(0).toString(16) ); // d835，在 0xd800 和 0xdbff 之间
+// alert( '𝒳'.charCodeAt(1).toString(16) ); // dcb3, 在 0xdc00 和 0xdfff 之间
+// function ucFirst(str) {
+//     if ( !str ) {
+//         return str;
+//     }
+//     let firstAlp = str[0].toUpperCase();
+//     let newStr = firstAlp + str.slice(1);
+//     return newStr;
+// } 
+// // alert('sbss'.slice(1));
+// alert(ucFirst('s'));
+// alert('T'.slice(1));
