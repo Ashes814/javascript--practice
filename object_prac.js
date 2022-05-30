@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // let user = new Object();
 // user = {};
@@ -362,37 +362,82 @@
 // }
 // alert(sumInput());
 
-function getMaxSubSum(arr) {
-    let sum = 0;
-    let cumSumArr = [0];
-    let maxIndex = 0;
-    let minIndex = 0;
-    let minIndexArrar = [0];
-    for (let number of arr) {
+// function getMaxSubSum(arr) {
+//     let sum = 0;
+//     let cumSumArr = [0];
+//     let maxIndex = 0;
+//     let minIndex = 0;
+//     let minIndexArrar = [0];
+//     for (let number of arr) {
         
-        if ((sum + number)>=cumSumArr[maxIndex]) {
-            maxIndex = cumSumArr.length
-        }
+//         if ((sum + number)>=cumSumArr[maxIndex]) {
+//             maxIndex = cumSumArr.length
+//         }
 
-        if ((sum + number)<cumSumArr[minIndex]) {
-            minIndex = cumSumArr.length
-        }
-        minIndexArrar.push(minIndex);
-        sum += number
-        cumSumArr.push(sum)
+//         if ((sum + number)<cumSumArr[minIndex]) {
+//             minIndex = cumSumArr.length
+//         }
+//         minIndexArrar.push(minIndex);
+//         sum += number
+//         cumSumArr.push(sum)
 
-    }
-
-
-    return cumSumArr[maxIndex] - cumSumArr[minIndexArrar[maxIndex]]
-}
+//     }
 
 
+//     return cumSumArr[maxIndex] - cumSumArr[minIndexArrar[maxIndex]]
+// }
 
-alert(getMaxSubSum([-1, 2, 3, -9]));
-alert(getMaxSubSum([2, -1, 2, 3, -9]));
-alert(getMaxSubSum([-1, 2, 3, -9, 11]));
-alert(getMaxSubSum([-2, -1, 1, 2]));
-alert(getMaxSubSum([100, -9, 2, -3, 5]));
-alert(getMaxSubSum([1, 2, 3]));
-alert(getMaxSubSum([-1, -2, -3]));
+
+
+// alert(getMaxSubSum([-1, 2, 3, -9]));
+// alert(getMaxSubSum([2, -1, 2, 3, -9]));
+// alert(getMaxSubSum([-1, 2, 3, -9, 11]));
+// alert(getMaxSubSum([-2, -1, 1, 2]));
+// alert(getMaxSubSum([100, -9, 2, -3, 5]));
+// alert(getMaxSubSum([1, 2, 3]));
+// alert(getMaxSubSum([-1, -2, -3]));
+
+// let arr = ["I", "Study", "JavaScript", "4", "5", "6", "7"];
+
+// // let removed = arr.splice(1,0,'new1', 'new2');
+// // alert(arr);
+// // // alert(removed);
+// // alert(arr.concat([3, 4], 57));
+
+// arr.forEach(alert);
+// let users = [
+//     {id: 1, name: "John"},
+//     {id: 2, name: "Pete"},
+//     {id: 3, name: "Mary"}
+//   ];
+
+// // let user = users.find(item => item.name=='Pete');
+// // alert(user.id);
+// alert(users.filter(item => item.id<=2));
+
+// let lengths = ['Bilbo', 'conda', 'pypi']
+// alert(lengths.map(function(item) { 
+//     return item.length
+// }));
+
+// [1, -2, 15, 2, 0, 8].sort(function(a, b) {
+//     alert( a + " <> " + b );
+//     return a - b;
+// });
+
+// let arr = [1, 2, 3, 4, 5];
+// let result = arr.reduce((sum, current) >= sum + current, 0);
+// alert(result);
+
+// function camelize(str) {
+//     let strArr = str.split('-');
+//     let newStrArr = [];
+//     for (let s of strArr.slice(1)) {
+//         newStrArr.push(s[0].toUpperCase() + s.slice(1));
+//     }
+//     let newStr = newStrArr.join('')
+
+//     return strArr[0] + newStr;
+// }
+
+// alert(camelize('list-style-image'));
