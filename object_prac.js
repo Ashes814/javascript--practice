@@ -442,13 +442,32 @@
 
 // alert(camelize('list-style-image'));
 
-function filterRange(arr, a, b) {
-    return arr.filter(item => (item >= a && item <= b))
-}
+// function filterRange(arr, a, b) {
+//     return arr.filter(item => (item >= a && item <= b))
+// }
+
+// function filterRangeInPlace(arr, a, b) {
+//     for (let i=0; i < arr.length; i++ ) {
+//         let tempNum = arr[i];
+//         if (a<=tempNum && tempNum<=b) {
+//             continue
+//         } else {
+//             arr.splice(i, 1);
+            
+//         }
+//     }
+// }
 
 
 
-let arr = [5, 3, 8, 1];
-let filtered = filterRange(arr, 1, 4);
-alert( filtered ); // 3,1（匹配值）
-alert( arr ); // 5,3,8,1（未修改）
+// let arr = [5, 3, 8, 1,1,3,4,5,1,5];
+// filterRangeInPlace(arr, 1, 4)
+// // let filtered = filterRange(arr, 1, 4);
+// // alert( filtered ); // 3,1（匹配值）
+// alert( arr ); // 5,3,8,1（未修改）
+// let arr = [5, 2, 1, -10, 8];
+
+// arr.sort((a, b) => b - a);
+
+
+// alert( arr );
