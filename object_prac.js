@@ -479,3 +479,8 @@
 // let sorted = copySorted(arr);
 // alert(sorted);
 // alert(arr);
+function Calculator() {
+    this.calculate = function(str) {
+        
+    }
+}
