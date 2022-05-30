@@ -315,6 +315,84 @@
 //     return +cur.slice(1,);
 // }
 // alert( extractCurrencyValue('$120') === 120 );
-let fruits = ['Apple', 'Orange', 'Plum'];
+// let fruits = ['Apple', 'Orange', 'Plum'];
 
-// alert( fruits.at(-1) );
+// // alert( fruits.at(-1) );
+// alert( fruits.push('Banana') );
+// alert( fruits.pop() );
+
+// let fruits = ["Apples", "Pear", "Orange"];
+
+// // 在“副本”里 push 了一个新的值
+// let shoppingCart = fruits;
+// shoppingCart.push("Banana");
+
+// // fruits 里面是什么？
+// alert( fruits.length ); // ?
+
+// let styles = ["Jazz", "Blues"];
+// alert(styles);
+// styles.push('Rock-n-Roll');
+// alert(styles);
+// styles[(styles.length - 1)/2] = 'Classics';
+// alert(styles);
+// alert(styles.shift());
+// styles.unshift('Rap','Reggae');
+// // alert(styles);
+// let arr = ["a", "b"];
+
+// arr.push(function() {
+//   alert( this );
+// });
+
+// arr[2](); // ?
+
+// function sumInput() {
+//     let userArray = [];
+//     let userInput = prompt("Enter a number", 10086);
+//     while (+userInput || userInput == '0')  {
+//         userArray.push(+userInput);
+//         userInput = prompt("Enter a number", 10086);
+//     }
+//     let sum = 0;
+//     for (let number of userArray) {
+//         sum += number;
+//     }
+//     return sum;
+// }
+// alert(sumInput());
+
+function getMaxSubSum(arr) {
+    let sum = 0;
+    let cumSumArr = [0];
+    let maxIndex = 0;
+    let minIndex = 0;
+    let minIndexArrar = [0];
+    for (let number of arr) {
+        
+        if ((sum + number)>=cumSumArr[maxIndex]) {
+            maxIndex = cumSumArr.length
+        }
+
+        if ((sum + number)<cumSumArr[minIndex]) {
+            minIndex = cumSumArr.length
+        }
+        minIndexArrar.push(minIndex);
+        sum += number
+        cumSumArr.push(sum)
+
+    }
+
+
+    return cumSumArr[maxIndex] - cumSumArr[minIndexArrar[maxIndex]]
+}
+
+
+
+alert(getMaxSubSum([-1, 2, 3, -9]));
+alert(getMaxSubSum([2, -1, 2, 3, -9]));
+alert(getMaxSubSum([-1, 2, 3, -9, 11]));
+alert(getMaxSubSum([-2, -1, 1, 2]));
+alert(getMaxSubSum([100, -9, 2, -3, 5]));
+alert(getMaxSubSum([1, 2, 3]));
+alert(getMaxSubSum([-1, -2, -3]));
