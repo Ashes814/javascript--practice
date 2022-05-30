@@ -311,7 +311,10 @@
 // alert(truncate("What I'd like to tell on this topic is:", 20));
 
 // alert(truncate("Hi everyone!", 20));
-function extractCurrencyValue(cur) {
-    return +cur.slice(1,);
-}
-alert( extractCurrencyValue('$120') === 120 );
+// function extractCurrencyValue(cur) {
+//     return +cur.slice(1,);
+// }
+// alert( extractCurrencyValue('$120') === 120 );
+let fruits = ['Apple', 'Orange', 'Plum'];
+
+// alert( fruits.at(-1) );
