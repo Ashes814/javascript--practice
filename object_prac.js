@@ -569,3 +569,27 @@
 // // arr = [2, 1, 3]
 
 // shuffle(arr);
+
+
+// function getAverageAge(users) {
+//     let ageArr = users.map(item => item.age);
+//     let ageSum = 0;
+//     for (let age of ageArr) {
+//         ageSum += age;
+//     }
+//     return ageSum / ageArr.length;
+// }
+// function getAverageAge(users) {
+//         return users.reduce((sum, item) => sum + item.age, 0) / users.length;
+//     }
+
+// // function getAverageAge(users) {
+// //     return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// //   }
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
+
+// let arr = [ john, pete, mary ];
+
+// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
