@@ -481,6 +481,15 @@
 // alert(arr);
 function Calculator() {
     this.calculate = function(str) {
-        
+        let expressionArr = str.split(' ');
+        let numArr = [];
+        for (let i=0; i<expressionArr.length;i += 2) {
+            numArr.push(expressionArr[i])
+        }
+        for 
     }
 }
+
+let calc = new Calculator;
+
+alert( calc.calculate("3 + 7") ); // 10
