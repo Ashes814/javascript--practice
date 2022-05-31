@@ -532,3 +532,20 @@
 
 // alert( usersMapped[0].id ) // 1
 // alert( usersMapped[0].fullName ) // John Smith
+function sortByAge(users) {
+    users.sort(function(a, b) {return a.age - b.age})
+}
+
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ];
+
+sortByAge(arr);
+
+// now: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete
