@@ -593,3 +593,21 @@
 // let arr = [ john, pete, mary ];
 
 // alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+function unique(arr) {
+    let newArr = []
+    for (let i of arr) {
+        if (newArr.includes(i)) {
+            continue;
+        } else {
+            newArr.push(i);
+        }
+    }
+    return newArr;
+  }
+  
+  let strings = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+  ];
+  
+  alert( unique(strings) ); // Hare, Krishna, :-O
