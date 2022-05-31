@@ -479,17 +479,34 @@
 // let sorted = copySorted(arr);
 // alert(sorted);
 // alert(arr);
-function Calculator() {
-    this.calculate = function(str) {
-        let expressionArr = str.split(' ');
-        let numArr = [];
-        for (let i=0; i<expressionArr.length;i += 2) {
-            numArr.push(expressionArr[i])
-        }
-        for 
-    }
-}
+// function Calculator() {
+//     this.calculate = function(str) {
+//         let expressionArr = str.split(' ');
+//         let numArr = [];
+//         for (let i=0; i<expressionArr.length;i += 2) {
+//             numArr.push(expressionArr[i])
+//         }
+//         for (let j=1; j<expressionArr.length; j += 2)
 
-let calc = new Calculator;
+//     }
 
-alert( calc.calculate("3 + 7") ); // 10
+//     this.addMethod() {
+//         return
+//     }
+// }
+
+// let calc = new Calculator;
+
+// alert( calc.calculate("3 + 7") ); // 10
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(function (item) {
+    return item.name;
+})
+
+alert( names ); // John, Pete, Mary
