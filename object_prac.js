@@ -532,20 +532,40 @@
 
 // alert( usersMapped[0].id ) // 1
 // alert( usersMapped[0].fullName ) // John Smith
-function sortByAge(users) {
-    users.sort(function(a, b) {return a.age - b.age})
-}
+// function sortByAge(users) {
+//     users.sort(function(a, b) {return a.age - b.age})
+// }
 
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let arr = [ pete, john, mary ];
+// let arr = [ pete, john, mary ];
 
-sortByAge(arr);
+// sortByAge(arr);
 
-// now: [john, mary, pete]
-alert(arr[0].name); // John
-alert(arr[1].name); // Mary
-alert(arr[2].name); // Pete
+// // now: [john, mary, pete]
+// alert(arr[0].name); // John
+// alert(arr[1].name); // Mary
+// alert(arr[2].name); // Pete
+
+
+// function shuffle(array) {
+
+//     for (let i = array.length-1; i>0; i--) {
+//         let j = Math.floor(Math.random() * (i + 1));
+
+//         [array[i], array[j]] = [array[j], array[i]];
+//     }
+
+// }
+// let arr = [1, 2, 3];
+
+// shuffle(arr);
+// // arr = [3, 2, 1]
+
+// shuffle(arr);
+// // arr = [2, 1, 3]
+
+// shuffle(arr);
