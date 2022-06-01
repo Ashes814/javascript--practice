@@ -494,40 +494,40 @@
 //         return
 //     }
 // }
-function Calculator() {
-  this.methods = {
-    '+': (a, b) => a + b,
-    '-': (a, b) => a - b
-  }
+// function Calculator() {
+//   this.methods = {
+//     '+': (a, b) => a + b,
+//     '-': (a, b) => a - b
+//   }
 
-  this.calculate = function(strInput) {
-    let str = strInput.split(' ');
-    let a = +str[0];
-    let b = +str[2];
-    let oper = str[1];
+//   this.calculate = function(strInput) {
+//     let str = strInput.split(' ');
+//     let a = +str[0];
+//     let b = +str[2];
+//     let oper = str[1];
 
-    if (!this.methods[oper] || isNaN(a) || isNaN(b)) {
-      return NaN;
-    }
-    return this.methods[oper](a, b);
-  }
+//     if (!this.methods[oper] || isNaN(a) || isNaN(b)) {
+//       return NaN;
+//     }
+//     return this.methods[oper](a, b);
+//   }
 
-  this.addMethod = function(name, func) {
-    this.methods[name] = func;
-  }
+//   this.addMethod = function(name, func) {
+//     this.methods[name] = func;
+//   }
 
 
-}
+// }
 
-let calc = new Calculator;
-let powerCalc = new Calculator;
-alert( calc.calculate("3 + 7") ); // 10
-powerCalc.addMethod("*", (a, b) => a * b);
-powerCalc.addMethod("/", (a, b) => a / b);
-powerCalc.addMethod("**", (a, b) => a ** b);
+// let calc = new Calculator;
+// let powerCalc = new Calculator;
+// alert( calc.calculate("3 + 7") ); // 10
+// powerCalc.addMethod("*", (a, b) => a * b);
+// powerCalc.addMethod("/", (a, b) => a / b);
+// powerCalc.addMethod("**", (a, b) => a ** b);
 
-let result = powerCalc.calculate("2 ** 3");
-alert( result ); // 8
+// let result = powerCalc.calculate("2 ** 3");
+// alert( result ); // 8
 
 // let john = { name: "John", age: 25 };
 // let pete = { name: "Pete", age: 30 };
@@ -668,3 +668,43 @@ alert( result ); // 8
     pete: {id: 'pete', name: "Pete Peterson", age: 31},
   }
   */
+
+//   let range = {
+//     from: 1,
+//     to: 5
+//   }
+
+//   range[Symbol.iterator] = function() {
+//     return {
+//       current: this.from,
+//       last: this.to,
+
+//       next() {
+//         if (this.current <= this.last) {
+//           return {done: false, value: this.current++};
+//         } else {
+//           return {done: true};
+//         }
+//       }
+//     }
+//   }
+
+// for (let num of range) {
+//   alert(num);
+// }
+
+let arrayLike = {
+  0: 'Hello',
+  1: 'World',
+  length: 2
+};
+
+let arr = Array.from(arrayLike);
+alert(arr.pop());
+let arrayLike2 = {
+  0: 'Hello',
+  1: 'World',
+  length: 2
+};
+
+// alert(arrayLike2.pop());
