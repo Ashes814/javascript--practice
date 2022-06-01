@@ -494,10 +494,40 @@
 //         return
 //     }
 // }
+function Calculator() {
+  this.methods = {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b
+  }
 
-// let calc = new Calculator;
+  this.calculate = function(strInput) {
+    let str = strInput.split(' ');
+    let a = +str[0];
+    let b = +str[2];
+    let oper = str[1];
 
-// alert( calc.calculate("3 + 7") ); // 10
+    if (!this.methods[oper] || isNaN(a) || isNaN(b)) {
+      return NaN;
+    }
+    return this.methods[oper](a, b);
+  }
+
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  }
+
+
+}
+
+let calc = new Calculator;
+let powerCalc = new Calculator;
+alert( calc.calculate("3 + 7") ); // 10
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result = powerCalc.calculate("2 ** 3");
+alert( result ); // 8
 
 // let john = { name: "John", age: 25 };
 // let pete = { name: "Pete", age: 30 };
