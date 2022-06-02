@@ -761,17 +761,47 @@
 // alert(map);
 
 
-function unique(arr) {
-  let uniqueValue = new Set(arr);
-  let uniqueArr = []
-  for (let value of uniqueValue) {
-    uniqueArr.push(value)
-  }
-  return uniqueArr;
-}
+// function unique(arr) {
+//   let uniqueValue = new Set(arr);
+//   let uniqueArr = []
+//   for (let value of uniqueValue) {
+//     uniqueArr.push(value)
+//   }
+//   return uniqueArr;
+// }
 
-let values = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
 
-alert( unique(values) ); // Hare, Krishna, :-O
+// alert( unique(values) ); // Hare, Krishna, :-O
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// function aclean(arr) {
+//   let map = new Map();
+//   for (let a of arr) {
+//     let sorted = a.toLowerCase().split('').sort().join('');
+//     map.set(sorted, a);
+//   }
+//   return Array.from(map.values());
+// }
+
+
+
+// alert( aclean(arr) );
+// let test = new Set('nap');
+// let test2 = new Set('pan');
+// alert(Array.from(test));
+// alert(Array.from(test).sort() == Array.from(test2).sort());
+// alert(Array.from(test2).sort());
+// alert( test === test2 );
+
+let map = new Map();
+
+map.set("name", "John");
+
+let keys = Array.from(map.keys());
+
+// Error: keys.push is not a function
+keys.push("more");
+alert(keys);
