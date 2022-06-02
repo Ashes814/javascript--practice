@@ -583,128 +583,195 @@
 
 // function shuffle(array) {
 
-//     for (let i = array.length-1; i>0; i--) {
-//         let j = Math.floor(Math.random() * (i + 1));
+// //     for (let i = array.length-1; i>0; i--) {
+// //         let j = Math.floor(Math.random() * (i + 1));
 
-//         [array[i], array[j]] = [array[j], array[i]];
-//     }
+// //         [array[i], array[j]] = [array[j], array[i]];
+// //     }
 
-// }
-// let arr = [1, 2, 3];
+// // }
+// // let arr = [1, 2, 3];
 
-// shuffle(arr);
-// // arr = [3, 2, 1]
+// // shuffle(arr);
+// // // arr = [3, 2, 1]
 
-// shuffle(arr);
-// // arr = [2, 1, 3]
+// // shuffle(arr);
+// // // arr = [2, 1, 3]
 
-// shuffle(arr);
+// // shuffle(arr);
 
-
-// function getAverageAge(users) {
-//     let ageArr = users.map(item => item.age);
-//     let ageSum = 0;
-//     for (let age of ageArr) {
-//         ageSum += age;
-//     }
-//     return ageSum / ageArr.length;
-// }
-// function getAverageAge(users) {
-//         return users.reduce((sum, item) => sum + item.age, 0) / users.length;
-//     }
 
 // // function getAverageAge(users) {
-// //     return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// //     let ageArr = users.map(item => item.age);
+// //     let ageSum = 0;
+// //     for (let age of ageArr) {
+// //         ageSum += age;
+// //     }
+// //     return ageSum / ageArr.length;
+// // }
+// // function getAverageAge(users) {
+// //         return users.reduce((sum, item) => sum + item.age, 0) / users.length;
+// //     }
+
+// // // function getAverageAge(users) {
+// // //     return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// // //   }
+// // let john = { name: "John", age: 25 };
+// // let pete = { name: "Pete", age: 30 };
+// // let mary = { name: "Mary", age: 29 };
+
+// // let arr = [ john, pete, mary ];
+
+// // alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
+
+// // function unique(arr) {
+// //     let newArr = []
+// //     for (let i of arr) {
+// //         if (newArr.includes(i)) {
+// //             continue;
+// //         } else {
+// //             newArr.push(i);
+// //         }
+// //     }
+// //     return newArr;
 // //   }
-// let john = { name: "John", age: 25 };
-// let pete = { name: "Pete", age: 30 };
-// let mary = { name: "Mary", age: 29 };
+  
+// //   let strings = ["Hare", "Krishna", "Hare", "Krishna",
+// //     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// //   ];
+  
+// //   alert( unique(strings) ); // Hare, Krishna, :-O
+// // function groupById(users) {
+// //     return users.reduce(function (prev, item) {
+// //         prev[item.id] = item
+// //         return prev },
 
-// let arr = [ john, pete, mary ];
+// //     {})
+// // }
 
-// alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 
-// function unique(arr) {
-//     let newArr = []
-//     for (let i of arr) {
-//         if (newArr.includes(i)) {
-//             continue;
-//         } else {
-//             newArr.push(i);
-//         }
-//     }
-//     return newArr;
+
+// // let users = [
+// //     {id: 'john', name: "John Smith", age: 20},
+// //     {id: 'ann', name: "Ann Smith", age: 24},
+// //     {id: 'pete', name: "Pete Peterson", age: 31},
+// //   ];
+  
+// //   let usersById = groupById(users);
+// //   alert(usersById.john.id);
+//   /*
+//   // 调用函数后，我们应该得到：
+  
+//   usersById = {
+//     john: {id: 'john', name: "John Smith", age: 20},
+//     ann: {id: 'ann', name: "Ann Smith", age: 24},
+//     pete: {id: 'pete', name: "Pete Peterson", age: 31},
 //   }
-  
-//   let strings = ["Hare", "Krishna", "Hare", "Krishna",
-//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
-//   ];
-  
-//   alert( unique(strings) ); // Hare, Krishna, :-O
-// function groupById(users) {
-//     return users.reduce(function (prev, item) {
-//         prev[item.id] = item
-//         return prev },
+//   */
 
-//     {})
+// //   let range = {
+// //     from: 1,
+// //     to: 5
+// //   }
+
+// //   range[Symbol.iterator] = function() {
+// //     return {
+// //       current: this.from,
+// //       last: this.to,
+
+// //       next() {
+// //         if (this.current <= this.last) {
+// //           return {done: false, value: this.current++};
+// //         } else {
+// //           return {done: true};
+// //         }
+// //       }
+// //     }
+// //   }
+
+// // for (let num of range) {
+// //   alert(num);
+// // }
+
+// // let arrayLike = {
+// //   0: 'Hello',
+// //   1: 'World',
+// //   length: 2
+// // };
+
+// // let arr = Array.from(arrayLike);
+// // alert(arr.pop());
+// // let arrayLike2 = {
+// //   0: 'Hello',
+// //   1: 'World',
+// //   length: 2
+// // };
+
+// // alert(arrayLike2.pop());
+
+// // let john = { name: "John" };
+// // let ben = { name: "Ben" };
+
+
+// // let visitsCountObj = {};
+
+// // visitsCountObj[ben] = 123;
+// // visitsCountObj[john] = 321;
+// // alert(visitsCountObj[ben]);
+
+// let recipeMap = new Map([
+//   ['cucumber', 500],
+//   ['tomatoes', 350],
+//   ['onion', 50]
+// ])
+
+// // for (let vegetable of recipeMap.keys()) {
+// //   alert(vegetable);
+// // }
+
+// // for (let amount of recipeMap.values()) {
+// //   alert(amount);
+// // }
+
+// // for (let entity of recipeMap) {
+// //   alert(entity);
+// // }
+
+// recipeMap.forEach( (value, key) => {
+//   alert(`${key}: ${value}`)
+// })
+
+// let obj = {
+//   'banana': 1,
+//   'orange': 2,
+//   'meat': 4
 // }
 
+// let map = new Map(Object.entries(obj));
+
+// // alert( map.get('banana') );
+
+// let prices = Object.fromEntries([
+//   ['banana', 1],
+//   ['orange', 2],
+//   ['meat', 4]
+// ])
+
+// alert(prices);
+// alert(map);
 
 
-// let users = [
-//     {id: 'john', name: "John Smith", age: 20},
-//     {id: 'ann', name: "Ann Smith", age: 24},
-//     {id: 'pete', name: "Pete Peterson", age: 31},
-//   ];
-  
-//   let usersById = groupById(users);
-//   alert(usersById.john.id);
-  /*
-  // 调用函数后，我们应该得到：
-  
-  usersById = {
-    john: {id: 'john', name: "John Smith", age: 20},
-    ann: {id: 'ann', name: "Ann Smith", age: 24},
-    pete: {id: 'pete', name: "Pete Peterson", age: 31},
+function unique(arr) {
+  let uniqueValue = new Set(arr);
+  let uniqueArr = []
+  for (let value of uniqueValue) {
+    uniqueArr.push(value)
   }
-  */
+  return uniqueArr;
+}
 
-//   let range = {
-//     from: 1,
-//     to: 5
-//   }
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
 
-//   range[Symbol.iterator] = function() {
-//     return {
-//       current: this.from,
-//       last: this.to,
-
-//       next() {
-//         if (this.current <= this.last) {
-//           return {done: false, value: this.current++};
-//         } else {
-//           return {done: true};
-//         }
-//       }
-//     }
-//   }
-
-// for (let num of range) {
-//   alert(num);
-// }
-
-let arrayLike = {
-  0: 'Hello',
-  1: 'World',
-  length: 2
-};
-
-let arr = Array.from(arrayLike);
-alert(arr.pop());
-let arrayLike2 = {
-  0: 'Hello',
-  1: 'World',
-  length: 2
-};
-
-// alert(arrayLike2.pop());
+alert( unique(values) ); // Hare, Krishna, :-O
