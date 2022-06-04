@@ -924,26 +924,33 @@
 // alert( name ); // John
 // alert( age ); // 30
 // alert( isAdmin ); // false
-function topSalary(obj) {
-    let lastSalary = 0;
-    let name = null;
-    for (let salary of Object.entries(obj)) {
-        if (salary[1] >= lastSalary) {
-            lastSalary = salary[1];
-            [name, salary] = salary;
-        }
+// function topSalary(obj) {
+//     let lastSalary = 0;
+//     let name = null;
+//     for (let salary of Object.entries(obj)) {
+//         if (salary[1] >= lastSalary) {
+//             lastSalary = salary[1];
+//             [name, salary] = salary;
+//         }
 
             
-    }
-    return name;
-}
+//     }
+//     return name;
+// }
 
-let salaries = {
-    "John": 100,
-    "Pete": 300,
-    "Mary": 250
-  };
-let test = {}
+// let salaries = {
+//     "John": 100,
+//     "Pete": 300,
+//     "Mary": 250
+//   };
+// let test = {}
 
-alert( topSalary(salaries) );
-alert( topSalary(test) );
+// alert( topSalary(salaries) );
+// alert( topSalary(test) );
+// let now = new Date();
+// alert( now );
+
+// let date = new Date("2017-01-26");
+// alert( date );
+
+alert(new Date(2012, 1, 20, 3, 12));
