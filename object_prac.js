@@ -806,12 +806,26 @@
 // keys.push("more");
 // alert(keys);
 
-let visitedSet = new WeakSet();
-let john = { name: "John" };
-let pete = { name: "Pete" };
-let mary = { name: "Mary" };
+// let visitedSet = new WeakSet();
+// let john = { name: "John" };
+// let pete = { name: "Pete" };
+// let mary = { name: "Mary" };
 
-visitedSet.add(john);
-visitedSet.add(pete);
-visitedSet.add(mary);
+// visitedSet.add(john);
+// visitedSet.add(pete);
+// visitedSet.add(mary);
 
+let messages = [
+    {text: "Hello", from: "John"},
+    {text: "How goes?", from: "John"},
+    {text: "See you soon", from: "Alice"}
+  ];
+
+let readMessages = new WeakSet();
+readMessages.add(messages[0]);
+readMessages.add(messages[1]);
+readMessages.add(messages[2]);
+
+readMessages.add(messages[0]);
+
+alert(`messages 0 has been read?` + readMessages.has(messages[0]))
