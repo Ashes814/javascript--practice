@@ -842,19 +842,34 @@
 
 // alert(doublePrices.orange);
 
-function sumSalaries(salaries) {
-    let sumSalaries = 0;
-    for (let salary of Object.values(salaries)) {
-        sumSalaries += salary;
+// function sumSalaries(salaries) {
+//     let sumSalaries = 0;
+//     for (let salary of Object.values(salaries)) {
+//         sumSalaries += salary;
+//     }
+//     return sumSalaries;
+// }
+
+// let salaries = {
+//     "John": 100,
+//     "Pete": 300,
+//     "Mary": 250
+//   };
+// let another = {};
+// alert( sumSalaries(salaries) ); // 650
+// alert( sumSalaries(another) ); // 650
+function count(obj) {
+    let c = 0
+    for (let i of Object.keys(obj)){
+        c++;
     }
-    return sumSalaries;
+    return c
 }
 
-let salaries = {
-    "John": 100,
-    "Pete": 300,
-    "Mary": 250
+
+let user = {
+    name: 'John',
+    age: 30
   };
-let another = {};
-alert( sumSalaries(salaries) ); // 650
-alert( sumSalaries(another) ); // 650
+  
+alert( count(user) ); // 2
