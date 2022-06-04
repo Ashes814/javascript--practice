@@ -815,17 +815,29 @@
 // visitedSet.add(pete);
 // visitedSet.add(mary);
 
-let messages = [
-    {text: "Hello", from: "John"},
-    {text: "How goes?", from: "John"},
-    {text: "See you soon", from: "Alice"}
-  ];
+// let messages = [
+//     {text: "Hello", from: "John"},
+//     {text: "How goes?", from: "John"},
+//     {text: "See you soon", from: "Alice"}
+//   ];
 
-let readMessages = new WeakSet();
-readMessages.add(messages[0]);
-readMessages.add(messages[1]);
-readMessages.add(messages[2]);
+// let readMessages = new WeakSet();
+// readMessages.add(messages[0]);
+// readMessages.add(messages[1]);
+// readMessages.add(messages[2]);
 
-readMessages.add(messages[0]);
+// readMessages.add(messages[0]);
 
-alert(`messages 0 has been read?` + readMessages.has(messages[0]))
+// alert(`messages 0 has been read?` + readMessages.has(messages[0]))
+let prices = {
+    banana: 1,
+    orange: 2,
+    meat: 4,
+  };
+
+
+let doublePrices = Object.fromEntries(
+    Object.entries(prices).map(entry => [entry[0], entry[1] * 2])
+);
+
+alert(doublePrices.orange);
