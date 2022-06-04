@@ -999,5 +999,7 @@ function getSecondsToday() {
     return nowD.getHours()*60*60 + nowD.getMinutes() * 60 + nowD.getMinutes() * 60 + + nowD.getSeconds()
 } 
 
-
-alert( getSecondsToday() )
+function getSecondsToTommorrow() {
+    return 24*3600 - getSecondsToday()
+}
+alert( getSecondsToTommorrow() )
