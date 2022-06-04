@@ -952,17 +952,25 @@
 
 // let date = new Date("2017-01-26");
 // alert( date );
-function getWeekDay(date) {
-    let weekday = date.getDay();
-    let dayName = (weekday == 0) ? 'SU' :
-        (weekday == 1) ? 'MO' : 
-        (weekday == 2) ? 'TU' : 
-        (weekday == 3) ? 'WE' : 
-        (weekday == 4) ? 'TH' : 
-        (weekday == 5) ? 'FR' : 
-        (weekday == 6) ? 'SA' : 'Error'
-    return dayName;
+// function getWeekDay(date) {
+//     let weekday = date.getDay();
+//     let dayName = (weekday == 0) ? 'SU' :
+//         (weekday == 1) ? 'MO' : 
+//         (weekday == 2) ? 'TU' : 
+//         (weekday == 3) ? 'WE' : 
+//         (weekday == 4) ? 'TH' : 
+//         (weekday == 5) ? 'FR' : 
+//         (weekday == 6) ? 'SA' : 'Error'
+//     return dayName;
+// }
+
+// let date = new Date(2012, 0, 3);  // 3 Jan 2012
+// alert( getWeekDay(date) );  
+function getLocalDay(date) {
+    let weekDay = date.getDay();
+    let europeanDay = weekDay != 0 ? weekDay : 7
+    return europeanDay;
 }
 
 let date = new Date(2012, 0, 3);  // 3 Jan 2012
-alert( getWeekDay(date) );  
+alert( getLocalDay(date) );  
