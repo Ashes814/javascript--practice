@@ -796,12 +796,22 @@
 // alert(Array.from(test2).sort());
 // alert( test === test2 );
 
-let map = new Map();
+// let map = new Map();
 
-map.set("name", "John");
+// map.set("name", "John");
 
-let keys = Array.from(map.keys());
+// let keys = Array.from(map.keys());
 
-// Error: keys.push is not a function
-keys.push("more");
-alert(keys);
+// // Error: keys.push is not a function
+// keys.push("more");
+// alert(keys);
+
+let visitedSet = new WeakSet();
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+visitedSet.add(john);
+visitedSet.add(pete);
+visitedSet.add(mary);
+
