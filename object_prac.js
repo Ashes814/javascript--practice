@@ -900,3 +900,16 @@
 // // alert(item1);  // Cake
 // // alert(item2);  // Donut
 // alert( size )
+
+let options = {
+    title: "My menu",
+    items: ["Item1", "Item2"]
+};
+
+function showMenu({title='Untitled', width=200, height=100, items:[item1, item2]}) {
+    alert( `${title} ${width} ${height}`);
+    // alert( items );
+    alert (item1 )
+}
+
+showMenu(options);
