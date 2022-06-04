@@ -829,15 +829,32 @@
 // readMessages.add(messages[0]);
 
 // alert(`messages 0 has been read?` + readMessages.has(messages[0]))
-let prices = {
-    banana: 1,
-    orange: 2,
-    meat: 4,
+// let prices = {
+//     banana: 1,
+//     orange: 2,
+//     meat: 4,
+//   };
+
+
+// let doublePrices = Object.fromEntries(
+//     Object.entries(prices).map(entry => [entry[0], entry[1] * 2])
+// );
+
+// alert(doublePrices.orange);
+
+function sumSalaries(salaries) {
+    let sumSalaries = 0;
+    for (let salary of Object.values(salaries)) {
+        sumSalaries += salary;
+    }
+    return sumSalaries;
+}
+
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
   };
-
-
-let doublePrices = Object.fromEntries(
-    Object.entries(prices).map(entry => [entry[0], entry[1] * 2])
-);
-
-alert(doublePrices.orange);
+let another = {};
+alert( sumSalaries(salaries) ); // 650
+alert( sumSalaries(another) ); // 650
