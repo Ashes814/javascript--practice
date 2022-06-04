@@ -985,10 +985,19 @@
 // alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
 // alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
 
-function getLastDayOfMonth(year, month) {
-    let date1 = new Date(year, month);
-    let date2 = new Date(year, ++month);
-    return (date2 - date1) / 24 / 60 / 60 / 1000
-}
+// function getLastDayOfMonth(year, month) {
+//     let date1 = new Date(year, month);
+//     let date2 = new Date(year, ++month);
+//     return (date2 - date1) / 24 / 60 / 60 / 1000
+// }
 
-alert( getLastDayOfMonth(2012, 1) );
+// alert( getLastDayOfMonth(2012, 1) );
+
+function getSecondsToday() {
+    let nowDate = Date.now();
+    let nowD = new Date(nowDate)
+    return nowD.getHours()*60*60 + nowD.getMinutes() * 60 + nowD.getMinutes() * 60 + + nowD.getSeconds()
+} 
+
+
+alert( getSecondsToday() )
