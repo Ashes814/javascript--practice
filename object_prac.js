@@ -901,15 +901,49 @@
 // // alert(item2);  // Donut
 // alert( size )
 
-let options = {
-    title: "My menu",
-    items: ["Item1", "Item2"]
-};
+// let options = {
+//     title: "My menu",
+//     items: ["Item1", "Item2"]
+// };
 
-function showMenu({title='Untitled', width=200, height=100, items:[item1, item2]}) {
-    alert( `${title} ${width} ${height}`);
-    // alert( items );
-    alert (item1 )
+// function showMenu({title='Untitled', width=200, height=100, items:[item1, item2]}) {
+//     alert( `${title} ${width} ${height}`);
+//     // alert( items );
+//     alert (item1 )
+// }
+
+// showMenu(options);
+
+// let user = {
+//     name: "John",
+//     years: 30
+// };
+
+// let {name, years:age, isAdmin=false} = user;
+
+// alert( name ); // John
+// alert( age ); // 30
+// alert( isAdmin ); // false
+function topSalary(obj) {
+    let lastSalary = 0;
+    let name = null;
+    for (let salary of Object.entries(obj)) {
+        if (salary[1] >= lastSalary) {
+            lastSalary = salary[1];
+            [name, salary] = salary;
+        }
+
+            
+    }
+    return name;
 }
 
-showMenu(options);
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+  };
+let test = {}
+
+alert( topSalary(salaries) );
+alert( topSalary(test) );
