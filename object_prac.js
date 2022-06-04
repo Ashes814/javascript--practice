@@ -974,13 +974,21 @@
 
 // let date = new Date(2012, 0, 3);  // 3 Jan 2012
 // alert( getLocalDay(date) );  
-function getDateAgo(date, days){
-    let timeStempDiff = date - days*24*60*60*1000;
-    let newDate = new Date(timeStempDiff);
-    return newDate.getDate();
-}
-let date = new Date(2015, 0, 2);
+// function getDateAgo(date, days){
+//     let timeStempDiff = date - days*24*60*60*1000;
+//     let newDate = new Date(timeStempDiff);
+//     return newDate.getDate();
+// }
+// let date = new Date(2015, 0, 2);
 
-alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
-alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
-alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+// alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+// alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+// alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+
+function getLastDayOfMonth(year, month) {
+    let date1 = new Date(year, month);
+    let date2 = new Date(year, ++month);
+    return (date2 - date1) / 24 / 60 / 60 / 1000
+}
+
+alert( getLastDayOfMonth(2012, 1) );
