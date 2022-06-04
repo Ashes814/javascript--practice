@@ -1003,3 +1003,25 @@ function getSecondsToTommorrow() {
     return 24*3600 - getSecondsToday()
 }
 alert( getSecondsToTommorrow() )
+
+function formatDate(date) {
+    let nowDate = Date.now()
+    if (date - nowDate <= 1000 && date - nowDate >= -1000) {
+        return 'right now'
+    } else if (date - nowDate <= 60 * 1000 && date - nowDate >= -1000 * 60) {
+        return `${(nowDate - date) / 1000} sec. ago`
+    } else if (date - nowDate <= 3600 * 1000 && date - nowDate >= -1000 * 3600) {
+        return `${(nowDate - date) / 1000/60} min. ago`
+    } else {
+        return `${('0' + date.getDate()).slice(-2)}.${('0' + (date.getMonth() + 1)).slice(-2)}.${('0' + (date.getFullYear())).slice(-2)} ${('0' + (date.getHours())).slice(-2)}:${('0' + (date.getSeconds())).slice(-2)}`
+    }
+}
+
+alert( formatDate(new Date(new Date - 1)) ); // "right now"
+
+alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 sec. ago"
+
+alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 min. ago"
+
+// yesterday's date like 31.12.16 20:00
+alert( formatDate(new Date(new Date - 86400 * 1000)) );
