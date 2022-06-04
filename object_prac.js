@@ -858,18 +858,45 @@
 // let another = {};
 // alert( sumSalaries(salaries) ); // 650
 // alert( sumSalaries(another) ); // 650
-function count(obj) {
-    let c = 0
-    for (let i of Object.keys(obj)){
-        c++;
-    }
-    return c
-}
+// function count(obj) {
+//     let c = 0
+//     for (let i of Object.keys(obj)){
+//         c++;
+//     }
+//     return c
+// }
 
 
-let user = {
-    name: 'John',
-    age: 30
-  };
+// let user = {
+//     name: 'John',
+//     age: 30
+//   };
   
-alert( count(user) ); // 2
+// alert( count(user) ); // 2
+// runs only prompt for surname
+// let [name = prompt('name?'), surname = prompt('surname?')] = ["Julius"];
+
+// alert(name);    // Julius (from array)
+// alert(surname); // whatever prompt gets
+
+// let options = {
+//     size: {
+//       width: 100,
+//       height: 200
+//     },
+//     items: ["Cake", "Donut"],
+//     extra: true
+//   };
+
+// let {
+//     size: {width, height},
+//     items: [item1, item2],
+//     title = "menu"
+// } = options;
+
+// // alert(title);  // Menu
+// // alert(width);  // 100
+// // alert(height); // 200
+// // alert(item1);  // Cake
+// // alert(item2);  // Donut
+// alert( size )
