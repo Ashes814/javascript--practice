@@ -1050,29 +1050,42 @@
 // let newUser = JSON.parse(userJson);
 // alert( newUser );
 
-let room = {
-    number: 23
-  };
+// let room = {
+//     number: 23
+//   };
   
-  let meetup = {
-    title: "Conference",
-    occupiedBy: [{name: "John"}, {name: "Alice"}],
-    place: room
-  };
+//   let meetup = {
+//     title: "Conference",
+//     occupiedBy: [{name: "John"}, {name: "Alice"}],
+//     place: room
+//   };
   
-  // circular references
-  room.occupiedBy = meetup;
-  meetup.self = meetup;
+//   // circular references
+//   room.occupiedBy = meetup;
+//   meetup.self = meetup;
   
-  alert( JSON.stringify(meetup, function replacer(key, value) {
-    /* your code */
-    return (key != '' && value == meetup) ? undefined : value;
-  }));
+//   alert( JSON.stringify(meetup, function replacer(key, value) {
+//     /* your code */
+//     return (key != '' && value == meetup) ? undefined : value;
+//   }));
   
-  /* result should be:
-  {
-    "title":"Conference",
-    "occupiedBy":[{"name":"John"},{"name":"Alice"}],
-    "place":{"number":23}
-  }
-  */
+//   /* result should be:
+//   {
+//     "title":"Conference",
+//     "occupiedBy":[{"name":"John"},{"name":"Alice"}],
+//     "place":{"number":23}
+//   }
+//   */
+
+function sumTo(number) {
+    if (number == 1) {
+        return 1;
+    } else {
+        return number + sumTo(number - 1);
+    }
+    
+    
+    
+}
+
+alert(sumTo(100));
