@@ -1115,3 +1115,26 @@
 // alert(fib(3)); // 2
 // alert(fib(7)); // 13
 // alert(fib(77)); // 5527939700884757
+
+let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
+
+  function backList(list) {
+    if (list.next) {
+        backList(list.next)
+    }
+    alert( list.value );
+  }
+
+  backList(list)
