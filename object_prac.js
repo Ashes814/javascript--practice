@@ -1091,7 +1091,27 @@
 
 // alert(sumTo(100));
 
-function factorial(number) {
-    return (number == 0) ? 1 : factorial(number - 1) * number;
-}
-alert(factorial(4))
+// function factorial(number) {
+//     return (number == 0) ? 1 : factorial(number - 1) * number;
+// }
+// alert(factorial(4))
+// function fib(n) {
+//     let firstNumber = 1;
+//     let SecondNumber = 1;
+//     let fNumber = 0;
+//     if (n <= 2) {
+//         return 1
+//     } 
+//     for (let i = 3; i<=n; i++) {
+//         fNumber = firstNumber + SecondNumber;
+//         firstNumber = SecondNumber;
+//         SecondNumber = fNumber;
+//     }
+
+
+//     return SecondNumber;
+// }
+
+// alert(fib(3)); // 2
+// alert(fib(7)); // 13
+// alert(fib(77)); // 5527939700884757
