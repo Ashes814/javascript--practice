@@ -1077,15 +1077,21 @@
 //   }
 //   */
 
-function sumTo(number) {
-    if (number == 1) {
-        return 1;
-    } else {
-        return number + sumTo(number - 1);
-    }
-    
-    
-    
-}
+// function sumTo(number) {
 
-alert(sumTo(100));
+//     if (number == 1) {
+//         return 1;
+//     } else {
+//         return number + sumTo(number - 1);
+//     }
+    
+    
+    
+// }
+
+// alert(sumTo(100));
+
+function factorial(number) {
+    return (number == 0) ? 1 : factorial(number - 1) * number;
+}
+alert(factorial(4))
