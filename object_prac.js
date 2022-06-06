@@ -1183,19 +1183,25 @@
 
 // alert( counter2() ); // ?
 // alert( counter2() ); // ?
-function Counter() {
-  let count = 0;
+// function Counter() {
+//   let count = 0;
 
-  this.up = function() {
-    return ++count;
-  };
-  this.down = function() {
-    return --count;
-  };
-}
+//   this.up = function() {
+//     return ++count;
+//   };
+//   this.down = function() {
+//     return --count;
+//   };
+// }
 
-let counter = new Counter();
+// let counter = new Counter();
 
-alert( counter.up() ); // ?
-alert( counter.up() ); // ?
-alert( counter.down() ); // ?
+// alert( counter.up() ); // ?
+// alert( counter.up() ); // ?
+// alert( counter.down() ); // ?
+// function sum(a) {
+//   return function (b) {
+//     return a + b;
+//   }
+// }
+// alert(sum(1)(2));
