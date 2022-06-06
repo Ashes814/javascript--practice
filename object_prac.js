@@ -1116,25 +1116,28 @@
 // alert(fib(7)); // 13
 // alert(fib(77)); // 5527939700884757
 
-let list = {
-    value: 1,
-    next: {
-      value: 2,
-      next: {
-        value: 3,
-        next: {
-          value: 4,
-          next: null
-        }
-      }
-    }
-  };
+// let list = {
+//     value: 1,
+//     next: {
+//       value: 2,
+//       next: {
+//         value: 3,
+//         next: {
+//           value: 4,
+//           next: null
+//         }
+//       }
+//     }
+//   };
 
-  function backList(list) {
-    if (list.next) {
-        backList(list.next)
-    }
-    alert( list.value );
-  }
+//   function backList(list) {
+//     if (list.next) {
+//         backList(list.next)
+//     }
+//     alert( list.value );
+//   }
 
-  backList(list)
+//   backList(list)
+
+let arr = [1,2,3,4];
+alert( Math.max(...arr))
