@@ -1142,12 +1142,27 @@
 // let arr = [1,2,3,4];
 // alert( Math.max(...arr))
 
-let name = "John";
+// let name = "John";
 
-function sayHi() {
-  alert("Hi, " + name);
-}
+// function sayHi() {
+//   alert("Hi, " + name);
+// }
 
-name = "Pete";
+// name = "Pete";
 
-sayHi(); // 会显示什么："John" 还是 "Pete"？
+// sayHi(); // 会显示什么："John" 还是 "Pete"？
+// function makeWorker() {
+//   let name = "Pete";
+
+//   return function() {
+//     alert(name);
+//   };
+// }
+
+// let name = "John";
+
+// // create a function
+// let work = makeWorker();
+
+// // call it
+// work(); // 会显示什么？
