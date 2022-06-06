@@ -1205,3 +1205,14 @@
 //   }
 // }
 // alert(sum(1)(2));
+
+// let x = 1;
+
+// function func() {
+//   let x = 2;
+
+//   console.log(x); // ?
+// }
+
+
+// func();
