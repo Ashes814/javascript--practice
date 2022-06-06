@@ -1139,5 +1139,15 @@
 
 //   backList(list)
 
-let arr = [1,2,3,4];
-alert( Math.max(...arr))
+// let arr = [1,2,3,4];
+// alert( Math.max(...arr))
+
+let name = "John";
+
+function sayHi() {
+  alert("Hi, " + name);
+}
+
+name = "Pete";
+
+sayHi(); // 会显示什么："John" 还是 "Pete"？
