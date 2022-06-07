@@ -1275,3 +1275,26 @@
 // army[0](); // 编号为 0 的 shooter 显示的是 10
 // army[1](); // 编号为 1 的 shooter 显示的是 10
 // army[2](); // 10，其他的也是这样。
+
+function makeCounter() {
+  function Counter() {
+    return Counter.count++;
+  }
+
+  Counter.count = 0
+  Counter.set = function(value) {
+    Counter.count = value;
+  }
+  Counter.decrease = function(value) {
+    Counter.count -= value;
+  }
+  return Counter;
+}
+
+let c = makeCounter()
+alert(c());
+alert(c());
+c.set(10086);
+alert(c());
+c.decrease(2581);
+alert(c());
