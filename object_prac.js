@@ -1298,21 +1298,60 @@
 // alert(c());
 // c.decrease(2581);
 // alert(c());
-function sum(a) {
-  let currentSum = a;
+// function sum(a) {
+//   let currentSum = a;
 
-  function f(b) {
-    currentSum += b;
-    return f
-  }
+//   function f(b) {
+//     currentSum += b;
+//     return f
+//   }
 
-  f.toString = function() {
-    return currentSum;
-  }
+//   f.toString = function() {
+//     return currentSum;
+//   }
 
-  return f;
+//   return f;
 
 
+
+
+// }
+
+// alert( sum(1)(82)(53) )
+// let delay = 500;
+// let timeId = setTimeout(function request() {
+//   alert('request');
+//   timeId = setTimeout(request, delay);
+//   clearTimeout(timeId)
+// // }, delay);
+// function printNumbers(from, to) {
+  
+//   let number = from;
+//   if (number>=from && number<=to) {
+//     setInterval(function(number) {
+//       alert(number); 
+//       number += 1
+//     }, 1000, number)
+//   }
+// }
+// printNumbers(1, 10)
+function slow(x) {
+
+  alert( `called with ${x}`);
+  return x;
 }
 
-alert( sum(1)(82)(53) )
+function cachingDecorator(func) {
+  let cache = new Map();
+
+  return function(x) {
+    if (cache.has(x)) {
+      return cache.get(x);
+    }
+    let result = func(x);
+
+    cache.set(x, result);
+    return result;
+
+  }
+}
