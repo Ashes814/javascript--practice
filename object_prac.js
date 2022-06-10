@@ -1335,23 +1335,76 @@
 //   }
 // }
 // printNumbers(1, 10)
-function slow(x) {
+// function slow(x) {
 
-  alert( `called with ${x}`);
-  return x;
+//   alert( `called with ${x}`);
+//   return x;
+// }
+
+// function cachingDecorator(func) {
+//   let cache = new Map();
+
+//   return function(x) {
+//     if (cache.has(x)) {
+//       return cache.get(x);
+//     }
+//     let result = func(x);
+
+//     cache.set(x, result);
+//     return result;
+
+//   }
+// }
+
+// let worker = {
+//   slow(min, max) {
+//     alert(`Cached with ${min}, ${max}`);
+//     return min + max;
+//   }
+// };
+
+// function cachingDecorator(func, hash) {
+//   let cache = new Map();
+
+//   return function() {
+//     let key = hash(arguments);
+//     if (cache.has(key)) {
+//       return cache.get(key);
+//     }
+    
+//   let result = func.call(this, ...arguments)
+//   cache.set(key, result);
+//   return result
+//   }
+// }
+
+// function hash(args) {
+//   return args[0] + ',' + args[1];
+// }
+// worker.slow = cachingDecorator(worker.slow, hash);
+// alert( worker.slow(3,5) );
+// alert( worker.slow(3,5) );
+
+function work(a, b) {
+  alert(a + b);
 }
 
-function cachingDecorator(func) {
-  let cache = new Map();
+function spy(func) {
+  func.calls = []
+  function wrapper(...args) {
+    wrapper.calls.push(args);
 
-  return function(x) {
-    if (cache.has(x)) {
-      return cache.get(x);
-    }
-    let result = func(x);
-
-    cache.set(x, result);
-    return result;
-
+    return func.apply(this.args)
   }
+
+  wrapper.calls = [];
+
+  return wrapper;
+}
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (let args of work.calls) {
+  alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
 }
