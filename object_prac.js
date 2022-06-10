@@ -1385,26 +1385,42 @@
 // alert( worker.slow(3,5) );
 // alert( worker.slow(3,5) );
 
-function work(a, b) {
-  alert(a + b);
+// function work(a, b) {
+//   alert(a + b);
+// }
+
+// function spy(func) {
+//   func.calls = []
+//   function wrapper(...args) {
+//     wrapper.calls.push(args);
+
+//     return func.apply(this.args)
+//   }
+
+//   wrapper.calls = [];
+
+//   return wrapper;
+// }
+
+// work(1, 2); // 3
+// work(4, 5); // 9
+
+// for (let args of work.calls) {
+//   alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+// }
+function f(x) {
+  alert(x);
 }
+function delay(func, time) {
+  
+  return function(...args) {
 
-function spy(func) {
-  func.calls = []
-  function wrapper(...args) {
-    wrapper.calls.push(args);
-
-    return func.apply(this.args)
+    setTimeout(() => func.apply(this, args), time);
   }
-
-  wrapper.calls = [];
-
-  return wrapper;
 }
+// create wrappers
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
 
-work(1, 2); // 3
-work(4, 5); // 9
-
-for (let args of work.calls) {
-  alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
-}
+f1000("test"); // shows "test" after 1000ms
+f1500("test"); // shows "test" after 1500ms
