@@ -1424,3 +1424,52 @@
 
 // f1000("test"); // shows "test" after 1000ms
 // f1500("test"); // shows "test" after 1500ms
+
+// let user = {
+//   firstName: "John",
+//   sayHi() {
+//     alert(`Hello, ${this.firstName}!`);
+//   }
+// };
+
+// let sayHi = user.sayHi.bind(user);
+// setTimeout(sayHi, 1000);
+
+// user = {
+//   sayHi() {alert("Another user in setTimeout!")}
+// }
+
+// function partial(func, ...argsBound) {
+//   return function(...args) {
+//     return func.call(this, ...argsBound, ...args);
+//   }
+// }
+
+// let user = {
+//   firstName: "John",
+//   say(time, phrase) {
+//     alert(`[${time}] ${this.firstName}: ${phrase}!`);
+//   }
+// };
+
+// user.sayNow = partial(user.say, new Date().getHours() + ':' + new Date().getMinutes())
+// user.sayNow("Hello")
+
+function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == 'rockstar') ok();
+  else fail();
+}
+
+let user = {
+  name: 'John',
+
+  loginOk() {
+    alert(`${this.name} logged in`);
+  },
+
+  loginFail() {
+    alert(`${this.name} failed to log in`)
+  },
+}
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
