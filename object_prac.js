@@ -1455,25 +1455,38 @@
 // user.sayNow = partial(user.say, new Date().getHours() + ':' + new Date().getMinutes())
 // user.sayNow("Hello")
 
-function askPassword(ok, fail) {
-  let password = prompt("Password?", '');
-  if (password == 'rockstar') ok();
-  else fail();
+// function askPassword(ok, fail) {
+//   let password = prompt("Password?", '');
+//   if (password == 'rockstar') ok();
+//   else fail();
+// }
+
+// let user = {
+//   name: 'John',
+
+//   // loginOk() {
+//   //   alert(`${this.name} logged in`);
+//   // },
+
+//   // loginFail() {
+//   //   alert(`${this.name} failed to log in`)
+//   // },
+
+//   login(result) {
+//     alert( this.name + (result ? ' logged in ' : ' failed to log in ') )
+//   }
+// }
+// askPassword(user.login.bind(user, true), user.login.bind(user, false));
+
+function defer(f, ms) {
+  return function() {
+    setTimeout(() => f.apply(this, arguments), ms);
+  };
 }
 
-let user = {
-  name: 'John',
-
-  // loginOk() {
-  //   alert(`${this.name} logged in`);
-  // },
-
-  // loginFail() {
-  //   alert(`${this.name} failed to log in`)
-  // },
-
-  login(result) {
-    alert( this.name + (result ? ' logged in ' : ' failed to log in ') )
-  }
+function sayHi(who) {
+  alert("Hello, " + who);
 }
-askPassword(user.login.bind(user, true), user.login.bind(user, false));
+
+let sayHiDeferred = defer(sayHi, 2000);
+sayHiDeferred("John")
