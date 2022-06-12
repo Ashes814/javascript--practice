@@ -26,6 +26,6 @@
 // let lastName = 'SB'
 // console.log(lastName)
 // console.log(window.lastName)
-const now = 2022;
-const ageOo = now - 1999;
-console.log(ageOo);
+// const now = 2022;
+// const ageOo = now - 1999;
+// console.log(ageOo);
