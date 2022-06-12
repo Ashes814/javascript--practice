@@ -1478,15 +1478,22 @@
 // }
 // askPassword(user.login.bind(user, true), user.login.bind(user, false));
 
-function defer(f, ms) {
-  return function() {
-    setTimeout(() => f.apply(this, arguments), ms);
-  };
-}
+// function defer(f, ms) {
+//   return function() {
+//     setTimeout(() => f.apply(this, arguments), ms);
+//   };
+// }
 
-function sayHi(who) {
-  alert("Hello, " + who);
-}
+// function sayHi(who) {
+//   alert("Hello, " + who);
+// }
 
-let sayHiDeferred = defer(sayHi, 2000);
-sayHiDeferred("John")
+// let sayHiDeferred = defer(sayHi, 2000);
+// sayHiDeferred("John")
+
+// let user = {
+//   name: "John"
+// };
+
+// let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+// alert( JSON.stringify( descriptor, null, 2 ) );
