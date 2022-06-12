@@ -1497,3 +1497,12 @@
 
 // let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
 // alert( JSON.stringify( descriptor, null, 2 ) );
+// let obj = {
+//     get propName() {
+
+//     },
+
+//     set propName() {
+
+//     }
+// }
