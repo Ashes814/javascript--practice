@@ -16,13 +16,16 @@
 // const PI = 3.1415926535897932384626;
 // console.log(true);
 
-console.log(typeof true)
-console.log(typeof 'javascript')
-console.log(typeof 10086)
-console.log(typeof null)
-console.log(typeof undefined)
-console.log(typeof Symbol)
+// console.log(typeof true)
+// console.log(typeof 'javascript')
+// console.log(typeof 10086)
+// console.log(typeof null)
+// console.log(typeof undefined)
+// console.log(typeof Symbol)
 
-let lastName = 'SB'
-console.log(lastName)
-console.log(window.lastName)
+// let lastName = 'SB'
+// console.log(lastName)
+// console.log(window.lastName)
+const now = 2022;
+const ageOo = now - 1999;
+console.log(ageOo);
