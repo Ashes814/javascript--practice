@@ -21,3 +21,8 @@ console.log(typeof 'javascript')
 console.log(typeof 10086)
 console.log(typeof null)
 console.log(typeof undefined)
+console.log(typeof Symbol)
+
+let lastName = 'SB'
+console.log(lastName)
+console.log(window.lastName)
