@@ -29,3 +29,21 @@
 // const now = 2022;
 // const ageOo = now - 1999;
 // console.log(ageOo);
+
+const firstName = 'Ouwen';
+const job = 'student';
+const birthYear = 1999;
+const year = 2037;
+
+const ouwen = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+
+console.log(ouwen);
+
+const ouwenNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
+console.log(ouwenNew);
+
+console.log(`Just a regular string ...`);
+
+console.log(`String with
+multiple
+lines`);
