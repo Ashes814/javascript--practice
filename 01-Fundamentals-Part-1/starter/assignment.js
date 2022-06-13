@@ -22,28 +22,32 @@ language = 'Chinese'
 // console.log(description)
 
 ///////// Coding Challenage One
-// let heightMark = 1.69;
-// let weightMark = 78;
-// let weightJohn = 92;
-// let heightJohn = 1.95;
-// function calBMI(weight, height) {
-//     return weight / height ** 2;
-// }
+let heightMark = 1.69;
+let weightMark = 78;
+let weightJohn = 92;
+let heightJohn = 1.95;
+function calBMI(weight, height) {
+    return weight / height ** 2;
+}
 
-// let markHigherBMI;
+let markHigherBMI;
 
-// console.log(calBMI(weightMark, heightMark));
-// console.log(calBMI(weightJohn, heightJohn));
+console.log(calBMI(weightMark, heightMark));
+console.log(calBMI(weightJohn, heightJohn));
 
-// markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
-// console.log(markHigherBMI)
+markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
+console.log(markHigherBMI)
 
 // string and Template Literals
 // let description = `${country} is in ${continent}, and its ${population} people ${language}`;
 // console.log(description);
 
-if (population > 3000000) {
-    console.log(`${country}'s population is above average`)
-} else {
-    console.log(`${country}'s population is ${-population/1000000 + 33} below average`)
-}
+// if (population > 3000000) {
+//     console.log(`${country}'s population is above average`)
+// } else {
+//     console.log(`${country}'s population is ${-population/1000000 + 33} below average`)
+// }
+
+if (markHigherBMI) {
+    console.log(`Mark's BMI (${calBMI(weightMark, heightMark)} is higher thn john's (${calBMI(weightJohn, heightJohn)})`)
+} else {}
