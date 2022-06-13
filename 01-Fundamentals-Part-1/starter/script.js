@@ -66,3 +66,13 @@
 //     century = 21;
 // }
 // console.log(century)
+
+const inputYear = '1991';
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas'));
+
+// type coercion
+console.log('I am  ' + 23 + ' years old ');
+console.log('10' + 23 + '5');
+console.log('10' - 23 - '5');
