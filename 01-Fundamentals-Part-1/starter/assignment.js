@@ -39,5 +39,11 @@ language = 'Chinese'
 // console.log(markHigherBMI)
 
 // string and Template Literals
-let description = `${country} is in ${continent}, and its ${population} people ${language}`;
-console.log(description);
+// let description = `${country} is in ${continent}, and its ${population} people ${language}`;
+// console.log(description);
+
+if (population > 3000000) {
+    console.log(`${country}'s population is above average`)
+} else {
+    console.log(`${country}'s population is ${-population/1000000 + 33} below average`)
+}

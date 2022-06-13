@@ -30,20 +30,39 @@
 // const ageOo = now - 1999;
 // console.log(ageOo);
 
-const firstName = 'Ouwen';
-const job = 'student';
-const birthYear = 1999;
-const year = 2037;
+// const firstName = 'Ouwen';
+// const job = 'student';
+// const birthYear = 1999;
+// const year = 2037;
 
-const ouwen = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+// const ouwen = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
 
-console.log(ouwen);
+// console.log(ouwen);
 
-const ouwenNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
-console.log(ouwenNew);
+// const ouwenNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`
+// console.log(ouwenNew);
 
-console.log(`Just a regular string ...`);
+// console.log(`Just a regular string ...`);
 
-console.log(`String with
-multiple
-lines`);
+// console.log(`String with
+// multiple
+// lines`);
+
+const age = 9;
+// const isOldEnough = age >= 18;
+
+if(age >= 18) {
+    console.log('Sarah can start driving license');
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years ;`);
+}
+
+const birthYear = 2012;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century)
