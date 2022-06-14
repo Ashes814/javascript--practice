@@ -67,12 +67,33 @@
 // }
 // console.log(century)
 
-const inputYear = '1991';
-console.log(Number(inputYear) + 18);
+// const inputYear = '1991';
+// console.log(Number(inputYear) + 18);
 
-console.log(Number('Jonas'));
+// console.log(Number('Jonas'));
 
-// type coercion
-console.log('I am  ' + 23 + ' years old ');
-console.log('10' + 23 + '5');
-console.log('10' - 23 - '5');
+// // type coercion
+// console.log('I am  ' + 23 + ' years old ');
+// console.log('10' + 23 + '5');
+// console.log('10' - 23 - '5');
+
+// if ([]) {
+//     console.log('is true')
+// } else {
+//     console.log('is false')
+// }
+
+const money = 1000;
+if (money) {
+    console.log("Don't spend it all ;(");
+
+} else {
+    console.log("You should get a job.")
+}
+
+let height = 123;
+if (height) {
+    console.log("YaY, Height is defined");
+} else {
+    console.log("Wow, height is undefined")
+}
