@@ -61,8 +61,8 @@ markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
 // } else {
 //     console.log('No borders!')
 // }
-let scoreDolphins = [97, 112, 101];
-let scoreKoalas = [109, 95, 106];
+let scoreDolphins = [97, 112, 81];
+let scoreKoalas = [109, 95, 86];
 let averageDoplhins = (scoreDolphins[0] + scoreDolphins[1] + scoreDolphins[2]) / 3; 
 let averageKoalas = (scoreKoalas[0] + scoreKoalas[1] + scoreKoalas[2]) / 3; 
 
