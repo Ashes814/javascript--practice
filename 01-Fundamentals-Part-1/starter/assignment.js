@@ -32,11 +32,11 @@ function calBMI(weight, height) {
 
 let markHigherBMI;
 
-console.log(calBMI(weightMark, heightMark));
-console.log(calBMI(weightJohn, heightJohn));
+// console.log(calBMI(weightMark, heightMark));
+// console.log(calBMI(weightJohn, heightJohn));
 
 markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
-console.log(markHigherBMI)
+// console.log(markHigherBMI)
 
 // string and Template Literals
 // let description = `${country} is in ${continent}, and its ${population} people ${language}`;
@@ -48,6 +48,16 @@ console.log(markHigherBMI)
 //     console.log(`${country}'s population is ${-population/1000000 + 33} below average`)
 // }
 
-if (markHigherBMI) {
-    console.log(`Mark's BMI (${calBMI(weightMark, heightMark)} is higher thn john's (${calBMI(weightJohn, heightJohn)})`)
-} else {}
+// if (markHigherBMI) {
+//     console.log(`Mark's BMI (${calBMI(weightMark, heightMark)} is higher thn john's (${calBMI(weightJohn, heightJohn)})`)
+// } else {}
+
+const numNeighbours = prompt('How many neighbour countries does your country have?');
+
+if (numNeighbours == 1) {
+    console.log('Only 1 border');
+} else if (numNeighbours > 1) {
+    console.log('More than 1 border');
+} else {
+    console.log('No borders!')
+}

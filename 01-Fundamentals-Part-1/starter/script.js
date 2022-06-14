@@ -83,17 +83,27 @@
 //     console.log('is false')
 // }
 
-const money = 1000;
-if (money) {
-    console.log("Don't spend it all ;(");
+// const money = 1000;
+// if (money) {
+//     console.log("Don't spend it all ;(");
 
-} else {
-    console.log("You should get a job.")
-}
+// } else {
+//     console.log("You should get a job.")
+// }
 
-let height = 123;
-if (height) {
-    console.log("YaY, Height is defined");
-} else {
-    console.log("Wow, height is undefined")
+// let height = 123;
+// if (height) {
+//     console.log("YaY, Height is defined");
+// } else {
+//     console.log("Wow, height is undefined")
+// }
+// const age = 18;
+// if (age === 18) console.log("You just became an adult :D");
+const favouriteNumber = prompt("What is your favourite number?");
+console.log(favouriteNumber);
+console.log(typeof favouriteNumber);
+
+
+if (favouriteNumber == 23) {
+    console.log("Cool! 23 is an amazing number!")
 }
