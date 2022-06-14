@@ -52,12 +52,26 @@ markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
 //     console.log(`Mark's BMI (${calBMI(weightMark, heightMark)} is higher thn john's (${calBMI(weightJohn, heightJohn)})`)
 // } else {}
 
-const numNeighbours = prompt('How many neighbour countries does your country have?');
+// const numNeighbours = prompt('How many neighbour countries does your country have?');
 
-if (numNeighbours == 1) {
-    console.log('Only 1 border');
-} else if (numNeighbours > 1) {
-    console.log('More than 1 border');
+// if (numNeighbours == 1) {
+//     console.log('Only 1 border');
+// } else if (numNeighbours > 1) {
+//     console.log('More than 1 border');
+// } else {
+//     console.log('No borders!')
+// }
+let scoreDolphins = [97, 112, 101];
+let scoreKoalas = [109, 95, 106];
+let averageDoplhins = (scoreDolphins[0] + scoreDolphins[1] + scoreDolphins[2]) / 3; 
+let averageKoalas = (scoreKoalas[0] + scoreKoalas[1] + scoreKoalas[2]) / 3; 
+
+if (averageDoplhins > averageKoalas && averageDoplhins >= 100) {
+    console.log("Dolphins Win!");
+} else if (averageDoplhins === averageKoalas && averageDoplhins >= 100) {
+    console.log("Draw Game!");
+} else if (averageKoalas > averageDoplhins && averageKoalas >= 100) {
+    console.log("Koalas Win!");
 } else {
-    console.log('No borders!')
+    console.log("No winner!")
 }

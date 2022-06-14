@@ -99,11 +99,16 @@
 // }
 // const age = 18;
 // if (age === 18) console.log("You just became an adult :D");
-const favouriteNumber = prompt("What is your favourite number?");
-console.log(favouriteNumber);
-console.log(typeof favouriteNumber);
+// const favouriteNumber = prompt("What is your favourite number?");
+// console.log(favouriteNumber);
+// console.log(typeof favouriteNumber);
 
 
-if (favouriteNumber == 23) {
-    console.log("Cool! 23 is an amazing number!")
-}
+// if (favouriteNumber == 23) {
+//     console.log("Cool! 23 is an amazing number!")
+// }
+
+const hasDriverLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriverLicense && hasGoodVision);
