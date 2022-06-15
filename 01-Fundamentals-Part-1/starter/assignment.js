@@ -90,4 +90,10 @@ markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
 //         console.log("Great language too!");
 // } 
 
-(population > 33) ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);
+// (population > 33) ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);
+
+let bill = 275;
+
+let tip = (bill >= 50 && bill <= 300) ? bill*0.15 : bill*0.2
+
+console.log(`The bill is ${bill}, the tip was ${tip}, and the total value is ${bill + tip}`);
