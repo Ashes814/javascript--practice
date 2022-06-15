@@ -108,7 +108,23 @@
 //     console.log("Cool! 23 is an amazing number!")
 // }
 
-const hasDriverLicense = true;
-const hasGoodVision = true;
+// 
+const day = 'monday';
 
-console.log(hasDriverLicense && hasGoodVision);
+switch(day) {
+    case 'monday':
+        console.log("Today is Monday!");
+        break;
+    
+    case "tuesday":
+        console.log("Today is Tuesday!");
+        break;
+    case "wednesday":
+    case "thursday":
+        console.log("Today is wednesday or thursday");
+        break
+    case "friday":
+        console.log("Today is Friday!");
+    default:
+        console.log(" wooops! ")
+}
