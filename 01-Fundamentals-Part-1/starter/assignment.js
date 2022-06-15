@@ -1,6 +1,6 @@
 const country = 'China';
 const continent = 'Asia'
-let population = 1400000000;
+let population = 1400000000 / 1000000;
 // console.log(`Country:${country}, Continent:${continent}, Population:${population}`)
 
 let isIsland = false;
@@ -11,7 +11,7 @@ let language;
 // console.log(typeof country);
 // console.log(typeof language);
 
-language = 'Chinese'
+language = 'chinese'
 
 // console.log(population / 2);
 // console.log(++population);
@@ -60,18 +60,34 @@ markHigherBMI = calBMI(weightMark, heightMark) > calBMI(weightJohn, heightJohn);
 //     console.log('More than 1 border');
 // } else {
 //     console.log('No borders!')
-// }
-let scoreDolphins = [97, 112, 81];
-let scoreKoalas = [109, 95, 86];
-let averageDoplhins = (scoreDolphins[0] + scoreDolphins[1] + scoreDolphins[2]) / 3; 
-let averageKoalas = (scoreKoalas[0] + scoreKoalas[1] + scoreKoalas[2]) / 3; 
+// // }
+// let scoreDolphins = [97, 112, 81];
+// let scoreKoalas = [109, 95, 86];
+// let averageDoplhins = (scoreDolphins[0] + scoreDolphins[1] + scoreDolphins[2]) / 3; 
+// let averageKoalas = (scoreKoalas[0] + scoreKoalas[1] + scoreKoalas[2]) / 3; 
 
-if (averageDoplhins > averageKoalas && averageDoplhins >= 100) {
-    console.log("Dolphins Win!");
-} else if (averageDoplhins === averageKoalas && averageDoplhins >= 100) {
-    console.log("Draw Game!");
-} else if (averageKoalas > averageDoplhins && averageKoalas >= 100) {
-    console.log("Koalas Win!");
-} else {
-    console.log("No winner!")
-}
+// if (averageDoplhins > averageKoalas && averageDoplhins >= 100) {
+//     console.log("Dolphins Win!");
+// } else if (averageDoplhins === averageKoalas && averageDoplhins >= 100) {
+//     console.log("Draw Game!");
+// } else if (averageKoalas > averageDoplhins && averageKoalas >= 100) {
+//     console.log("Koalas Win!");
+// } else {
+//     console.log("No winner!")
+// }
+// switch(language) {
+//     case "chinese":
+//     case "mandarin":
+//         console.log("Most number of native speakers!");
+//         break;
+//     case "spanish":
+//         console.log("2nd place in number of native speakers!");
+//         break;
+//     case "english":
+//         console.log("3rd place in number of ");
+//         break;
+//     default:
+//         console.log("Great language too!");
+// } 
+
+(population > 33) ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`);

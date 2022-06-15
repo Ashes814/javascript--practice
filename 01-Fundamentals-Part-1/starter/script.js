@@ -109,22 +109,23 @@
 // }
 
 // 
-const day = 'monday';
+// const day = 'monday';
 
-switch(day) {
-    case 'monday':
-        console.log("Today is Monday!");
-        break;
+// switch(day) {
+//     case 'monday':
+//         console.log("Today is Monday!");
+//         break;
     
-    case "tuesday":
-        console.log("Today is Tuesday!");
-        break;
-    case "wednesday":
-    case "thursday":
-        console.log("Today is wednesday or thursday");
-        break
-    case "friday":
-        console.log("Today is Friday!");
-    default:
-        console.log(" wooops! ")
-}
+//     case "tuesday":
+//         console.log("Today is Tuesday!");
+//         break;
+//     case "wednesday":
+//     case "thursday":
+//         console.log("Today is wednesday or thursday");
+//         break
+//     case "friday":
+//         console.log("Today is Friday!");
+//     default:
+//         console.log(" wooops! ")
+// }
+
