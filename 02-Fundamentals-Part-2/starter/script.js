@@ -20,11 +20,28 @@
 
 // console.log(fruitProcessor(1,3));
 
-function describeCountry(country, population, capitalCity) {
-    return `${country} has ${population} million people and its capital city is ${capitalCity}`
+// function describeCountry(country, population, capitalCity) {
+//     return `${country} has ${population} million people and its capital city is ${capitalCity}`
+// }
+
+// let describeChina = describeCountry('China', 1400, 'Beijing');
+// let describeRussia = describeCountry('Russia', 20, 'Moscow');
+// let describeJapan = describeCountry('Japan', 140, 'Tokyo');
+// console.log(describeChina, describeRussia, describeJapan);\
+
+// function calcAge1(birthYear) {
+//     return 2037 - birthYear;
+// }
+
+// const age1 = calcAge1(1997);
+// console.log(age1)
+
+// const calcAge2 = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+// const age2 = calcAge2(1991);
+// console.log(age1, age2)
+function percentageOfWorld1(population) {
+    return population/7900;
 }
 
-let describeChina = describeCountry('China', 1400, 'Beijing');
-let describeRussia = describeCountry('Russia', 20, 'Moscow');
-let describeJapan = describeCountry('Japan', 140, 'Tokyo');
-console.log(describeChina, describeRussia, describeJapan);
