@@ -41,10 +41,18 @@
 // }
 // const age2 = calcAge2(1991);
 // console.log(age1, age2)
-// function percentageOfWorld1(population) {
-//     return population/7900;
-// }
+function percentageOfWorld(population) {
+    return population/7900;
+}
 
-const calcAge3 = birthYear => 2037 - birthYear;
+// const calcAge3 = birthYear => 2037 - birthYear;
 
-console.log(calcAge3(1881))
+// console.log(calcAge3(1881))
+
+const describePopulation = (country, population) => {
+    const percentOfWorld = percentageOfWorld(population);
+    return `${country} has ${population} million people, which is about ${percentOfWorld*100}% of the world!`;
+
+}
+
+console.log(describePopulation('China',  1441))
