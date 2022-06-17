@@ -41,7 +41,10 @@
 // }
 // const age2 = calcAge2(1991);
 // console.log(age1, age2)
-function percentageOfWorld1(population) {
-    return population/7900;
-}
+// function percentageOfWorld1(population) {
+//     return population/7900;
+// }
 
+const calcAge3 = birthYear => 2037 - birthYear;
+
+console.log(calcAge3(1881))
