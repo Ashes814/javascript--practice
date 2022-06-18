@@ -47,13 +47,13 @@ function percentageOfWorld(population) {
 
 // // const calcAge3 = birthYear => 2037 - birthYear;
 
-// // console.log(calcAge3(1881))
+// // // console.log(calcAge3(1881))
 
 // const describePopulation = (country, population) => {
 //     const percentOfWorld = percentageOfWorld(population);
 //     return `${country} has ${population} million people, which is about ${percentOfWorld*100}% of the world!`;
 
-// }
+// // }
 
 // console.log(describePopulation('China',  1441))
 // function calcAverage(data1, data2, data3) {
@@ -105,13 +105,23 @@ function percentageOfWorld(population) {
 
 // console.log(tips, total);
 
-const myCountry = {
+let myCountry = {
     'country': 'China',
     capital: "Beijing",
     language: 'chinese',
     population: 1441,
-    neighbours: ['North Korea', 'Russia', 'India']
+    neighbours: ['North Korea', 'Russia', 'India'],
+    describePopulation: function () {
+        const percentOfWorld = percentageOfWorld(this.population);
+        return `${this.country} has ${this.population} million people, which is about ${percentOfWorld*100}% of the world!`;
+    },
+    checkIsland: function () {
+        this.isIsland = (this.neighbours.length === 0) ? true : false
+    }
 
-}
+};
 
-console.log(`'${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.'`)
+// console.log(`'${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.'`)
+console.log(myCountry.describePopulation());
+myCountry.checkIsland()
+console.log(myCountry)
