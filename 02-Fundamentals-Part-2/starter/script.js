@@ -125,23 +125,27 @@ let myCountry = {
 // console.log(myCountry.describePopulation());
 // myCountry.checkIsland()
 // console.log(myCountry)
-const bmiMark = {
-    name: 'Mark',
-    weight: 78,
-    height: 1.68,
-    calcBMI: function () {
-        this.BMI = this.weight / this.height**2;
-    }
-}
+// const bmiMark = {
+//     name: 'Mark',
+//     weight: 78,
+//     height: 1.68,
+//     calcBMI: function () {
+//         this.BMI = this.weight / this.height**2;
+//     }
+// }
 
-const bmiJohn = {
-    name: 'John',
-    weight: 92,
-    height: 1.95,
-    calcBMI: function () {
-        this.BMI = this.weight / this.height**2;
-    }
+// const bmiJohn = {
+//     name: 'John',
+//     weight: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//         this.BMI = this.weight / this.height**2;
+//     }
+// }
+// bmiMark.calcBMI();
+// bmiJohn.calcBMI();
+// console.log((bmiMark.BMI >= bmiJohn.BMI) ? `${bmiMark.name}'s BMI (${bmiMark.BMI}) is higher than ${bmiJohn.name}'s (${bmiJohn.BMI})!"` : `${bmiMark.name}'s BMI (${bmiMark.BMI}) is lower than ${bmiJohn.name}'s (${bmiJohn.BMI})!"`)
+
+for (let i = 1; i <= 50; i++) {
+    console.log(`Voter number ${i} is currently voting`)
 }
-bmiMark.calcBMI();
-bmiJohn.calcBMI();
-console.log((bmiMark.BMI >= bmiJohn.BMI) ? `${bmiMark.name}'s BMI (${bmiMark.BMI}) is higher than ${bmiJohn.name}'s (${bmiJohn.BMI})!"` : `${bmiMark.name}'s BMI (${bmiMark.BMI}) is lower than ${bmiJohn.name}'s (${bmiJohn.BMI})!"`)
