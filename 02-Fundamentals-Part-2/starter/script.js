@@ -41,9 +41,9 @@
 // }
 // const age2 = calcAge2(1991);
 // console.log(age1, age2)
-function percentageOfWorld(population) {
-    return population/7900;
-}
+// function percentageOfWorld(population) {
+//     return population/7900;
+// }
 
 // // const calcAge3 = birthYear => 2037 - birthYear;
 
@@ -86,40 +86,31 @@ function percentageOfWorld(population) {
 // neighbours[neighbours.findIndex(value => value =='Korea')] = 'K'
 // console.log(neighbours)
 
-// const calcTip = (bill) => {
-//     if (bill >= 50 && bill <= 300) {
-//         return bill*0.15;
-//     } else {
-//         return bill * 0.2;
-//     }
+
 // }
 // let bills = [125, 555, 44];
 // let tips = []
-// for (let bill of bills) {
-//     tips.push(calcTip(bill));
-// }
+
 // let total = [];
-// for (let  i = 0; i < bills.length; i++) {
-//     total.push(bills[i] + tips[i]);
-// }
+
 
 // console.log(tips, total);
 
-let myCountry = {
-    'country': 'China',
-    capital: "Beijing",
-    language: 'chinese',
-    population: 1441,
-    neighbours: ['North Korea', 'Russia', 'India'],
-    describePopulation: function () {
-        const percentOfWorld = percentageOfWorld(this.population);
-        return `${this.country} has ${this.population} million people, which is about ${percentOfWorld*100}% of the world!`;
-    },
-    checkIsland: function () {
-        this.isIsland = (this.neighbours.length === 0) ? true : false
-    }
+// let myCountry = {
+//     'country': 'China',
+//     capital: "Beijing",
+//     language: 'chinese',
+//     population: 1441,
+//     neighbours: ['North Korea', 'Russia', 'India'],
+//     describePopulation: function () {
+//         const percentOfWorld = percentageOfWorld(this.population);
+//         return `${this.country} has ${this.population} million people, which is about ${percentOfWorld*100}% of the world!`;
+//     },
+//     checkIsland: function () {
+//         this.isIsland = (this.neighbours.length === 0) ? true : false
+//     }
 
-};
+// };
 
 // console.log(`'${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.'`)
 // console.log(myCountry.describePopulation());
@@ -146,6 +137,25 @@ let myCountry = {
 // bmiJohn.calcBMI();
 // console.log((bmiMark.BMI >= bmiJohn.BMI) ? `${bmiMark.name}'s BMI (${bmiMark.BMI}) is higher than ${bmiJohn.name}'s (${bmiJohn.BMI})!"` : `${bmiMark.name}'s BMI (${bmiMark.BMI}) is lower than ${bmiJohn.name}'s (${bmiJohn.BMI})!"`)
 
-for (let i = 1; i <= 50; i++) {
-    console.log(`Voter number ${i} is currently voting`)
+// for (let i = 1; i <= 50; i++) {
+//     console.log(`Voter number ${i} is currently voting`)
+// }[[
+
+const calcTip = (bill) => {
+    if (bill >= 50 && bill <= 300) {
+        return bill*0.15;
+    } else {
+        return bill * 0.2;
+    }
+}
+
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+for (let bill of bills) {
+    tips.push(calcTip(bill));
+}
+
+for (let  i = 0; i < bills.length; i++) {
+    totals.push(bills[i] + tips[i]);
 }
