@@ -86,21 +86,32 @@ function percentageOfWorld(population) {
 // neighbours[neighbours.findIndex(value => value =='Korea')] = 'K'
 // console.log(neighbours)
 
-const calcTip = (bill) => {
-    if (bill >= 50 && bill <= 300) {
-        return bill*0.15;
-    } else {
-        return bill * 0.2;
-    }
-}
-let bills = [125, 555, 44];
-let tips = []
-for (let bill of bills) {
-    tips.push(calcTip(bill));
-}
-let total = [];
-for (let  i = 0; i < bills.length; i++) {
-    total.push(bills[i] + tips[i]);
+// const calcTip = (bill) => {
+//     if (bill >= 50 && bill <= 300) {
+//         return bill*0.15;
+//     } else {
+//         return bill * 0.2;
+//     }
+// }
+// let bills = [125, 555, 44];
+// let tips = []
+// for (let bill of bills) {
+//     tips.push(calcTip(bill));
+// }
+// let total = [];
+// for (let  i = 0; i < bills.length; i++) {
+//     total.push(bills[i] + tips[i]);
+// }
+
+// console.log(tips, total);
+
+const myCountry = {
+    'country': 'China',
+    capital: "Beijing",
+    language: 'chinese',
+    population: 1441,
+    neighbours: ['North Korea', 'Russia', 'India']
+
 }
 
-console.log(tips, total);
+console.log(myCountry)
