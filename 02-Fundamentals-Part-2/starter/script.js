@@ -76,12 +76,31 @@ function percentageOfWorld(population) {
 // console.log(populations.length === 4);
 // console.log(percentageOfWorld(populations[0]))
 
-let neighbours = ['Mongolia', 'Korea', 'Japan']
-neighbours.push('Utopia');
-neighbours.pop('Utopia');
-console.log(neighbours);
-if (!neighbours.includes("Germany")) {
-    console.log("Not European Country!");
+// let neighbours = ['Mongolia', 'Korea', 'Japan']
+// neighbours.push('Utopia');
+// neighbours.pop('Utopia');
+// console.log(neighbours);
+// if (!neighbours.includes("Germany")) {
+//     console.log("Not European Country!");
+// }
+// neighbours[neighbours.findIndex(value => value =='Korea')] = 'K'
+// console.log(neighbours)
+
+const calcTip = (bill) => {
+    if (bill >= 50 && bill <= 300) {
+        return bill*0.15;
+    } else {
+        return bill * 0.2;
+    }
 }
-neighbours[neighbours.findIndex(value => value =='Korea')] = 'K'
-console.log(neighbours)
+let bills = [125, 555, 44];
+let tips = []
+for (let bill of bills) {
+    tips.push(calcTip(bill));
+}
+let total = [];
+for (let  i = 0; i < bills.length; i++) {
+    total.push(bills[i] + tips[i]);
+}
+
+console.log(tips, total);
