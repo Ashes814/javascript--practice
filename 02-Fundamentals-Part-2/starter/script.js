@@ -41,18 +41,34 @@
 // }
 // const age2 = calcAge2(1991);
 // console.log(age1, age2)
-function percentageOfWorld(population) {
-    return population/7900;
+// function percentageOfWorld(population) {
+//     return population/7900;
+// }
+
+// // const calcAge3 = birthYear => 2037 - birthYear;
+
+// // console.log(calcAge3(1881))
+
+// const describePopulation = (country, population) => {
+//     const percentOfWorld = percentageOfWorld(population);
+//     return `${country} has ${population} million people, which is about ${percentOfWorld*100}% of the world!`;
+
+// }
+
+// console.log(describePopulation('China',  1441))
+function calcAverage(data1, data2, data3) {
+    return ( data1 + data2 + data3 ) / 3;
 }
 
-// const calcAge3 = birthYear => 2037 - birthYear;
-
-// console.log(calcAge3(1881))
-
-const describePopulation = (country, population) => {
-    const percentOfWorld = percentageOfWorld(population);
-    return `${country} has ${population} million people, which is about ${percentOfWorld*100}% of the world!`;
-
+function checkWinner(avgDolhins, avgKoalas) {
+    if (avgDolhins >= 2 * avgKoalas) {
+        console.log(`Dolhins win (${avgDolhins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolhins) {
+        console.log(`Koalas win (${avgDolhins} vs. ${avgKoalas})`);
+    } else {
+        console.log(`No winner !`);
+    }
 }
 
-console.log(describePopulation('China',  1441))
+checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 79));
+checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
