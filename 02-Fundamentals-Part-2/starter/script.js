@@ -72,6 +72,16 @@ function percentageOfWorld(population) {
 
 // checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 79));
 // checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27)); 
-let populations = [1,2,3,4];
-console.log(populations.length === 4);
-console.log(percentageOfWorld(populations[0]))
+// let populations = [1,2,3,4];
+// console.log(populations.length === 4);
+// console.log(percentageOfWorld(populations[0]))
+
+let neighbours = ['Mongolia', 'Korea', 'Japan']
+neighbours.push('Utopia');
+neighbours.pop('Utopia');
+console.log(neighbours);
+if (!neighbours.includes("Germany")) {
+    console.log("Not European Country!");
+}
+neighbours[neighbours.findIndex(value => value =='Korea')] = 'K'
+console.log(neighbours)
