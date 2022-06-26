@@ -17,3 +17,11 @@ th {
 td {
   text-align: left;
 }
+
+tr:nth-child(even) {
+  background-color: aliceblue;
+}
+
+tr:hover {
+  background-color: red;
+}
