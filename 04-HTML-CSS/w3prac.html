@@ -92,7 +92,7 @@
       <li>Super Idor3</li>
     </ul>
     <br>
-    <ol>
+    <ol class="city">
       <li>Super Idor</li>
       <li>Super Idor2</li>
       <li>Super Idor3</li>
@@ -104,5 +104,20 @@
       <dt>Milk</dt>
       <dd>- White cold drink</dd>
     </dl>
+
+    <div style="background-color:brown; padding: 20px" class="city">
+      <h2>London</h2>
+      <p>London is the capital city of England.</p>
+    </div>
+
+    <script>
+      function myFunction() {
+        let x = document.getElementsByClassName("city");
+        for (let i = 0; i < x.length; i++) {
+          x[i].style.display = "10086"
+        }
+      myFunction()
+      }
+    </script>
   </body>
 </html>
