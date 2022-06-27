@@ -26,12 +26,13 @@ tr:hover {
 }
 p.center {
   font-size: 100px;
+  padding: 500px;
 }
 
 body {
   margin-top: 800px;
   background-image: url("favicon.png");
-  background-repeat: repeat-x;
+  /* background-repeat: repeat-x; */
   /* background-position: center; */
   background-attachment: scroll;
 }
