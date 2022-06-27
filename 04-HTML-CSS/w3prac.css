@@ -29,6 +29,7 @@ p.center {
   padding: 50px;
   outline-style: groove;
   border-style: groove;
+  text-decoration: overline;
 }
 
 body {
