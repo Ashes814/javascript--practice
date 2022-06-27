@@ -1,7 +1,6 @@
 p {
-  border: 2px solid powderblue;
-  padding: 30px;
-  margin: 50px;
+  font-size: 10px;
+  color: aliceblue;
 }
 
 table,
@@ -24,4 +23,15 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: red;
+}
+p.center {
+  font-size: 100px;
+}
+
+body {
+  margin-top: 800px;
+  background-image: url("favicon.png");
+  background-repeat: repeat-x;
+  /* background-position: center; */
+  background-attachment: scroll;
 }
