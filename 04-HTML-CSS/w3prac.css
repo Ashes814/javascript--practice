@@ -1,6 +1,8 @@
 p {
+  font-family: "Sofia";
+  /* font-variant: small-caps; */
   font-size: 10px;
-  color: red;
+  /* color: red; */
 }
 
 table,
