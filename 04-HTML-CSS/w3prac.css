@@ -1,6 +1,6 @@
 p {
   font-size: 10px;
-  color: aliceblue;
+  color: red;
 }
 
 table,
@@ -30,6 +30,8 @@ p.center {
   outline-style: groove;
   border-style: groove;
   text-decoration: overline;
+  letter-spacing: -2px;
+  text-shadow: 2px 5px;
 }
 
 body {
