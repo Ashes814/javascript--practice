@@ -48,7 +48,7 @@ p.center {
 }
 
 body {
-  margin-top: 800px;
+  margin: auto;
   background-image: url("favicon.png");
   background-repeat: repeat-x;
   /* background-position: center; */
