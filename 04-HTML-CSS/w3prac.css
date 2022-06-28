@@ -47,10 +47,10 @@ p.center {
   text-shadow: 2px 5px;
 }
 
-body {
+body + p {
   margin: auto;
   background-image: url("favicon.png");
-  background-repeat: repeat-x;
+  /* background-repeat: repeat-x; */
   /* background-position: center; */
   background-attachment: scroll;
 }
