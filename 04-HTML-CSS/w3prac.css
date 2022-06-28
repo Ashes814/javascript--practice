@@ -10,7 +10,17 @@ th,
 td {
   border: 1px solid black;
 }
-
+a:link {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+ul {
+  list-style-type: circle;
+}
+a:hover {
+  color: rgb(12, 255, 48);
+}
 th {
   text-align: left;
 }
