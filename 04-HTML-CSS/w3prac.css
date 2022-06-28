@@ -105,3 +105,7 @@ body ::marker {
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
+
+h1[style~="red"] {
+  font-size: 200px;
+}
