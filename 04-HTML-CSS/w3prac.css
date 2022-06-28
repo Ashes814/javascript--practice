@@ -107,5 +107,10 @@ body ::marker {
 }
 
 h1[style~="red"] {
-  font-size: 200px;
+  font-size: 20px;
+}
+
+input:focus {
+  width: 100%;
+  border: 10px solid red;
 }
