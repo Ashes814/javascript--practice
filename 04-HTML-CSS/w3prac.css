@@ -47,7 +47,8 @@ p.center {
   text-shadow: 2px 5px;
 }
 
-body + p {
+body ::marker {
+  color: red;
   margin: auto;
   background-image: url("favicon.png");
   /* background-repeat: repeat-x; */
