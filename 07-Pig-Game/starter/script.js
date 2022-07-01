@@ -11,7 +11,7 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-const scores = [0, 0];
+let scores = [0, 0];
 let activePlayer = 0;
 let currentScore = 0;
 let playing = true;
@@ -87,8 +87,12 @@ function resetGame() {
     current0Element.textContent = 0;
     current1Element.textContent = 0;
 
-    document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner')
-    player0Element.classList.toggle('player--active')
+    document.querySelector(`.player--0`).classList.remove('player--winner');
+    document.querySelector(`.player--1`).classList.remove('player--winner');
+    player0Element.classList.add('player--active');
+    player1Element.classList.remove('player--active');
+    document.getElementById(`name--0`).textContent = "欧宝";
+    document.getElementById(`name--1`).textContent = "萱宝";
 
 }
 
