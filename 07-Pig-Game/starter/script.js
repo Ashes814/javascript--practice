@@ -61,6 +61,7 @@ btnHold.addEventListener('click', function () {
         if (scores[activePlayer] >= 20) {
             // Finish the game
             playing = false;
+            document.getElementById(`current--${activePlayer}`).textContent = 0;
             diceElement.classList.add('hidden')
             document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
             document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
@@ -97,3 +98,9 @@ function resetGame() {
 }
 
 btnNew.addEventListener('click', resetGame)
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'r') {
+            resetGame()
+    }
+})
