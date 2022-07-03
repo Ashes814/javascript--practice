@@ -28,5 +28,6 @@ const restaurant = {
   },
 };
 const [a, b] = [1, 2];
-console.log(a);
-console.log(b);
+const { openingHours: {thu:c, fri: d} } =restaurant
+console.log(c);
+console.log(d);
