@@ -27,7 +27,13 @@ const restaurant = {
     },
   },
 };
-const [a, b] = [1, 2];
-const { openingHours: {thu:c, fri: d} } =restaurant
-console.log(c);
-console.log(d);
+// const [a, b] = [1, 2];
+// const { openingHours: {thu:c, fri: d} } =restaurant
+// console.log(c);
+// console.log(d);
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(...'newArr');
