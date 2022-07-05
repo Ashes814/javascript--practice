@@ -67,5 +67,27 @@ function add(...numbers) {
 
 // console.log(undefined || null || undefined)
 
-console.log(0 && 'qq');
-console.log(undefined ?? 'qq' ?? 0 ?? null);
+// console.log(0 && 'qq');
+// console.log(undefi ?? 'qq' ?? 0 ?? null);
+
+
+const rest1 = {
+  name: "Capri", 
+  numGuests: 0,
+}
+
+const rest2 = {
+  name: "Ikun",
+  numGuests: 10,
+  owner: 'Super Idor'
+}
+
+
+rest1.numGuests ||= 20;
+rest2.numGuests ||= 20;
+
+console.log(rest1.numGuests);
+console.log(rest2.numGuests);
+
+rest1.owner ??= '<ANONYMOUS>';
+console.log(rest1.owner);
