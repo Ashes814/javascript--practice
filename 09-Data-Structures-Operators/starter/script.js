@@ -46,3 +46,17 @@ const { fri, ...d } = restaurant.openingHours;
 console.log(d);
 
 console.log(fri);
+
+
+function add(...numbers) {
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
+  return sum;
+
+}
+
+
+console.log(add(1, 2, 3, 4));
+console.log(add(2, 5, 8));
