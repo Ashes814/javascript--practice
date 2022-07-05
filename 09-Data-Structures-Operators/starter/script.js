@@ -156,7 +156,7 @@ function printGoals(...goalPlayers) {
 
 }
 
-printGoals(game.scored);
+printGoals(...game.scored);
 printGoals('Davis', 'Muller', 'Lewandowski', 'Gnarby');
 
 
@@ -164,3 +164,6 @@ const winner = ['team1', 'team2'];
 
 const winnerIndex = (team1 < team2 && 1) || 2;
 console.log(winner[winnerIndex - 1]);
+
+team1 > team2 && console.log('team2');
+team1 < team2 && console.log('team1')
