@@ -68,4 +68,4 @@ function add(...numbers) {
 // console.log(undefined || null || undefined)
 
 console.log(0 && 'qq');
-console.log(1 && 'qq' && 0 && null);
+console.log(undefined ?? 'qq' ?? 0 ?? null);
