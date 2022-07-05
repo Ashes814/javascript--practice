@@ -58,5 +58,14 @@ function add(...numbers) {
 }
 
 
-console.log(add(1, 2, 3, 4));
-console.log(add(2, 5, 8));
+// console.log(add(1, 2, 3, 4));
+// console.log(add(2, 5, 8));
+
+// console.log(3 || 'a')
+
+// console.log(0 || 'a');
+
+// console.log(undefined || null || undefined)
+
+console.log(0 && 'qq');
+console.log(1 && 'qq' && 0 && null);
