@@ -172,4 +172,8 @@ const restaurant = {
 // console.log(arr.entries())
 
 // object literals
-console.log(restaurant.openingHours.thu?.open);
+
+for (let i of Object.keys(restaurant)) {
+  console.log(i);
+}
+
