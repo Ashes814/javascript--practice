@@ -92,69 +92,69 @@ const restaurant = {
 // // rest1.owner ??= '<ANONYMOUS>';
 // // console.log(rest1.owner);
 
-// const game = {
-// team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
-// [
-// 'Neuer',
-//       'Pavard',
-//       'Martinez',
-//       'Alaba',
-//       'Davies',
-//       'Kimmich',
-//       'Goretzka',
-//       'Coman',
-//       'Muller',
-//       'Gnarby',
-//       'Lewandowski',
-// ], [
-//       'Burki',
-//       'Schulz',
-//       'Hummels',
-//       'Akanji',
-//       'Hakimi',
-//       'Weigl',
-//       'Witsel',
-//       'Hazard',
-//       'Brandt',
-//       'Sancho',
-//       'Gotze',
-// ], ],
-//   score: '4:0',
-//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
-//   'Hummels'],
-//   date: 'Nov 9th, 2037',
-//   odds: {
-//     team1: 11.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-// };
+const game = {
+team1: 'Bayern Munich', team2: 'Borrussia Dortmund', players: [
+[
+'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+], [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+], ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+  'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 11.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
-// const [players1, players2] = game.players;
+const [players1, players2] = game.players;
 
-// const [gk, ...fieldPlayers] = players1;
-// console.log(`1. ${players1}, ${players2}`);
+const [gk, ...fieldPlayers] = players1;
+console.log(`1. ${players1}, ${players2}`);
 
-// console.log(`2. ${gk} and ${fieldPlayers}`);
+console.log(`2. ${gk} and ${fieldPlayers}`);
 
-// const allPlayers = [...players1, ...players2];
-// console.log(`3. ${allPlayers}`);
+const allPlayers = [...players1, ...players2];
+console.log(`3. ${allPlayers}`);
 
-// const players1Final = [players1, 'Thiago', 'Coutinho', 'Perisic'];
-// console.log(`4. ${players1Final}`);
-// const { team1, x: draw, team2 } = game.odds;
-// console.log(`5. ${team1},${draw},${team2}`);
+const players1Final = [players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(`4. ${players1Final}`);
+const { team1, x: draw, team2 } = game.odds;
+console.log(`5. ${team1},${draw},${team2}`);
 
-// function printGoals(...goalPlayers) {
-//   let playersMap = new Map();
-//   console.log(goalPlayers.length)
-//   for (let p of goalPlayers) {
-//     playersMap.set(p, playersMap.get(p) + 1 || 1)
-//   }
+function printGoals(...goalPlayers) {
+  let playersMap = new Map();
+  console.log(goalPlayers.length)
+  for (let p of goalPlayers) {
+    playersMap.set(p, playersMap.get(p) + 1 || 1)
+  }
 
-//   playersMap.forEach((value, key, map) => console.log(`${key} scored ${value}`))
+  playersMap.forEach((value, key, map) => console.log(`${key} scored ${value}`))
 
-// }
+}
 
 // printGoals(...game.scored);
 // printGoals('Davis', 'Muller', 'Lewandowski', 'Gnarby');
@@ -173,7 +173,20 @@ const restaurant = {
 
 // object literals
 
-for (let i of Object.keys(restaurant)) {
-  console.log(i);
+// for (let i of Object.keys(restaurant)) {
+//   console.log(i);
+// }
+
+for (let i of game.scored.entries()) {
+  console.log(`goal ${i[0] + 1}: ${i[1]}`);
 }
 
+let sum = 0;
+for (let i of Object.values(game.odds)) {
+  sum += i;
+}
+console.log(sum / Object.values(game.odds).length);
+
+for (let i of Object.keys(game.odds)) {
+  console.log(`Odd of ${(i === 'team1') ? 'victory Bayern Munich' : (i === 'team2') ? 'victory Borrussia Dortmund' : 'draw'}: ${game.odds[i]}`)
+}
