@@ -193,3 +193,15 @@ for (let i of Object.keys(game.odds)) {
 
 // set
 
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+console.log(orderSet);
+
+console.log(new Set('jjjjkkkk'));
+
+console.log(orderSet.has('Pasta'));
+
+
+for (const order of orderSet) {
+  console.log(order);
+}
+
