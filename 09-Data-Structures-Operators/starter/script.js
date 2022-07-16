@@ -191,3 +191,5 @@ for (let i of Object.keys(game.odds)) {
   console.log(`Odd of ${(i === 'team1') ? `victory ${game[i]}` : (i === 'team2') ? 'victory Borrussia Dortmund' : 'draw'}: ${game.odds[i]}`)
 }
 
+// set
+
