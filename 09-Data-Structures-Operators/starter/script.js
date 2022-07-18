@@ -177,32 +177,32 @@ function printGoals(...goalPlayers) {
 //   console.log(i);
 // }
 
-for (let i of game.scored.entries()) {
-  console.log(`goal ${i[0] + 1}: ${i[1]}`);
-}
+// for (let i of game.scored.entries()) {
+//   console.log(`goal ${i[0] + 1}: ${i[1]}`);
+// }
 
-let sum = 0;
-for (let i of Object.values(game.odds)) {
-  sum += i;
-}
-console.log(sum / Object.values(game.odds).length);
+// let sum = 0;
+// for (let i of Object.values(game.odds)) {
+//   sum += i;
+// }
+// console.log(sum / Object.values(game.odds).length);
 
-for (let i of Object.keys(game.odds)) {
-  console.log(`Odd of ${(i === 'team1') ? `victory ${game[i]}` : (i === 'team2') ? 'victory Borrussia Dortmund' : 'draw'}: ${game.odds[i]}`)
-}
+// for (let i of Object.keys(game.odds)) {
+//   console.log(`Odd of ${(i === 'team1') ? `victory ${game[i]}` : (i === 'team2') ? 'victory Borrussia Dortmund' : 'draw'}: ${game.odds[i]}`)
+// }
 
-// set
+// // set
 
-const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
-console.log(orderSet);
+// const orderSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pasta', 'Pizza']);
+// console.log(orderSet);
 
-console.log(new Set('jjjjkkkk'));
+// console.log(new Set('jjjjkkkk'));
 
-console.log(orderSet.has('Pasta'));
+// console.log(orderSet.has('Pasta'));
 
 
-for (const order of orderSet) {
-  console.log(order);
-}
+// for (const order of orderSet) {
+//   console.log(order);
+// }
 
 // maps
