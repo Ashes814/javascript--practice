@@ -206,3 +206,41 @@ function printGoals(...goalPlayers) {
 // }
 
 // maps
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+let events = new Set();
+
+gameEvents.forEach(function (value, key, map) {
+  events.add(value);
+})
+console.log(events);
+
+gameEvents.delete(64);
+console.log(gameEvents);
+
+let gameEventNumbers = new Map();
+
+gameEvents.forEach(function (value, key, map) {
+  gameEventNumbers.set(value, (gameEventNumbers.get(value) === undefined) ? 1 : gameEventNumbers.get(value) + 1);
+});
+
+gameEventNumbers.forEach(function (value, key, map) {
+  console.log(`An ${key} happened, on average, every ${90 / value} minutes`);
+})
+
+
+gameEvents.forEach(function (value, key, map) {
+  (key > 45) ? console.log(`Second Half ${key}: ${value}`) : console.log(`First Half ${key}: ${value}`);
+});
