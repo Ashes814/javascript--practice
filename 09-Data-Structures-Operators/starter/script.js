@@ -254,3 +254,7 @@ console.log(airplane.slice(4));
 
 const testObjectString = new String('123');
 console.log(testObjectString.slice(-1));
+
+console.log('   nsdgj  \n  '.trim())
+
+console.log('aaa'.replaceAll('a', 'b'))
