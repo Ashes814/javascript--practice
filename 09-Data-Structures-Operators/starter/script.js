@@ -246,26 +246,51 @@
 // });
 
 
-const airplane = 'Air China';
-const plane = 'B787';
+// const airplane = 'Air China';
+// const plane = 'B787';
 
 
-console.log(airplane.slice(4));
+// console.log(airplane.slice(4));
 
-const testObjectString = new String('123');
-console.log(testObjectString.slice(-1));
+// const testObjectString = new String('123');
+// console.log(testObjectString.slice(-1));
 
-console.log('   nsdgj  \n  '.trim());
+// console.log('   nsdgj  \n  '.trim());
 
-console.log('aaa'.replaceAll('a', 'b'));
+// console.log('aaa'.replaceAll('a', 'b'));
 
-console.log('zow'.padEnd(2, '+'));
+// console.log('zow'.padEnd(2, '+'));
 
-function maskCode(number) {
-  let str = number + '';
-  let lastFourDigits = str.slice(-4);
+// function maskCode(number) {
+//   let str = number + '';
+//   let lastFourDigits = str.slice(-4);
 
-  return lastFourDigits.padStart(str.length, '*');
-}
+//   return lastFourDigits.padStart(str.length, '*');
+// }
 
-console.log(maskCode(33250119990814081));
+// console.log(maskCode(33250119990814081));
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+document.querySelector('button').addEventListener('click', function () {
+  let text = document.querySelector('textarea').value;
+  let cleanedTextList = []
+  for (let t of text.split('\n')) {
+    cleanedTextList.push(t.trim());
+  }
+
+  let cleanWordList = [];
+  let i = 1;
+  for (let words of cleanedTextList) {
+    i++
+    let word1 = words.split('_')[0];
+    let word2 = words.split('_')[1];
+    let cleanWord1 = word1.toLowerCase();
+    let cleanWord2 = word2[0].toUpperCase() + word2.slice(1).toLowerCase();
+    let cleanWord = cleanWord1 + cleanWord2;
+    cleanWordList.push(cleanWord.padEnd(20, ' ') + ' '.padStart(i, '✅'));
+    
+  }
+  document.querySelector('textarea').value = cleanWordList.join('\n');
+})
+
