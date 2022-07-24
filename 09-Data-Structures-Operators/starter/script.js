@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 // // Data needed for a later exercise
 // const flights =
@@ -255,6 +255,17 @@ console.log(airplane.slice(4));
 const testObjectString = new String('123');
 console.log(testObjectString.slice(-1));
 
-console.log('   nsdgj  \n  '.trim())
+console.log('   nsdgj  \n  '.trim());
 
-console.log('aaa'.replaceAll('a', 'b'))
+console.log('aaa'.replaceAll('a', 'b'));
+
+console.log('zow'.padEnd(2, '+'));
+
+function maskCode(number) {
+  let str = number + '';
+  let lastFourDigits = str.slice(-4);
+
+  return lastFourDigits.padStart(str.length, '*');
+}
+
+console.log(maskCode(33250119990814081));
