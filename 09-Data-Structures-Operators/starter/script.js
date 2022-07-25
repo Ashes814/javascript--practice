@@ -294,3 +294,5 @@ document.querySelector('button').addEventListener('click', function () {
   document.querySelector('textarea').value = cleanWordList.join('\n');
 })
 
+
+// functions
