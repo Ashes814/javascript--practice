@@ -33,4 +33,5 @@ transformer('JavaScript is the best', upperFirstWord);
 const high5 = function () {
     console.log('tietie');
 }
-['Jonas', 'sdf', 'sdf'].forEach(high5)
+    
+['Jonas', 'sdf', 'gsdf'].forEach(high5)
