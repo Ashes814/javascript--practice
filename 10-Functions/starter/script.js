@@ -30,8 +30,32 @@ const transformer = function (str, fn) {
 
 transformer('JavaScript is the best', upperFirstWord);
 
-const high5 = function () {
-    console.log('tietie');
-}
+// const high5 = function () {
+//     console.log('tietie');
+// }
     
-['Jonas', 'sdf', 'gsdf'].forEach(high5)
+
+
+
+// const greet = function (greeting) {
+//     return function (name) {
+//         alert(`${greeting} ${name}`);
+//     }
+// }
+
+
+// const greeterHey = greet('Hey');
+// greeterHey('ZOW');
+
+// //
+// const greetArrow = greeting => (name => alert(`${greeting} ${name}`))
+// greetArrow(1)(2);
+
+// const lufthansa = {
+//     airline: 'Lufthansa',
+      
+// }
+
+const addTax = (rate, value) => value + value * rate;
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
