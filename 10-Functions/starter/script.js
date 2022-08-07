@@ -64,10 +64,33 @@ const poll = {
     // This generates [0, 0, 0, 0]. More in the next section! 
     answers: new Array(4).fill(0),
     registerNewAnswer: function () {
-        inputAnswer = +prompt(this.question + '\n' +this.options.join('\n'));
+        let inputAnswer = +prompt(this.question + '\n' + this.options.join('\n'));
+        if (inputAnswer <= 3 && inputAnswer >= 0) {
+            this.answers[inputAnswer] += 1;
+        let inputType = prompt('What type?')
+        this.displayResults(inputType)
+        }
 
+
+    },
+    displayResults: function (type) {
+        if (type == 'string') {
+            console.log(`Poll results are ${this.answers[0]},${this.answers[1]},${this.answers[2]}, ${this.answers[3]}`)
+        } else {
+            console.log(this.answers)
+        }
+        
+        ;
+        
+        
     }
 };
+let bindPoll= poll.registerNewAnswer.bind(poll);
 
 
-poll.registerNewAnswer();
+const testData1 = [5, 2, 3];
+const testData2 = [1, 5, 3, 9, 6, 1];
+document.querySelector('.poll').addEventListener('click', bindPoll);
+
+let test1 = poll.registerNewAnswer.bind(testData1);
+test1('string')
