@@ -94,3 +94,9 @@
 
 // let test1 = poll.registerNewAnswer.bind(testData1);
 // test1('string')
+
+
+// (function () {
+//     console.log('1')
+// })() 
+
