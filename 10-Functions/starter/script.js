@@ -100,3 +100,19 @@
 //     console.log('1')
 // })() 
 
+const secureBooking = function () {
+    let passengerCount = 0;
+
+    return function () {
+        passengerCount++;
+
+        console.log(`${passengerCount} passenagers`);
+    }
+}
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+booker();
