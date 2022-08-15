@@ -100,19 +100,60 @@
 //     console.log('1')
 // })() 
 
-const secureBooking = function () {
-    let passengerCount = 0;
+// const secureBooking = function () {
+//     let passengerCount = 0;
 
-    return function () {
-        passengerCount++;
+//     return function () {
+//         passengerCount++;
 
-        console.log(`${passengerCount} passenagers`);
+//         console.log(`${passengerCount} passenagers`);
+//     }
+// }
+
+// const booker = secureBooking();
+
+// booker();
+// booker();
+// booker();
+// booker();
+
+let f;
+
+const g = function () {
+    const a = 23;
+    f = function () {
+        console.log(a * 2);
+    };
+};
+
+const h = function () {
+    const b = 777;
+    f = function () {
+        console.log(b * 2);
     }
 }
 
-const booker = secureBooking();
 
-booker();
-booker();
-booker();
-booker();
+g();
+f();
+h();
+f();
+
+console.dir(f);
+
+// Example 2
+const boardPassenagers = function (n, wait) {
+    const perGroup = n / 3;
+
+    setTimeout(function () {
+        console.log(`We are now boarding all ${n}`);
+        console.log(`There are 3 groups, each with ${perGroup} passenagers`)
+    }, wait * 1000);
+
+
+
+    console.log(`will start boarding in ${wait} seconds`);
+}
+
+
+boardPassenagers(180, 3)
