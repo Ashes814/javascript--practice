@@ -92,6 +92,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // movements.forEach(function (a) {
 //   console.log(a);
 // });\
-movements.forEach(function (movement, index, array) {
-  (movement > 0) ? console.log(`${index} + ${movement}`) : console.log(`${index} - ${movement}`);
-});
+// movements.forEach(function (movement, index, array) {
+//   (movement > 0) ? console.log(`${index} + ${movement}`) : console.log(`${index} - ${movement}`);
+// });
+console.log(movements.at(-1))
