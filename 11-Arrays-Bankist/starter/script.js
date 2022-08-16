@@ -95,4 +95,13 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // movements.forEach(function (movement, index, array) {
 //   (movement > 0) ? console.log(`${index} + ${movement}`) : console.log(`${index} - ${movement}`);
 // });
-console.log(movements.at(-1))
+// console.log(movements.at(-1))
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// });
+
+// // Set
+// const currenciesUnique = new Set(['USD', 'SB']);
+// currenciesUnique.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// });
