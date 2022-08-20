@@ -123,3 +123,6 @@ displayMomvements(account1.movements)
 // currenciesUnique.forEach(function (value, key, map) {
 //   console.log(`${key}: ${value}`);
 // });
+
+
+function() {}
