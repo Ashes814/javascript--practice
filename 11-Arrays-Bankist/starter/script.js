@@ -89,7 +89,7 @@ displayMomvements(account1.movements)
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -138,3 +138,17 @@ displayMomvements(account1.movements)
 // }
 
 // checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+
+// const eurToUsd = 11; 
+
+// const movementsUsd = movements.map(function (mov) {
+//   return (mov * eurToUsd) / 10;
+
+// });
+// console.log(movements);
+// console.log(movementsUsd);
+
+const movementsDescription = movements.forEach(mov => String(mov));
+console.log(movementsDescription)
+console.log(movements)
