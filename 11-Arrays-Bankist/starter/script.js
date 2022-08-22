@@ -125,4 +125,16 @@ displayMomvements(account1.movements)
 // });
 
 
-function() dog{}
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   let dogsJuliaNocat = dogsJulia.slice(1, -1);
+//   let dogsKateArray = dogsKate;
+//   dogsJuliaNocat.forEach(function (value, index) {
+//     value >= 3 ? console.log(`Dog number ${index + 1} is an adult, and is ${value} years old`) : console.log(`Dog number ${index + 1} is still a puppy, and is ${value} years old`);
+//   });
+
+//   dogsKateArray.forEach(function (value, index) {
+//     value >= 3 ? console.log(`Dog number ${index + 1} is an adult, and is ${value} years old`) : console.log(`Dog number ${index + 1} is still a puppy, and is ${value} years old`);
+//   });
+// }
+
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
