@@ -93,8 +93,9 @@ const creatUsernames = function (accs) {
 
 
 
-creatUsernames(accounts);
-console.log(accounts);
+// creatUsernames(accounts);
+// console.log(accounts);
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -106,7 +107,7 @@ console.log(accounts);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -169,3 +170,4 @@ console.log(accounts);
 // const movementsDescription = movements.forEach(mov => String(mov));
 // console.log(movementsDescription)
 // console.log(movements)
+console.log(movements.filter(mov => mov < 0));
