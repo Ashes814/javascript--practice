@@ -78,7 +78,24 @@ const displayMomvements = function (movements) {
   })
 }
 
-displayMomvements(account1.movements)
+displayMomvements(account1.movements);
+
+const creatUsernames = function (accs) {
+
+  accs.forEach(function (acc) {
+    acc.username = acc.owner.toLowerCase()
+      .split(' ')
+      .map(word => word[0])
+      .join('');
+  })
+
+}
+
+
+
+creatUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -89,7 +106,7 @@ displayMomvements(account1.movements)
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -149,6 +166,6 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(movements);
 // console.log(movementsUsd);
 
-const movementsDescription = movements.forEach(mov => String(mov));
-console.log(movementsDescription)
-console.log(movements)
+// const movementsDescription = movements.forEach(mov => String(mov));
+// console.log(movementsDescription)
+// console.log(movements)
