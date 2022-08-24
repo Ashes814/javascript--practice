@@ -91,6 +91,17 @@ const creatUsernames = function (accs) {
 
 }
 
+const calDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+
+
+
+
+calDisplayBalance(account1.movements);
+
 
 
 // creatUsernames(accounts);
@@ -107,7 +118,7 @@ const creatUsernames = function (accs) {
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -170,4 +181,25 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // const movementsDescription = movements.forEach(mov => String(mov));
 // console.log(movementsDescription)
 // console.log(movements)
-console.log(movements.filter(mov => mov < 0));
+// console.log(movements.filter(mov => mov < 0));
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   return acc + cur;
+// });
+
+// console.log(balance);
+
+const calAverageHumanAge = function(dogsAge) {
+  const humanAge = dogsAge.map(function (age) {
+    if (age <= 2) {
+      return age * 2;
+    } else {
+      return 16 + age * 4
+    }
+  });
+
+  const adultHumanAge = humanAge.filter(val => val >= 18);
+  const sumAge = adultHumanAge.reduce((acc, val) => acc + val);
+  return sumAge / adultHumanAge.length
+}
+
+alert(calAverageHumanAge([5,2,4,1,15,8,3]))
