@@ -139,7 +139,7 @@ calDisplaySummary(account1.movements);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -228,3 +228,8 @@ calDisplaySummary(account1.movements);
 // const euroToUsd = 1.1;
 // const totalDepositsUSD = movements.filter(mov => mov > 0).map(mov => mov * eurToUsd).reduce((acc, mov) => acc + mov, 0);
 //
+
+
+console.log(movements.find(mov => mov < 0));
+
+console.log(accounts.filter(account => account.interestRate > 1));
