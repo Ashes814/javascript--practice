@@ -62,11 +62,11 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-const displayMomvements = function (movements) {
+const displayMomvements = function (acc) {
   containerMovements.innerHTML = '';
 
   
-  movements.forEach(function (mov, index) {
+  acc.movements.forEach(function (mov, index) {
     const type = mov > 0 ? `deposit` : `withdrawal`
     const html = `
         <div class="movements__row">
@@ -92,9 +92,10 @@ const creatUsernames = function (accs) {
 
 creatUsernames(accounts);
 
-const calDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+const calDisplayBalance = function (acc) {
+  const balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} EUR`;
+  acc.balance = balance;
 };
 
 
@@ -129,6 +130,13 @@ const calDisplaySummary = function (acc) {
 // creatUsernames(accounts);
 // console.log(accounts);
 let currentAccount;
+
+const updateUI = function (currentAccount) {
+  displayMomvements(currentAccount);
+  calDisplayBalance(currentAccount);
+  calDisplaySummary(currentAccount);
+};
+
 // Event Handler
 btnLogin.addEventListener('click', function (event) {
   event.preventDefault();
@@ -138,14 +146,17 @@ btnLogin.addEventListener('click', function (event) {
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     labelWelcome.textContent = `Welcome Back,  ${currentAccount.owner.split(' ')[0]}`;
     containerApp.style.opacity = 100;
+    updateUI(currentAccount);
+  } else {
+    alert('Code or Account Error!')
   }
   // clear fields
   inputLoginUsername.value = inputLoginPin.value = ''
   inputLoginPin.blur();
   // display accounts
-  displayMomvements(currentAccount.movements);
-  calDisplayBalance(currentAccount.movements);
-  calDisplaySummary(currentAccount);
+
+  
+
 
 
 });
@@ -154,6 +165,22 @@ btnTransfer.addEventListener('click', function (event) {
   event.preventDefault();
 
   const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value);
+
+  if (amount > 0
+    && currentAccount.balance
+    >= amount
+    && receiverAcc.username
+    !== currentAccount.username
+    && receiverAcc) {
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+    updateUI(currentAccount);
+    alert(`Transfer Success!`)
+
+  } else {
+    alert(`Wrong Account or Banlance insufficient.`)
+  };
 })
 
 /////////////////////////////////////////////////
