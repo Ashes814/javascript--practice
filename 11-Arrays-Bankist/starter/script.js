@@ -78,7 +78,6 @@ const displayMomvements = function (movements) {
   })
 }
 
-displayMomvements(account1.movements);
 
 const creatUsernames = function (accs) {
 
@@ -91,6 +90,8 @@ const creatUsernames = function (accs) {
 
 }
 
+creatUsernames(accounts);
+
 const calDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} EUR`;
@@ -100,34 +101,60 @@ const calDisplayBalance = function (movements) {
 
 
 
-calDisplayBalance(account1.movements);
+// calDisplayBalance(account1.movements);
 
-const calDisplaySummary = function (movements) {
-  const incomes = movements
+const calDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}`
 
 
-  const out = movements
+  const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(out)}`;
 
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest}`
 };
-calDisplaySummary(account1.movements);
+// calDisplaySummary(account1.movements);
 // creatUsernames(accounts);
 // console.log(accounts);
+let currentAccount;
+// Event Handler
+btnLogin.addEventListener('click', function (event) {
+  event.preventDefault();
 
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    labelWelcome.textContent = `Welcome Back,  ${currentAccount.owner.split(' ')[0]}`;
+    containerApp.style.opacity = 100;
+  }
+  // clear fields
+  inputLoginUsername.value = inputLoginPin.value = ''
+  inputLoginPin.blur();
+  // display accounts
+  displayMomvements(currentAccount.movements);
+  calDisplayBalance(currentAccount.movements);
+  calDisplaySummary(currentAccount);
+
+
+});
+
+btnTransfer.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  const amount = Number(inputTransferAmount.value);
+})
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -139,7 +166,7 @@ calDisplaySummary(account1.movements);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -230,6 +257,6 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //
 
 
-console.log(movements.find(mov => mov < 0));
+// console.log(movements.find(mov => mov < 0));
 
-console.log(accounts.filter(account => account.interestRate > 1));
+// console.log(accounts.filter(account => account.interestRate > 1));
