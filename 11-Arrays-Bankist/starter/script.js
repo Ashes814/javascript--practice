@@ -181,6 +181,28 @@ btnTransfer.addEventListener('click', function (event) {
   } else {
     alert(`Wrong Account or Banlance insufficient.`)
   };
+});
+
+
+const returnToLogin = function() {
+  containerApp.style.opacity = 0;
+  labelWelcome.textContent = 'Log in to get started'
+}
+btnClose.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  if (currentAccount.username === inputCloseUsername.value
+    && currentAccount?.pin === Number(inputClosePin.value)) {
+    const index = accounts.findIndex(acc => acc.owner = currentAccount.owner)
+    accounts.splice(index, 1);
+    returnToLogin();
+    alert(`Account: ${currentAccount.owner} has been closed`);
+    inputClosePin.value = inputCloseUsername.value = '';
+    inputClosePin.blur()
+    
+  } else {
+    alert(`Missing Account or Code Error!`);
+    }
 })
 
 /////////////////////////////////////////////////
