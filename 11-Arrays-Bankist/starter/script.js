@@ -131,7 +131,7 @@ const calDisplaySummary = function (acc) {
 // console.log(accounts);
 let currentAccount;
 
-const updateUI = function (currentAccount) {
+const updateUI = function (acc) {
   displayMomvements(currentAccount);
   calDisplayBalance(currentAccount);
   calDisplaySummary(currentAccount);
@@ -160,6 +160,33 @@ btnLogin.addEventListener('click', function (event) {
 
 
 });
+// const getArrayMax = function(array) {
+//   const maxValue = array.reduce(function (max, cur) {
+//     if (cur > max) {
+//       max = cur;
+//       return max;
+//     };
+    
+
+//   }, -9999999999999)
+// }
+
+btnLoan.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+
+  if (amount <= 0) {
+    alert(`Loan must be positive!!!`)
+  } else if (currentAccount.movements.some(mov => amount * 0.1 <= mov)) {
+    currentAccount.movements.push(amount);
+    updateUI();
+    alert(`Loan Successful!`)
+  } else {
+    alert(`Failed, You Loan limit is !!`)
+  }
+})
 
 btnTransfer.addEventListener('click', function (event) {
   event.preventDefault();
