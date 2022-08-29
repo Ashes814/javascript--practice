@@ -361,3 +361,7 @@ btnSort.addEventListener('click', function (event) {
 const x = new Array(7);
 x.fill(10086);
 console.log(x);
+
+
+const y = Array.from({ length: 10 }, (_, i) => 8848 + i);
+console.log(y);
