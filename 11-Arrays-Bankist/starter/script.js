@@ -229,7 +229,14 @@ btnClose.addEventListener('click', function (event) {
     
   } else {
     alert(`Missing Account or Code Error!`);
-    }
+  }
+});
+
+btnSort.addEventListener('click', function () {
+
+  currentAccount.movements.sort((a, b) => a - b);
+
+  updateUI(currentAccount);
 })
 
 /////////////////////////////////////////////////
