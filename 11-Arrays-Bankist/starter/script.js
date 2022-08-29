@@ -336,3 +336,6 @@ btnClose.addEventListener('click', function (event) {
 // console.log(movements.find(mov => mov < 0));
 
 // console.log(accounts.filter(account => account.interestRate > 1));
+
+const arr = [[1, 2, 3]];
+console.log(arr.flat());
