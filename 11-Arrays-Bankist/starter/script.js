@@ -242,7 +242,7 @@ btnClose.addEventListener('click', function (event) {
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -340,6 +340,8 @@ btnClose.addEventListener('click', function (event) {
 // const arr = [[1, 2, 3]];
 // console.log(arr.flat());
 
-const overallBalance = accounts.flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overallBalance);
+// const overallBalance = accounts.flatMap(acc => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overallBalance);
+
+console.log(movements.sort((a, b) => a - b));
