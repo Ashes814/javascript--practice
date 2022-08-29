@@ -62,11 +62,13 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-const displayMomvements = function (acc) {
+const displayMomvements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
+
+  const movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
   
-  acc.movements.forEach(function (mov, index) {
+  movs.forEach(function (mov, index) {
     const type = mov > 0 ? `deposit` : `withdrawal`
     const html = `
         <div class="movements__row">
@@ -232,11 +234,13 @@ btnClose.addEventListener('click', function (event) {
   }
 });
 
-btnSort.addEventListener('click', function () {
+let sortedStatus = false;
+btnSort.addEventListener('click', function (event) {
+  event.preventDefault()
+  sortedStatus = sortedStatus ? false : true;
 
-  currentAccount.movements.sort((a, b) => a - b);
+  displayMomvements(currentAccount, sortedStatus);
 
-  updateUI(currentAccount);
 })
 
 /////////////////////////////////////////////////
@@ -249,7 +253,7 @@ btnSort.addEventListener('click', function () {
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -351,4 +355,9 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //   .reduce((acc, mov) => acc + mov, 0);
 // console.log(overallBalance);
 
-console.log(movements.sort((a, b) => a - b));
+// console.log(movements.sort((a, b) => a - b));
+
+
+const x = new Array(7);
+x.fill(10086);
+console.log(x);
