@@ -371,7 +371,14 @@ alert(movementsUI.map((el) => el.textContent));
 // const y = Array.from({ length: 10 }, (_, i) => 8848 + i);
 // console.log(y);
 
-const bankDeposit = accounts.flatMap(function (acc) {
-  return acc.movements
-}).filter(mov => mov > 0).reduce((acc, cur) => acc + cur);
-console.log(bankDeposit);
+// const bankDeposit = accounts.flatMap(function (acc) {
+//   return acc.movements
+// }).filter(mov => mov > 0).reduce((acc, cur) => acc + cur);
+// console.log(bankDeposit)
+
+const { deposits, withdrawals } = accounts.flatMap(acc => acc.movements)
+  .reduce(function (sums, cur) {
+    sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur
+    return sums;
+  }, { deposits: 0, withdrawals: 0 });
+console.log(deposits, withdrawals);
