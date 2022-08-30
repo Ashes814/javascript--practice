@@ -356,12 +356,22 @@ btnSort.addEventListener('click', function (event) {
 // console.log(overallBalance);
 
 // console.log(movements.sort((a, b) => a - b));
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value')
+  );
+alert(movementsUI.map((el) => el.textContent));
+});
+
+// const x = new Array(7);
+// x.fill(10086);
+// console.log(x);
 
 
-const x = new Array(7);
-x.fill(10086);
-console.log(x);
+// const y = Array.from({ length: 10 }, (_, i) => 8848 + i);
+// console.log(y);
 
-
-const y = Array.from({ length: 10 }, (_, i) => 8848 + i);
-console.log(y);
+const bankDeposit = accounts.flatMap(function (acc) {
+  return acc.movements
+}).filter(mov => mov > 0).reduce((acc, cur) => acc + cur);
+console.log(bankDeposit);
