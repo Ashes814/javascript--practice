@@ -376,9 +376,9 @@ alert(movementsUI.map((el) => el.textContent));
 // }).filter(mov => mov > 0).reduce((acc, cur) => acc + cur);
 // console.log(bankDeposit)
 
-const { deposits, withdrawals } = accounts.flatMap(acc => acc.movements)
-  .reduce(function (sums, cur) {
-    sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur
-    return sums;
-  }, { deposits: 0, withdrawals: 0 });
-console.log(deposits, withdrawals);
+// const { deposits, withdrawals } = accounts.flatMap(acc => acc.movements)
+//   .reduce(function (sums, cur) {
+//     sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur
+//     return sums;
+//   }, { deposits: 0, withdrawals: 0 });
+// console.log(deposits, withdrawals);
