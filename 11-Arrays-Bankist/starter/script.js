@@ -382,3 +382,61 @@ alert(movementsUI.map((el) => el.textContent));
 //     return sums;
 //   }, { deposits: 0, withdrawals: 0 });
 // console.log(deposits, withdrawals);
+
+const dogs = [
+{ weight: 22, curFood: 250, owners: ['Alice', 'Bob'] }, { weight: 8, curFood: 200, owners: ['Matilda'] },
+{ weight: 13, curFood: 275, owners: ['Sarah', 'John'] }, { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+dogs.forEach(function (dog) {
+  dog.recommendedFood = dog.weight ** 0.75 * 28;
+});
+// console.log(dogs);
+let sarahDogsFood = 0;
+let sarahDogsRecommend = 0;
+dogs.filter(function (dog) {
+  return dog.owners.includes('Sarah')
+}).forEach(function (dog) {
+  sarahDogsFood = dog.curFood;
+  sarahDogsRecommend = dog.recommendedFood;
+});
+
+(sarahDogsFood > sarahDogsRecommend * 1.1) ? console.log('Eating too much') : (sarahDogsFood < sarahDogsRecommend * 0.9) ? console.log('Eating too little') : console.log('Eating ok') 
+
+// dogs.forEach(function (dog) {
+//   console.log(dog.owners.includes('Sarah'))
+// })
+
+
+let ownersEatTooMuch = dogs.flatMap(function (dog) {
+  if (dog.recommendedFood * 1.1 < dog.curFood) {
+    return dog.owners;
+  }
+}).filter(owner => owner !== undefined);
+console.log(ownersEatTooMuch);
+
+
+let ownersEatTooLittle = dogs.flatMap(function (dog) {
+  if (dog.recommendedFood * 0.9 > dog.curFood) {
+    return dog.owners;
+  }
+}).filter(owner => owner !== undefined);;
+console.log(ownersEatTooLittle);
+
+
+console.log(`${ownersEatTooMuch.join(' and ')}'s dogs eat too much!`)
+console.log(`${ownersEatTooLittle.join(' and ')}'s dogs eat too little!`)
+
+
+console.log(dogs.some(dog => dog.curFood === dog.recommendedFood));
+
+console.log(dogs.some(dog => (dog.curFood <= dog.recommendedFood * 1.1) && (dog.curFood >= dog.recommendedFood * 0.9)));
+
+
+let okayDogs = dogs.filter(dog => (dog.curFood <= dog.recommendedFood * 1.1) && (dog.curFood >= dog.recommendedFood * 0.9));
+console.log(okayDogs);
+
+let copyDogs = dogs.sort(function (dogA, dogB) {
+  return dogA.recommendedFood - dogB.recommendedFood
+});
+console.log(copyDogs)
