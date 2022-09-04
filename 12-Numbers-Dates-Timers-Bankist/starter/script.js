@@ -258,4 +258,5 @@ btnSort.addEventListener('click', function (e) {
 // };
 
 // console.log(randomInt(-10, 20));
-console.log()
+// console.log(5 % 3);
+const solarDiameter = 287_600_000_000
