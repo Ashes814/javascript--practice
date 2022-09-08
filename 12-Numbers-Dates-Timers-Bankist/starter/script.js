@@ -81,19 +81,28 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
-const displayMovements = function (movements, sort = false) {
+const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
-  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
-
+  const movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  console.log(movs);
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const date = new Date(acc.movementsDates[i]);
+    const year = date.getFullYear()
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
+    const day = `${date.getDate()}`.padStart(2, 0);
+
+    const displayDate = `${year}/${month}/${day}`
+
+
 
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
+        <div class="movements__date">${displayDate}</div>
         <div class="movements__value">${mov.toFixed(2)}€</div>
       </div>
     `;
@@ -142,7 +151,7 @@ createUsernames(accounts);
 
 const updateUI = function (acc) {
   // Display movements
-  displayMovements(acc.movements);
+  displayMovements(acc);
 
   // Display balance
   calcDisplayBalance(acc);
@@ -171,6 +180,15 @@ btnLogin.addEventListener('click', function (e) {
     }`;
     containerApp.style.opacity = 100;
 
+    const now = new Date();
+    const year = now.getFullYear()
+    const month = `${now.getMonth() + 1}`.padStart(2, 0);
+    const day = `${now.getDate()}`.padStart(2, 0);
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    labelDate.textContent = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`
+
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
@@ -198,6 +216,9 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
 
+    // Update Date
+    currentAccount.movementsDates.push(new Date());
+    receiverAccount.movementsDates.push(new Date());
     // Update UI
     updateUI(currentAccount);
   }
@@ -212,6 +233,8 @@ btnLoan.addEventListener('click', function (e) {
     // Add movement
     currentAccount.movements.push(amount);
 
+    // Add movement Date
+    currentAccount.movementsDates.push(new Date());
     // Update UI
     updateUI(currentAccount);
   }
@@ -244,9 +267,17 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
+
+
+
+function fakeLog() {
+  currentAccount = account1;
+  updateUI(currentAccount);
+  containerApp.style.opacity = 100;
+}
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -259,7 +290,4 @@ btnSort.addEventListener('click', function (e) {
 
 // console.log(randomInt(-10, 20));
 // console.log(5 % 3);
-const solarDiameter = 287_600_000_000
-
-
-console.log(new Date(8843, 29, 22))
+// fakeLog()
