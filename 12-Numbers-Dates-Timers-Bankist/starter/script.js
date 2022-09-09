@@ -22,8 +22,8 @@ const account1 = {
     '2020-04-01T10:17:24.185Z',
     '2020-05-08T14:11:59.604Z',
     '2020-05-27T17:01:17.194Z',
-    '2020-07-11T23:36:17.929Z',
-    '2020-07-12T10:51:36.790Z',
+    '2022-09-08T11:36:17.929Z',
+    '2022-09-09T10:51:36.790Z',
   ],
   currency: 'EUR',
   locale: 'pt-PT', // de-DE
@@ -80,6 +80,21 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
 // Functions
+const formatMovementDate = function(date) {
+
+  const calcDaysPassed = function(date1, date2) {
+    return Math.floor(Math.abs((date2 - date1) / (1000 * 24 * 60 * 60)));
+  }
+
+  const daysPassed = calcDaysPassed(new Date(), date);
+
+  const year = date.getFullYear()
+  const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  const day = `${date.getDate()}`.padStart(2, 0);
+
+  return (daysPassed === 0) ? 'Today' : (daysPassed === 1) ? 'Yesterday' : `${daysPassed} Days Ago`
+
+}
 
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
@@ -89,11 +104,9 @@ const displayMovements = function (acc, sort = false) {
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const date = new Date(acc.movementsDates[i]);
-    const year = date.getFullYear()
-    const month = `${date.getMonth() + 1}`.padStart(2, 0);
-    const day = `${date.getDate()}`.padStart(2, 0);
 
-    const displayDate = `${year}/${month}/${day}`
+
+    const displayDate = formatMovementDate(date)
 
 
 
@@ -218,7 +231,7 @@ btnTransfer.addEventListener('click', function (e) {
 
     // Update Date
     currentAccount.movementsDates.push(new Date());
-    receiverAccount.movementsDates.push(new Date());
+    receiverAcc.movementsDates.push(new Date());
     // Update UI
     updateUI(currentAccount);
   }
