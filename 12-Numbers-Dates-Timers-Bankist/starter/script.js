@@ -304,3 +304,6 @@ function fakeLog() {
 // console.log(randomInt(-10, 20));
 // console.log(5 % 3);
 // fakeLog()
+
+const now = new Date();
+console.log(new Intl.DateTimeFormat('zh-CN').format(now));
