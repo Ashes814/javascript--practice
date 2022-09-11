@@ -184,7 +184,7 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     // Display UI and message
@@ -193,14 +193,19 @@ btnLogin.addEventListener('click', function (e) {
     }`;
     containerApp.style.opacity = 100;
 
-    const now = new Date();
-    const year = now.getFullYear()
-    const month = `${now.getMonth() + 1}`.padStart(2, 0);
-    const day = `${now.getDate()}`.padStart(2, 0);
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    labelDate.textContent = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`
+
+
+    setInterval(function () {
+      const now = new Date();
+      const year = now.getFullYear()
+      const month = `${now.getMonth() + 1}`.padStart(2, 0);
+      const day = `${now.getDate()}`.padStart(2, 0);
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      labelDate.textContent = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`
+    }, 1)
+
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
@@ -244,13 +249,15 @@ btnLoan.addEventListener('click', function (e) {
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
+
+    setTimeout(function() {
     currentAccount.movements.push(amount);
 
     // Add movement Date
     currentAccount.movementsDates.push(new Date());
     // Update UI
     updateUI(currentAccount);
-  }
+    }, 2000);}
   inputLoanAmount.value = '';
 });
 
@@ -305,5 +312,10 @@ function fakeLog() {
 // console.log(5 % 3);
 // fakeLog()
 
-const now = new Date();
-console.log(new Intl.DateTimeFormat('zh-CN').format(now));
+// const now = new Date();
+// console.log(new Intl.DateTimeFormat('zh-CN').format(now));
+
+// setTimeout(() => {
+//   alert('Here is your Pizza');
+  
+// }, 1000);
