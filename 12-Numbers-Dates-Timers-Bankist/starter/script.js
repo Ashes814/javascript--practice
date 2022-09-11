@@ -211,6 +211,8 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+
+    timer = startLogOutTimer();
     // Update UI
     updateUI(currentAccount);
   }
@@ -218,6 +220,10 @@ btnLogin.addEventListener('click', function (e) {
 
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
+  if (timer) {
+    clearInterval(timer);
+  };
+  timer = startLogOutTimer();
   const amount = Number(inputTransferAmount.value);
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
@@ -244,6 +250,10 @@ btnTransfer.addEventListener('click', function (e) {
 
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
+  if (timer) {
+    clearInterval(timer);
+  };
+  timer = startLogOutTimer();
 
   const amount = Math.floor(inputLoanAmount.value);
 
@@ -263,6 +273,10 @@ btnLoan.addEventListener('click', function (e) {
 
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
+  if (timer) {
+    clearInterval(timer);
+  };
+  timer = startLogOutTimer();
 
   if (
     inputCloseUsername.value === currentAccount.username &&
@@ -287,6 +301,10 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
+
+  clearInterval(timer);
+
+  timer = startLogOutTimer();
   displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
@@ -297,6 +315,29 @@ function fakeLog() {
   currentAccount = account1;
   updateUI(currentAccount);
   containerApp.style.opacity = 100;
+}
+
+const startLogOutTimer = function() {
+
+  let time = 3;
+  const timeFunction = function() {
+
+    const min = Math.floor(time / 60);
+    const seconds = time % 60
+    labelTimer.textContent = `${min}`.padStart(2,0) + `:` + `${seconds}`.padStart(2,0);
+    
+
+    if (time === 0) {
+      clearInterval(timer)
+      containerApp.style.opacity = 0;
+      labelWelcome.textContent = 'Log in to get started!'
+    };
+
+    time--;
+  }
+  
+  timeFunction();
+  const timer = setInterval(timeFunction, 1000);
 }
 
 /////////////////////////////////////////////////
