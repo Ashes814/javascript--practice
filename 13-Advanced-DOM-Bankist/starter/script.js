@@ -35,4 +35,14 @@ document.addEventListener('keydown', function (e) {
 
 
 // test
-const message = document.createElement('div')
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML = 'Add coookie. <button class="btn btn--close--cookie">Got it</button>'
+
+document.querySelector('.header').prepend(message);
+
+document.querySelector('.btn--close--cookie').addEventListener('click', function() {
+  message.remove();
+})
+
+message.style.width = '120%';
