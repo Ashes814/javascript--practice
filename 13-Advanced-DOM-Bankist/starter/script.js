@@ -57,3 +57,15 @@ document.querySelector('.btn--close--cookie').addEventListener('click', function
 })
 
 message.style.width = '120%';
+
+
+// random color
+const randomInt = function(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+};
+
+const randomColor = function() {
+  return `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`
+}
+
+console.log(randomColor());
