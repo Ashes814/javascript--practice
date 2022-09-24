@@ -120,18 +120,32 @@ const changeOpacity = function(e, opacity) {
     
     siblings.forEach(el => {
       if (el !== link) {
-        el.style.opacity = opacity;
+        el.style.opacity = this;
       }
     })
 
-    logo.style.opacity = opacity;
+    logo.style.opacity = this;
 
   };
 };
 
-nav.addEventListener('mouseover', function(e) {changeOpacity(e, 0.5)})
+nav.addEventListener('mouseover', changeOpacity.bind(0.5))
 
-nav.addEventListener('mouseout', function(e) {changeOpacity(e, 1)})
+nav.addEventListener('mouseout', changeOpacity.bind(1))
+
+// sticky scroll
+
+const initCoords = section1.getBoundingClientRect();
+
+
+window.addEventListener('scroll', function(e) {
+
+  if (window.scrollY > initCoords.top) {
+    nav.classList.add('sticky'); 
+  } else {
+    nav.classList.remove('sticky');
+  }
+})
 
 // random color
 // const randomInt = function(min, max) {
