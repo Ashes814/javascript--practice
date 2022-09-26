@@ -10,6 +10,7 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+const header = document.querySelector('.header');
 const nav = document.querySelector('.nav');
 
 btnScrollTo.addEventListener('click', function(e) {
@@ -138,15 +139,33 @@ nav.addEventListener('mouseout', changeOpacity.bind(1))
 const initCoords = section1.getBoundingClientRect();
 
 
-window.addEventListener('scroll', function(e) {
+// window.addEventListener('scroll', function(e) {
 
-  if (window.scrollY > initCoords.top) {
-    nav.classList.add('sticky'); 
+//   if (window.scrollY > initCoords.top) {
+//     nav.classList.add('sticky'); 
+//   } else {
+//     nav.classList.remove('sticky');
+//   }
+// })
+const obsCallbacks = function(entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) {
+    nav.classList.add('sticky');
   } else {
     nav.classList.remove('sticky');
   }
-})
+}
 
+const navHeight = nav.getBoundingClientRect().height;
+const obsOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+};
+
+const observer = new IntersectionObserver(obsCallbacks, obsOptions);
+observer.observe(header);
 // random color
 // const randomInt = function(min, max) {
 //   return Math.floor(Math.random() * (max - min + 1) + min)
