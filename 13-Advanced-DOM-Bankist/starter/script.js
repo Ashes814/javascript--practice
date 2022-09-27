@@ -12,6 +12,10 @@ const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
 const header = document.querySelector('.header');
 const nav = document.querySelector('.nav');
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRiight = document.querySelector('.slider__btn--right');
 
 btnScrollTo.addEventListener('click', function(e) {
   // const s1coords = section1.getBoundingClientRect()
@@ -244,3 +248,37 @@ imgTargets.forEach((img) => imgObserver.observe(img));
 //   this.style.backgroundColor = randomColor();
 //   console.log('NAV', e.target, e.currentTarget);
 // }, true);
+
+// slides
+let curSlide = 0;
+const maxSlide = slides.length;
+// slides.forEach((s, i) => s.style.transform = `translateX(${100 * i}%)`);
+
+// slider.style.transform = 'scale(0) translateX()';
+// slider.style.overflow = 'visible';
+const goToSlide = function(slide) {
+  slides.forEach((s, i) => s.style.transform = `translateX(${100 * (i-slide)}%)`)
+}
+goToSlide(0);
+const prevSlide = function() {
+  (curSlide === 0) ? curSlide = maxSlide - 1 : curSlide--;
+  goToSlide(curSlide);
+}
+const nextSlide = function() {
+  (curSlide === maxSlide - 1) ? curSlide = 0 : curSlide++;
+  goToSlide(curSlide);
+}
+
+btnRiight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide);
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') {
+    prevSlide();
+  } else if (e.key === 'ArrowRight') {
+    nextSlide();
+  }
+})
+
+
+
