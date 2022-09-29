@@ -1581,3 +1581,16 @@
   
 //   // This one also has it, why? fix please.
 // console.log( lazy.stomach ); // apple；
+
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+
+    sayHi() {
+        console.log(this.name);
+    }
+}
+
+let user = new User("OO");
+user.sayHi();
