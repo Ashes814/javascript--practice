@@ -1593,4 +1593,4 @@ class User {
 }
 
 let user = new User("OO");
-user.sayHi();
+user.sayHi()
