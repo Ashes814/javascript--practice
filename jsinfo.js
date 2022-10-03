@@ -1582,15 +1582,44 @@
 //   // This one also has it, why? fix please.
 // console.log( lazy.stomach ); // apple；
 
-class User {
-    constructor(name) {
-        this.name = name;
-    }
+// class User {
+//     constructor(name) {
+//         this.name = name;
+//     }
 
-    sayHi() {
-        console.log(this.name);
-    }
+//     sayHi() {
+//         console.log(this.name);
+//     }
+// }
+
+// let user = new User("OO");
+// user.sayHi();
+
+// let me = {
+//     love: "me"
+// };
+
+// let xb = {
+//     eat: 'ob'
+// };
+
+// xb.__proto__ = me;
+
+// console.log(me.love);
+// console.log(xb.love);
+
+let xb = {
+    one: 1,
+    two: 2
 }
 
-let user = new User("OO");
-user.sayHi()
+let ob = {
+    three:3,
+    four:4,
+    __proto__: xb
+
+}
+
+for (let prop in ob) {
+    ob.hasOwnProperty(prop) ? console.log(prop) : console.log('nonono');
+};
