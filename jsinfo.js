@@ -1660,26 +1660,41 @@ let animal = {
 //     money: 2000,
 //     __proto__: bed
 //   };
-let hamster = {
-    stomach: [],
+// let hamster = {
+//     stomach: [],
   
-    eat(food) {
-      this.stomach = [];
-      this.stomach.push(food);
-    }
-  };
+//     eat(food) {
+//       this.stomach = [];
+//       this.stomach.push(food);
+//     }
+//   };
   
-  let speedy = {
-    __proto__: hamster
-  };
+//   let speedy = {
+//     __proto__: hamster
+//   };
   
-  let lazy = {
-    __proto__: hamster
-  };
+//   let lazy = {
+//     __proto__: hamster
+//   };
   
-  // 这只仓鼠找到了食物
-speedy.eat("apple");
-alert( speedy.stomach ); // apple
+//   // 这只仓鼠找到了食物
+// speedy.eat("apple");
+// alert( speedy.stomach ); // apple
 
-// 这只仓鼠也找到了食物，为什么？请修复它。
-alert( lazy.stomach ); // apple
+// // 这只仓鼠也找到了食物，为什么？请修复它。
+// alert( lazy.stomach ); // apple
+// console.log([1,2,3])
+Function.prototype.defer = function(ms) {
+    let f = this;
+    return function (...args) {
+        setTimeout(() => f.apply(this, args), ms)
+    }
+    
+}
+
+function f(a, b) {
+    alert(a + b);
+
+}
+
+f.defer(1000)(1,2);
