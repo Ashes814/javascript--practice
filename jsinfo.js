@@ -1624,13 +1624,13 @@
 //     ob.hasOwnProperty(prop) ? console.log(prop) : console.log('nonono');
 // };
 
-let animal = {
-    jumps: null
-  };
-  let rabbit = {
-    __proto__: animal,
-    jumps: true
-  };
+// let animal = {
+//     jumps: null
+//   };
+//   let rabbit = {
+//     __proto__: animal,
+//     jumps: true
+//   };
   
 // alert( rabbit.jumps ); // true (1)
 
@@ -1684,17 +1684,74 @@ let animal = {
 // // 这只仓鼠也找到了食物，为什么？请修复它。
 // alert( lazy.stomach ); // apple
 // console.log([1,2,3])
-Function.prototype.defer = function(ms) {
-    let f = this;
-    return function (...args) {
-        setTimeout(() => f.apply(this, args), ms)
-    }
+// Function.prototype.defer = function(ms) {
+//     let f = this;
+//     return function (...args) {
+//         setTimeout(() => f.apply(this, args), ms)
+//     }
     
-}
+// }
 
-function f(a, b) {
-    alert(a + b);
+// function f(a, b) {
+//     alert(a + b);
 
-}
+// }
 
-f.defer(1000)(1,2);
+// f.defer(1000)(1,2);
+
+// let animal = {
+//     eats: true
+// }
+
+// let rabbit = {
+//     color: 'white',
+//     __proto__: animal    
+// }
+
+// console.log(rabbit.eats);
+
+// console.log(Object.create(animal).eats);
+
+// let obj = new Map();
+
+// let key = prompt('set key', '__proto__');
+
+// obj.set(key, 8848);
+// console.log(obj.get(key));
+
+// let dictionary = Object.create(null, {
+//     toString: {
+//         value() {
+//             return Object.keys(this).join()
+//         }
+//     }
+// });
+
+// // 你的添加 dictionary.toString 方法的代码
+
+// // 添加一些数据
+// dictionary.apple = "Apple";
+// dictionary.__proto__ = "test"; // 这里 __proto__ 是一个常规的属性键
+
+// // 在循环中只有 apple 和 __proto__
+// for(let key in dictionary) {
+//   alert(key); // "apple", then "__proto__"
+// }
+
+// // 你的 toString 方法在发挥作用
+
+// alert(dictionary); // "apple,__proto__"
+
+function Rabbit(name) {
+    this.name = name;
+  }
+Rabbit.prototype.sayHi = function() {
+    alert(this.name);
+};
+  
+let rabbit = new Rabbit("Rabbit");
+
+rabbit.sayHi();
+Rabbit.prototype.sayHi();
+Object.getPrototypeOf(rabbit).sayHi();
+rabbit.__proto__.sayHi();
