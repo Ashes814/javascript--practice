@@ -1742,16 +1742,51 @@
 
 // alert(dictionary); // "apple,__proto__"
 
-function Rabbit(name) {
-    this.name = name;
-  }
-Rabbit.prototype.sayHi = function() {
-    alert(this.name);
-};
+// function Rabbit(name) {
+//     this.name = name;
+//   }
+// Rabbit.prototype.sayHi = function() {
+//     alert(this.name);
+// };
   
-let rabbit = new Rabbit("Rabbit");
+// let rabbit = new Rabbit("Rabbit");
 
-rabbit.sayHi();
-Rabbit.prototype.sayHi();
-Object.getPrototypeOf(rabbit).sayHi();
-rabbit.__proto__.sayHi();
+// rabbit.sayHi();
+// Rabbit.prototype.sayHi();
+// Object.getPrototypeOf(rabbit).sayHi();
+// rabbit.__proto__.sayHi();
+// class User {
+//     constructor(name) {
+//         this.name = name;
+//     }
+
+//     sayHi() {
+//         console.log(this.name);
+//     }
+// }
+
+// let user = new User('sb');
+// user.sayHi();
+
+class User{
+
+    constructor(name) {
+        this.name = name;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(value) {
+        if (value.length < 4) {
+            console.log("Too short");
+            return;
+        } 
+
+        this._name = value;
+    }
+}
+
+let user = new User('sbsbsb')
+console.log(user.name)
