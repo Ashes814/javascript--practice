@@ -1768,25 +1768,57 @@
 // let user = new User('sb');
 // user.sayHi();
 
-class User{
+// class User{
 
+//     constructor(name) {
+//         this.name = name;
+//     }
+
+//     get name() {
+//         return this._name;
+//     }
+
+//     set name(value) {
+//         if (value.length < 4) {
+//             console.log("Too short");
+//             return;
+//         } 
+
+//         this._name = value;
+//     }
+// }
+
+// let user = new User('sbsbsb')
+// console.log(user.name)
+
+class Animal {
     constructor(name) {
-        this.name = name;
+      this.speed = 0;
+      this.name = name;
     }
-
-    get name() {
-        return this._name;
+    run(speed) {
+      this.speed = speed;
+      alert(`${this.name} runs with speed ${this.speed}.`);
     }
+    stop() {
+      this.speed = 0;
+      alert(`${this.name} stands still.`);
+    }
+  }
+  
+let animal = new Animal("My animal");
 
-    set name(value) {
-        if (value.length < 4) {
-            console.log("Too short");
-            return;
-        } 
+class Rabbit extends Animal {
+    hide() {
+        console.log(`${this.name} hides!`);
+        }
 
-        this._name = value;
+    stop() {
+        super.stop();
+        this.hide();
     }
 }
 
-let user = new User('sbsbsb')
-console.log(user.name)
+  let rabbit1 = new Rabbit('sb');
+  rabbit1.run(8848);
+  rabbit1.stop();
