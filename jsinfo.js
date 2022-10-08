@@ -1822,3 +1822,4 @@ class Rabbit extends Animal {
   let rabbit1 = new Rabbit('sb');
   rabbit1.run(8848);
   rabbit1.stop();
+  
