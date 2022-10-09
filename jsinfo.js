@@ -1747,79 +1747,199 @@
 //   }
 // Rabbit.prototype.sayHi = function() {
 //     alert(this.name);
-// };
+// // };
   
-// let rabbit = new Rabbit("Rabbit");
+// // let rabbit = new Rabbit("Rabbit");
 
-// rabbit.sayHi();
-// Rabbit.prototype.sayHi();
-// Object.getPrototypeOf(rabbit).sayHi();
-// rabbit.__proto__.sayHi();
-// class User {
-//     constructor(name) {
-//         this.name = name;
+// // rabbit.sayHi();
+// // Rabbit.prototype.sayHi();
+// // Object.getPrototypeOf(rabbit).sayHi();
+// // rabbit.__proto__.sayHi();
+// // class User {
+// //     constructor(name) {
+// //         this.name = name;
+// //     }
+
+// //     sayHi() {
+// //         console.log(this.name);
+// //     }
+// // }
+
+// // let user = new User('sb');
+// // user.sayHi();
+
+// // class User{
+
+// //     constructor(name) {
+// //         this.name = name;
+// //     }
+
+// //     get name() {
+// //         return this._name;
+// //     }
+
+// //     set name(value) {
+// //         if (value.length < 4) {
+// //             console.log("Too short");
+// //             return;
+// //         } 
+
+// //         this._name = value;
+// //     }
+// // }
+
+// // let user = new User('sbsbsb')
+// // console.log(user.name)
+
+// // class Animal {
+// //     constructor(name) {
+// //       this.speed = 0;
+// //       this.name = name;
+// //     }
+// //     run(speed) {
+// //       this.speed = speed;
+// //       alert(`${this.name} runs with speed ${this.speed}.`);
+// //     }
+// //     stop() {
+// //       this.speed = 0;
+// //       alert(`${this.name} stands still.`);
+// //     }
+// //   }
+  
+// // let animal = new Animal("My animal");
+
+// // class Rabbit extends Animal {
+// //     hide() {
+// //         console.log(`${this.name} hides!`);
+// //         }
+
+// //     stop() {
+// //         super.stop();
+// //         this.hide();
+// //     }
+// // }
+
+// //   let rabbit1 = new Rabbit('sb');
+// //   rabbit1.run(8848);
+// //   rabbit1.stop();
+
+// // let animal = {
+// //     name: "Animal",
+// //     eat() {
+// //         console.log(`${this.name} eats.`);
+// //     }
+// // };
+
+// // let rabbit = {
+// //     name: "rabbit",
+// //     __proto__: animal,
+// //     eat() {
+// //         // this.__proto__.eat.call(this);
+// //         super.eat();
+// //     }
+// // };
+
+// // let longEar = {
+// //     name: "longear",
+// //     __proto__: rabbit,
+// //     eat() {
+// //         // this.__proto__.eat.call(this);
+// //         super.eat();
+// //     }
+// // };
+
+// // // console.log(animal.eat.HomeObject);
+// // longEar.eat();
+
+// //方法并不自由
+// // let animal = {
+// //     sayHi() {
+// //         console.log('I, am an animal');
+// //     }
+// // };
+
+// // let rabbit = {
+// //     __proto__: animal,
+// //     sayHi() {
+// //         super.sayHi();
+// //     }
+// // };
+
+// // let plant = {
+// //     __proto__: animal,
+// //     sayHi() {
+// //         console.log('I, am a plant');
+// //     }
+// // }
+
+// // let tree = {
+// //     __proto__: plant,
+// //     sayHi: rabbit.sayHi
+// // };
+// // tree.sayHi()
+
+// // class Animal {
+
+// //     constructor(name) {
+// //       this.name = name;
+// //     }
+  
+// //   }
+  
+// // class Rabbit extends Animal {
+// //     constructor(name) {
+// //         super(name);
+// //         this.created = Date.now();
+// //     }
+// // }
+
+// // let rabbit = new Rabbit("White Rabbit"); // Error: this is not defined
+// // alert(rabbit.name);
+
+// class Clock {
+//     constructor({ template }) {
+//       this.template = template;
 //     }
-
-//     sayHi() {
-//         console.log(this.name);
+  
+//     render() {
+//       let date = new Date();
+  
+//       let hours = date.getHours();
+//       if (hours < 10) hours = '0' + hours;
+  
+//       let mins = date.getMinutes();
+//       if (mins < 10) mins = '0' + mins;
+  
+//       let secs = date.getSeconds();
+//       if (secs < 10) secs = '0' + secs;
+  
+//       let output = this.template
+//         .replace('h', hours)
+//         .replace('m', mins)
+//         .replace('s', secs);
+  
+//       console.log(output);
+//     }
+  
+//     stop() {
+//       clearInterval(this.timer);
+//     }
+  
+//     start() {
+//       this.render();
+//       this.timer = setInterval(() => this.render(), 1000);
 //     }
 // }
 
-// let user = new User('sb');
-// user.sayHi();
-
-// class User{
-
-//     constructor(name) {
-//         this.name = name;
-//     }
-
-//     get name() {
-//         return this._name;
-//     }
-
-//     set name(value) {
-//         if (value.length < 4) {
-//             console.log("Too short");
-//             return;
-//         } 
-
-//         this._name = value;
+// class extendedClock extends Clock {
+//     start(ticks) {
+//         this.render();
+//         this.timer = setInterval(() => this.render(), ticks);
 //     }
 // }
 
-// let user = new User('sbsbsb')
-// console.log(user.name)
+// testClock = new extendedClock('hms');
+// testClock.start(100);
 
-class Animal {
-    constructor(name) {
-      this.speed = 0;
-      this.name = name;
-    }
-    run(speed) {
-      this.speed = speed;
-      alert(`${this.name} runs with speed ${this.speed}.`);
-    }
-    stop() {
-      this.speed = 0;
-      alert(`${this.name} stands still.`);
-    }
-  }
-  
-let animal = new Animal("My animal");
-
-class Rabbit extends Animal {
-    hide() {
-        console.log(`${this.name} hides!`);
-        }
-
-    stop() {
-        super.stop();
-        this.hide();
-    }
-}
-
-  let rabbit1 = new Rabbit('sb');
-  rabbit1.run(8848);
-  rabbit1.stop();
-  
+let {precision = 100} = {precisio:50}
+console.log(precision)
