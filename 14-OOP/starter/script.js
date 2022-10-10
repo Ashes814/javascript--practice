@@ -24,26 +24,37 @@
 
 // console.dir(document.querySelector('h1'))
 //challenage 1
-const Car = function(make, speed) {
-    this.make = make;
-    this.speed = speed;
-};
+// const Car = function(make, speed) {
+//     this.make = make;
+//     this.speed = speed;
+// };
 
-Car.prototype.accelerate = function() {
-    this.speed += 10;
-    console.log(this.speed);
+// Car.prototype.accelerate = function() {
+//     this.speed += 10;
+//     console.log(this.make + this.speed);
+// }
+
+// Car.prototype.brake = function() {
+//     this.speed -= 5;
+//     console.log(this.make + this.speed);
+// }
+
+// let bmw = new Car('BMW', 120);
+// let ferrari = new Car('Ferrari', 320);
+
+
+// bmw.brake();
+// bmw.brake();
+
+// ferrari.accelerate();
+class Person {
+    constructor(name, birth) {
+        this.name = name;
+        this.birth = birth;
+    }
+
+    calcAge() {
+        console.log(2037 - this.birth);
+    }
 }
 
-Car.prototype.brake = function() {
-    this.speed -= 5;
-    console.log(this.speed);
-}
-
-let bmw = new Car('BMW', 120);
-let ferrari = new Car('Ferrari', 320);
-
-
-bmw.brake();
-bmw.brake();
-
-ferrari.accelerate();
