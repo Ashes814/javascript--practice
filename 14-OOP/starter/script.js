@@ -56,5 +56,31 @@ class Person {
     calcAge() {
         console.log(2037 - this.birth);
     }
+
+    set name(name) {
+        if (name.includes(' ')) {
+            this._name = name;
+        } else {
+            alert('Name ERROR')
+        }
+    }
+
+    get name() {
+        return this._name;
+    }
 }
+
+let testP = new Person('fff f', 1999);
+console.log(testP);
+console.log(testP.name);
+// const account = {
+//     name: 'oo',
+//     movements: [1,2,3,4],
+
+//     get latest() {
+//         return this.movements.slice(-1).pop();
+//     }
+// }
+
+// console.log(account.latest);
 
