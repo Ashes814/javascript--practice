@@ -68,11 +68,17 @@ class Person {
     get name() {
         return this._name;
     }
+
+    static stHey() {
+        console.log('Hi')
+    }
 }
 
 let testP = new Person('fff f', 1999);
 console.log(testP);
 console.log(testP.name);
+Person.stHey()
+testP.stHey()
 // const account = {
 //     name: 'oo',
 //     movements: [1,2,3,4],
