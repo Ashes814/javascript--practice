@@ -90,12 +90,60 @@
 
 // console.log(account.latest);
 
-const personProto = {
-    calcAge() {
-        return 2037 - this.birthyear;
+// const personProto = {
+//     calcAge() {
+//         return 2037 - this.birthyear;
+//     }
+// };
+
+// let test = Object.create(personProto);
+// console.log(test);
+
+// // const Car = function(make, speed) {
+// //     this.make = make;
+// //     this.speed = speed;
+// // };
+
+// // Car.prototype.accelerate = function() {
+// //     this.speed += 10;
+// //     console.log(this.make + this.speed);
+// // }
+
+// // Car.prototype.brake = function() {
+// //     this.speed -= 5;
+// //     console.log(this.make + this.speed);
+// // }
+
+class CarCl {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
     }
-};
 
-let test = Object.create(personProto);
-console.log(test);
+    accelerate() {
+        this.speed += 10;
+        console.log(this.make + this.speed);
+    }
 
+    brake() {
+        this.speed -= 5;
+        console.log(this.make + this.speed);
+    }
+
+    get speedUS() {
+        return this.speed / 1.6
+    }
+
+    set speedUS(milespeed) {
+        this.speed = milespeed * 1.6
+    }
+}
+
+let car1 = new CarCl('Ford', 120);
+console.log(car1);
+car1.accelerate();
+car1.brake();
+
+console.log(car1.speedUS)
+car1.speedUS = 60;
+console.log(car1.speedUS,car1.speed);
