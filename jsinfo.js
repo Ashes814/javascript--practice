@@ -1941,5 +1941,31 @@
 // testClock = new extendedClock('hms');
 // testClock.start(100);
 
-let {precision = 100} = {precisio:50}
-console.log(precision)
+//  
+// class Article {
+//     constructor(title, date) {
+//         this.title = title;
+//         this.date = this.date;
+//     }
+
+//     static createTodays() {
+//         return new this("Today's digest", new Date());
+//     }
+// }
+
+// let article
+
+let number = +prompt();
+let ifsu = true
+for (let i = 2;i<number;i++) {
+    if ((number % i) === 0) {
+        ifsu = false;
+        break;
+    }
+}
+
+if (ifsu) {
+    alert('yes');
+} else {
+    alert('no');
+}
