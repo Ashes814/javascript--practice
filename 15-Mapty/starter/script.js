@@ -26,6 +26,18 @@ navigator.geolocation.getCurrentPosition(
             .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
             .openPopup();
 
+        map.on('click', function(mapEvent) {
+            let {lat, lng} = mapEvent.latlng;
+            L.marker([lat, lng]).addTo(map)
+            .bindPopup(L.popup({maxWidth:250, 
+                                minWidth:100, 
+                                autoClose:false, 
+                                closeOnClick:false, 
+                                className: 'running-popup'}))
+            .setPopupContent('YEW')
+            .openPopup();
+        })
+
     }, 
     function() {
         alert('Could not get your position!')
