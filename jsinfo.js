@@ -1955,17 +1955,27 @@
 
 // let article
 
-let number = +prompt();
-let ifsu = true
-for (let i = 2;i<number;i++) {
-    if ((number % i) === 0) {
-        ifsu = false;
-        break;
-    }
-}
+// let number = +prompt();
+// let ifsu = true
+// for (let i = 2;i<number;i++) {
+//     if ((number % i) === 0) {
+//         ifsu = false;
+//         break;
+//     }
+// }
 
-if (ifsu) {
-    alert('yes');
-} else {
-    alert('no');
-}
+// if (ifsu) {
+//     alert('yes');
+// } else {
+//     alert('no');
+// }
+
+let a;
+const af = function(ab) {
+    console.log(a)
+    a = ab;
+    console.log(a);
+};
+
+af(100);
+console.log(a);
