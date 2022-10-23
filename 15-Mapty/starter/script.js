@@ -27,6 +27,8 @@ class WorkOut {
 }
 
 class Running extends WorkOut {
+    type = 'running';
+
     constructor(coords, distance, duration, cadence) {
         super(coords, distance, duration);
         this.cadence = cadence;
@@ -40,6 +42,8 @@ class Running extends WorkOut {
 }
 
 class Cycling extends WorkOut {
+    type = 'cycling';
+
     constructor(coords, distance, duration, elevationGain) {
         super(coords, distance, duration);
         this.elevationGain = elevationGain;
@@ -140,31 +144,43 @@ class App {
         // add new workouts to an array
         this.#workouts.push(workout);
         // render workout on map as a marker
-        this.renderWorkoutMarker(workout);
+        this._renderWorkoutMarker(workout);
         // render workout on list
+        this._renderWorkout(workout);
         // hide form and clear input
-        inputCadence.value = inputDistance.value = inputDuration.value = inputElevation = '';
+        inputCadence.value = inputDistance.value = inputDuration.value = inputElevation.value = '';
         //display marker
        
 
     }
 
-    renderWorkoutMarker(workout) {
-        L.marker(workout.coords).addTo(this.#map)
-        .bindPopup(L.popup({maxWidth:250, 
-                            minWidth:100, 
-                            autoClose:false, 
-                            closeOnClick:false, 
-                            className: `${type}-popup`}))
-        .setPopupContent(workout.distance)
-        .openPopup();
+    _renderWorkoutMarker(workout) {
+        L.marker(workout.coords)
+          .addTo(this.#map)
+          .bindPopup(
+            L.popup({
+              maxWidth: 250,
+              minWidth: 100,
+              autoClose: false,
+              closeOnClick: false,
+              className: `${workout.type}-popup`,
+            })
+          )
+          .setPopupContent(
+            `${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'} ${workout.description}`
+          )
+          .openPopup();
+      }
+
+    _renderWorkout(workout) {
+
     }
 
 
 }
-const run1 = new Running([120,31], 5, 10, 4);
-const cyc1 = new Cycling([120,31], 5, 10, 4);
-console.log(run1, cyc1);
+// const run1 = new Running([120,31], 5, 10, 4);
+// const cyc1 = new Cycling([120,31], 5, 10, 4);
+// console.log(run1, cyc1);
 
 
 const app = new App();
