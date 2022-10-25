@@ -1982,39 +1982,58 @@
 
 // alert('this is jsinfo')
 
-class CoffeeMachine {
-    _waterAmount = 0;
+// class CoffeeMachine {
+//     _waterAmount = 0;
 
 
-    constructor(power) {
-        this._power = power;
-        // console.log(`Created a coffee-machine, power: ${power}`);
+//     constructor(power) {
+//         this._power = power;
+//         // console.log(`Created a coffee-machine, power: ${power}`);
+//     }
+
+
+//     set waterAmount(value) {
+//         if (value < 0) {
+//             value = 0;
+//         }
+
+//         this._waterAmount = value;
+//     }
+
+//     get waterAmount() {
+//         return this._waterAmount;
+//     }
+
+//     get power() {
+//         return this._power;
+//     }
+
+
+// }
+
+// const coffeeMachine = new CoffeeMachine(100);
+
+// coffeeMachine.waterAmount = -200;
+// coffeeMachine.power = 8848;// console.log(coffeeMachine.power);
+// class PowerArray extends Array {
+//     isEmpty() {
+//         return this.length === 0
+//     }
+// }
+
+// let arr = new PowerArray(1, 2, 5);
+class PowerArray extends Array {
+    isEmpty() {
+        return this.length === 0;
     }
 
-
-    set waterAmount(value) {
-        if (value < 0) {
-            value = 0;
-        }
-
-        this._waterAmount = value;
-    }
-
-    get waterAmount() {
-        return this._waterAmount;
-    }
-
-    get power() {
-        return this._power;
-    }
-
-
+    // static get [Symbol.species]() {
+    //     return Array;
+    // }
 }
 
-const coffeeMachine = new CoffeeMachine(100);
+let arr = new PowerArray(1, 2, 5, 10, 50);
+console.log(arr.isEmpty());
 
-coffeeMachine.waterAmount = -200;
-console.log(coffeeMachine.power);
-coffeeMachine.power = 8848;
-console.log(coffeeMachine.power);
-console.log(coffeeMachine);
+const filteredArr = arr.filter(item => item >= 10);
+console.log(filteredArr.isEmpty());
