@@ -1970,12 +1970,12 @@
 //     alert('no');
 // }
 
-let a;
-const af = function(ab) {
-    console.log(a)
-    a = ab;
-    console.log(a);
-};
+// let a;
+// const af = function(ab) {
+//     console.log(a)
+//     a = ab;
+//     console.log(a);
+// };
 
-af(100);
-console.log(a);
+// af(100);
+// console.log(a);
