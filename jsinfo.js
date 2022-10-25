@@ -1979,3 +1979,42 @@
 
 // af(100);
 // console.log(a);
+
+// alert('this is jsinfo')
+
+class CoffeeMachine {
+    _waterAmount = 0;
+
+
+    constructor(power) {
+        this._power = power;
+        // console.log(`Created a coffee-machine, power: ${power}`);
+    }
+
+
+    set waterAmount(value) {
+        if (value < 0) {
+            value = 0;
+        }
+
+        this._waterAmount = value;
+    }
+
+    get waterAmount() {
+        return this._waterAmount;
+    }
+
+    get power() {
+        return this._power;
+    }
+
+
+}
+
+const coffeeMachine = new CoffeeMachine(100);
+
+coffeeMachine.waterAmount = -200;
+console.log(coffeeMachine.power);
+coffeeMachine.power = 8848;
+console.log(coffeeMachine.power);
+console.log(coffeeMachine);
