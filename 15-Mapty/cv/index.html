@@ -12,23 +12,10 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-      crossorigin=""
-    />
-    <script
-      defer
-      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-      crossorigin=""
-    ></script>
-
-    <!-- <script defer src="other.js"></script> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
     <script defer src="script.js"></script>
-    <title>OO's career path!</title>
+    <title>mapty // Map your workouts</title>
   </head>
   <body>
     <div class="sidebar">
@@ -41,32 +28,39 @@
             <select class="form__input form__input--type">
               <option value="running">Running</option>
               <option value="cycling">Cycling</option>
+              <option value="school">School</option>
             </select>
           </div>
           <div class="form__row">
-            <label class="form__label">Distance</label>
-            <input class="form__input form__input--distance" placeholder="km" />
+            <label class="form__label">Name</label>
+            <input class="form__input form__input--name" placeholder="name" />
           </div>
           <div class="form__row">
-            <label class="form__label">Duration</label>
+            <label class="form__label">Time</label>
             <input
-              class="form__input form__input--duration"
-              placeholder="min"
+              class="form__input form__input--time"
+              placeholder="time"
             />
           </div>
-
           <div class="form__row">
-            <label class="form__label">Cadence</label>
+            <label class="form__label">Title</label>
             <input
-              class="form__input form__input--cadence"
-              placeholder="step/min"
+              class="form__input form__input--title"
+              placeholder="title"
             />
           </div>
-          <div class="form__row form__row--hidden">
+          <div class="form__row form__long">
             <label class="form__label">Elev Gain</label>
             <input
               class="form__input form__input--elevation"
               placeholder="meters"
+            />
+          </div>
+          <div class="form__row form__long form__row--hidden">
+            <label class="form__label">Major</label>
+            <input
+              class="form__input--long form__input--major"
+              placeholder="your major"
             />
           </div>
           <button class="form__btn">OK</button>

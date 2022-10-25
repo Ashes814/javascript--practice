@@ -72,6 +72,20 @@ class Cycling extends WorkOut {
     }
 }
 
+class School extends WorkOut {
+    type = 'school';
+
+    constructor(coords, name, time, info) {
+
+        this.coords = coords;
+        this.name = name;
+        this.time = time;
+        this.info = info;
+        this._setDescription();
+    }
+
+}
+
 class App {
     #map;
     #mapZoomLevel = 10;
@@ -187,6 +201,18 @@ class App {
         }
         // if workout cycling, create cycling object
         if (type === 'cycling') {
+            const elevation = +inputElevation.value;
+
+            if (!validInputs(distance, duration, elevation) || 
+            !allPositive(distance, duration)) {
+                return alert('Inputs invalid!');
+            }
+
+            workout = new Cycling([lat, lng], distance, duration, elevation);
+
+        }
+
+        if (type === 'school') {
             const elevation = +inputElevation.value;
 
             if (!validInputs(distance, duration, elevation) || 
