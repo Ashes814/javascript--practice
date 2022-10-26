@@ -2022,18 +2022,33 @@
 // }
 
 // let arr = new PowerArray(1, 2, 5);
-class PowerArray extends Array {
-    isEmpty() {
-        return this.length === 0;
-    }
+// class PowerArray extends Array {
+//     isEmpty() {
+//         return this.length === 0;
+//     }
 
-    // static get [Symbol.species]() {
-    //     return Array;
-    // }
-}
+//     static get [Symbol.species]() {
+//         return Array;
+//     }
+// }
 
-let arr = new PowerArray(1, 2, 5, 10, 50);
-console.log(arr.isEmpty());
+// let arr = new PowerArray(1, 2, 5, 10, 50);
+// console.log(arr.isEmpty());
 
-const filteredArr = arr.filter(item => item >= 10);
-console.log(filteredArr.isEmpty());
+// const filteredArr = arr.filter(item => item >= 10);
+// // console.log(filteredArr.isEmpty());
+
+// console.log(filteredArr instanceof Array);
+// class 
+// function Rabbit() {}
+// let rabbit = new Rabbit();
+
+// Rabbit.prototype = {};
+
+// console.log(rabbit instanceof Rabbit);
+
+let user = {
+    [Symbol.toStringTag]: "User"
+};
+
+console.log(Array.toString.call(user));
