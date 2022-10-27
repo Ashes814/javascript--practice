@@ -2073,46 +2073,151 @@
 
 // new User('tietie').sayHi();
 
-let eventMixin = {
+// let eventMixin = {
 
-    on(eventName, handler) {
-        if (!this._eventHandlers) this._eventHandlers = {};
-        if (!this._eventHandlers[eventName]) {
-            this._eventHandlers[eventName] = [];
-        }
-        this._eventHandlers[eventName].push(handler)
-    },
+//     on(eventName, handler) {
+//         if (!this._eventHandlers) this._eventHandlers = {};
+//         if (!this._eventHandlers[eventName]) {
+//             this._eventHandlers[eventName] = [];
+//         }
+//         this._eventHandlers[eventName].push(handler)
+//     },
 
-    off(eventName, handler) {
-        let handlers = this._eventHandlers?.[eventName];
-        if (!handlers) return;
-        for (let i=0; i<handlers.length; i++) {
-            if (handlers[i] === handler) {
-                handlers.splice(i--, 1);
-            }
-        }
-    },
+//     off(eventName, handler) {
+//         let handlers = this._eventHandlers?.[eventName];
+//         if (!handlers) return;
+//         for (let i=0; i<handlers.length; i++) {
+//             if (handlers[i] === handler) {
+//                 handlers.splice(i--, 1);
+//             }
+//         }
+//     },
 
-    trigger(eventName, ...args) {
-        if (!this._eventHandlers?.[eventName]) {
-            return;
-        }
+//     trigger(eventName, ...args) {
+//         if (!this._eventHandlers?.[eventName]) {
+//             return;
+//         }
 
-        this._eventHandlers[eventName].forEach(handler => handler.apply(this, args));
-    }
+//         this._eventHandlers[eventName].forEach(handler => handler.apply(this, args));
+//     }
 
-};
+// };
 
-class Menu {
-    choose(value) {
-        this.trigger('select', value);
-    }
-}
+// class Menu {
+//     choose(value) {
+//         this.trigger('select', value);
+//     }
+// }
 
-Object.assign(Menu.prototype, eventMixin);
+// Object.assign(Menu.prototype, eventMixin);
 
-let menu = new Menu();
+// let menu = new Menu();
 
-menu.on("select", value => alert(`value selected: ${value}`));
+// menu.on("select", value => alert(`value selected: ${value}`));
 
-menu.choose('123')
+// menu.choose('123')
+
+
+// setTimeout(function() {try {
+//     no
+// } catch(err) {
+//     alert('no');
+//     alert(err);
+// }
+// }, 1000)
+
+let json = '{"age": 30}';
+
+// try {
+//     let user = JSON.parse(json);
+    
+//     if (!user.name) {
+//         throw new SyntaxError("Incomplete data: no name");
+//     }
+
+//     alert(user.name);
+
+// } catch (err) {
+//     alert("JSON Error: " + err.message);
+// }
+
+// try {
+//     let user = JSON.parse(json);
+
+//     if (!user.name) {
+//         throw new SyntaxError("Incomplete data: no name");
+//     }
+
+//     blabla();
+
+//     alert(user.name);
+// } catch(err) {
+//     if (err instanceof SyntaxError) {
+//         alert("JSON Error:" + err.message);
+//     } else {
+//         throw err;
+//     }
+// }
+
+// function readData() {
+//     let json = '{ "age": 30 }';
+  
+//     try {
+//       // ...
+//       let user = JSON.parse(json);
+//       if (!user.name) {
+//                 throw new SyntaxError("Incomplete data: no name");
+//             }
+//       blabla(); // error!
+//     } catch (err) {
+//       // ...
+//       if (!(err instanceof SyntaxError)) {
+//         throw err; // rethrow (don't know how to deal with it)
+//       }
+//     }
+//   }
+  
+//   try {
+//     readData();
+//   } catch (err) {
+//     alert( "External catch got: " + err ); // caught it!
+//   }
+
+// let num = +prompt("Enter a positive integer number?", 35);
+// let diff, result;
+
+// function fib(n) {
+//     if (n < 0 || Math.trunc(n) != n) {
+//         throw new Error("Must be negative, and also an integer.");
+//     }
+//     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+// }
+
+// let start = Date.now();
+
+// try {
+//     result = fib(num);
+// } catch (err) {
+//     result = 0;
+// } finally {
+//     diff = Date.now() - start;
+// }
+
+// alert(result || "error occurred");
+// alert(`execution took ${diff} ms`);
+
+// try {
+//     errorcode;
+// } finally {
+//     alert('always me')
+// }
+
+// window.onerror = function(message, url, line, col, error) {
+//     alert(`${message}\n At ${line}:${col} of ${url}`);
+//   };
+
+//   function readData() {
+//     badFunc(); // Whoops, something went wrong!
+//   }
+
+//   readData();
