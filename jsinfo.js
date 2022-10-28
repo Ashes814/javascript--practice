@@ -2126,7 +2126,7 @@
 // }
 // }, 1000)
 
-let json = '{"age": 30}';
+// let json = '{"age": 30}';
 
 // try {
 //     let user = JSON.parse(json);
@@ -2221,3 +2221,7 @@ let json = '{"age": 30}';
 //   }
 
 //   readData();
+
+let json = `{"name": "John", "age": 30}`;
+
+
