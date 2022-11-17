@@ -2311,11 +2311,16 @@
 
 // class 
 
-function loadScript(src, callback) {
-    let script = document.createElement('script');
-    script.src = src;
+// function loadScript(src, callback) {
+//     let script = document.createElement('script');
+//     script.src = src;
 
-    script.onload = () => callback(script);
-    
-    document.head.append(script);
-}
+//     script.onload = () => callback(script);
+
+//     document.head.append(script);
+// }
+
+let promise = new Promise(function(resolve, reject) {
+
+    setTimeout(() => resolve("done"), 1000)
+}) 
