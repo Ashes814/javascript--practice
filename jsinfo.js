@@ -8,7 +8,6 @@
 // //     age: 30
 // // };
 
-
 // // for (key in user) {
 // //     alert(user[key]);
 // // }
@@ -20,7 +19,6 @@
 // // alert(user.name);
 // // user['surname'] = "Smith";
 // // alert(user.surname);
-
 
 // // user['name'] = 'Pete';
 // // alert(user.name);
@@ -191,7 +189,7 @@
 
 // //     this.read = function() {
 // //         let newValue = +prompt("Please enter new value", 10);
-// //         this.value += newValue;  
+// //         this.value += newValue;
 // //     }
 // // }
 
@@ -280,11 +278,10 @@
 // //     let firstAlp = str[0].toUpperCase();
 // //     let newStr = firstAlp + str.slice(1);
 // //     return newStr;
-// // } 
+// // }
 // // // alert('sbss'.slice(1));
 // // alert(ucFirst('s'));
 // // alert('T'.slice(1));
-
 
 // // function checkSpam(str) {
 // //     let newStr = str.toLowerCase()
@@ -369,7 +366,7 @@
 // //     let minIndex = 0;
 // //     let minIndexArrar = [0];
 // //     for (let number of arr) {
-        
+
 // //         if ((sum + number)>=cumSumArr[maxIndex]) {
 // //             maxIndex = cumSumArr.length
 // //         }
@@ -383,11 +380,8 @@
 
 // //     }
 
-
 // //     return cumSumArr[maxIndex] - cumSumArr[minIndexArrar[maxIndex]]
 // // }
-
-
 
 // // alert(getMaxSubSum([-1, 2, 3, -9]));
 // // alert(getMaxSubSum([2, -1, 2, 3, -9]));
@@ -416,7 +410,7 @@
 // // alert(users.filter(item => item.id<=2));
 
 // // let lengths = ['Bilbo', 'conda', 'pypi']
-// // alert(lengths.map(function(item) { 
+// // alert(lengths.map(function(item) {
 // //     return item.length
 // // }));
 
@@ -453,12 +447,10 @@
 // //             continue
 // //         } else {
 // //             arr.splice(i, 1);
-            
+
 // //         }
 // //     }
 // // }
-
-
 
 // // let arr = [5, 3, 8, 1,1,3,4,5,1,5];
 // // filterRangeInPlace(arr, 1, 4)
@@ -468,7 +460,6 @@
 // // let arr = [5, 2, 1, -10, 8];
 
 // // arr.sort((a, b) => b - a);
-
 
 // // alert( arr );
 // // function copySorted(arr) {
@@ -515,7 +506,6 @@
 // //   this.addMethod = function(name, func) {
 // //     this.methods[name] = func;
 // //   }
-
 
 // // }
 
@@ -566,7 +556,6 @@
 // //     users.sort(function(a, b) {return a.age - b.age})
 // // }
 
-
 // // let john = { name: "John", age: 25 };
 // // let pete = { name: "Pete", age: 30 };
 // // let mary = { name: "Mary", age: 28 };
@@ -579,7 +568,6 @@
 // // alert(arr[0].name); // John
 // // alert(arr[1].name); // Mary
 // // alert(arr[2].name); // Pete
-
 
 // // function shuffle(array) {
 
@@ -599,7 +587,6 @@
 // // // // arr = [2, 1, 3]
 
 // // // shuffle(arr);
-
 
 // // // function getAverageAge(users) {
 // // //     let ageArr = users.map(item => item.age);
@@ -635,11 +622,11 @@
 // // //     }
 // // //     return newArr;
 // // //   }
-  
+
 // // //   let strings = ["Hare", "Krishna", "Hare", "Krishna",
 // // //     "Krishna", "Krishna", "Hare", "Hare", ":-O"
 // // //   ];
-  
+
 // // //   alert( unique(strings) ); // Hare, Krishna, :-O
 // // // function groupById(users) {
 // // //     return users.reduce(function (prev, item) {
@@ -649,19 +636,17 @@
 // // //     {})
 // // // }
 
-
-
 // // // let users = [
 // // //     {id: 'john', name: "John Smith", age: 20},
 // // //     {id: 'ann', name: "Ann Smith", age: 24},
 // // //     {id: 'pete', name: "Pete Peterson", age: 31},
 // // //   ];
-  
+
 // // //   let usersById = groupById(users);
 // // //   alert(usersById.john.id);
 // //   /*
 // //   // 调用函数后，我们应该得到：
-  
+
 // //   usersById = {
 // //     john: {id: 'john', name: "John Smith", age: 20},
 // //     ann: {id: 'ann', name: "Ann Smith", age: 24},
@@ -712,7 +697,6 @@
 // // // let john = { name: "John" };
 // // // let ben = { name: "Ben" };
 
-
 // // // let visitsCountObj = {};
 
 // // // visitsCountObj[ben] = 123;
@@ -760,7 +744,6 @@
 // // alert(prices);
 // // alert(map);
 
-
 // // function unique(arr) {
 // //   let uniqueValue = new Set(arr);
 // //   let uniqueArr = []
@@ -785,8 +768,6 @@
 // //   }
 // //   return Array.from(map.values());
 // // }
-
-
 
 // // alert( aclean(arr) );
 // // let test = new Set('nap');
@@ -835,7 +816,6 @@
 // //     meat: 4,
 // //   };
 
-
 // // let doublePrices = Object.fromEntries(
 // //     Object.entries(prices).map(entry => [entry[0], entry[1] * 2])
 // // );
@@ -866,12 +846,11 @@
 // //     return c
 // // }
 
-
 // // let user = {
 // //     name: 'John',
 // //     age: 30
 // //   };
-  
+
 // // alert( count(user) ); // 2
 // // runs only prompt for surname
 // // let [name = prompt('name?'), surname = prompt('surname?')] = ["Julius"];
@@ -933,7 +912,6 @@
 // //             [name, salary] = salary;
 // //         }
 
-            
 // //     }
 // //     return name;
 // // }
@@ -955,17 +933,17 @@
 // // function getWeekDay(date) {
 // //     let weekday = date.getDay();
 // //     let dayName = (weekday == 0) ? 'SU' :
-// //         (weekday == 1) ? 'MO' : 
-// //         (weekday == 2) ? 'TU' : 
-// //         (weekday == 3) ? 'WE' : 
-// //         (weekday == 4) ? 'TH' : 
-// //         (weekday == 5) ? 'FR' : 
+// //         (weekday == 1) ? 'MO' :
+// //         (weekday == 2) ? 'TU' :
+// //         (weekday == 3) ? 'WE' :
+// //         (weekday == 4) ? 'TH' :
+// //         (weekday == 5) ? 'FR' :
 // //         (weekday == 6) ? 'SA' : 'Error'
 // //     return dayName;
 // // }
 
 // // let date = new Date(2012, 0, 3);  // 3 Jan 2012
-// // alert( getWeekDay(date) );  
+// // alert( getWeekDay(date) );
 // // function getLocalDay(date) {
 // //     let weekDay = date.getDay();
 // //     let europeanDay = weekDay != 0 ? weekDay : 7
@@ -973,7 +951,7 @@
 // // }
 
 // // let date = new Date(2012, 0, 3);  // 3 Jan 2012
-// // alert( getLocalDay(date) );  
+// // alert( getLocalDay(date) );
 // // function getDateAgo(date, days){
 // //     let timeStempDiff = date - days*24*60*60*1000;
 // //     let newDate = new Date(timeStempDiff);
@@ -997,7 +975,7 @@
 // //     let nowDate = Date.now();
 // //     let nowD = new Date(nowDate)
 // //     return nowD.getHours()*60*60 + nowD.getMinutes() * 60 + nowD.getMinutes() * 60 + + nowD.getSeconds()
-// // } 
+// // }
 
 // // function getSecondsToTommorrow() {
 // //     return 24*3600 - getSecondsToday()
@@ -1033,11 +1011,11 @@
 // //     courses: ['html', 'css', 'js'],
 // //     wife: null
 // //   };
-  
+
 // //   let json = JSON.stringify(student);
-  
+
 // //   alert(typeof json); // we've got a string!
-  
+
 // //   alert(json);
 
 // // let user = {
@@ -1053,22 +1031,22 @@
 // // let room = {
 // //     number: 23
 // //   };
-  
+
 // //   let meetup = {
 // //     title: "Conference",
 // //     occupiedBy: [{name: "John"}, {name: "Alice"}],
 // //     place: room
 // //   };
-  
+
 // //   // circular references
 // //   room.occupiedBy = meetup;
 // //   meetup.self = meetup;
-  
+
 // //   alert( JSON.stringify(meetup, function replacer(key, value) {
 // //     /* your code */
 // //     return (key != '' && value == meetup) ? undefined : value;
 // //   }));
-  
+
 // //   /* result should be:
 // //   {
 // //     "title":"Conference",
@@ -1084,9 +1062,7 @@
 // //     } else {
 // //         return number + sumTo(number - 1);
 // //     }
-    
-    
-    
+
 // // }
 
 // // alert(sumTo(100));
@@ -1101,13 +1077,12 @@
 // //     let fNumber = 0;
 // //     if (n <= 2) {
 // //         return 1
-// //     } 
+// //     }
 // //     for (let i = 3; i<=n; i++) {
 // //         fNumber = firstNumber + SecondNumber;
 // //         firstNumber = SecondNumber;
 // //         SecondNumber = fNumber;
 // //     }
-
 
 // //     return SecondNumber;
 // // }
@@ -1214,7 +1189,6 @@
 // //   console.log(x); // ?
 // // }
 
-
 // // func();
 
 // // function inBetween(a, b){
@@ -1234,7 +1208,6 @@
 
 // // alert( arr.filter(inArray([1, 2, 10])) ); // 1,2
 
-
 // // let users = [
 // //   { name: "John", age: 20, surname: "Johnson" },
 // //   { name: "Pete", age: 18, surname: "Peterson" },
@@ -1242,10 +1215,9 @@
 // // ];
 // // function byField(field) {
 // //   return function(a, b) {
-// //     return a.field > b.field ? 1 : -1; 
+// //     return a.field > b.field ? 1 : -1;
 // //   }
 // // }
-
 
 // // users.sort(byField('name'));
 // // alert( users[0].name )
@@ -1258,7 +1230,7 @@
 // //   while (i < 10) {
 // //     let b = i;
 // //     let shooter = function() { // 创建一个 shooter 函数，
-    
+
 // //       alert( b ); // 应该显示其编号
 // //     };
 // //     shooters.push(shooter); // 将此 shooter 函数添加到数组中
@@ -1312,9 +1284,6 @@
 
 // //   return f;
 
-
-
-
 // // }
 
 // // alert( sum(1)(82)(53) )
@@ -1325,11 +1294,11 @@
 // //   clearTimeout(timeId)
 // // // }, delay);
 // // function printNumbers(from, to) {
-  
+
 // //   let number = from;
 // //   if (number>=from && number<=to) {
 // //     setInterval(function(number) {
-// //       alert(number); 
+// //       alert(number);
 // //       number += 1
 // //     }, 1000, number)
 // //   }
@@ -1371,7 +1340,7 @@
 // //     if (cache.has(key)) {
 // //       return cache.get(key);
 // //     }
-    
+
 // //   let result = func.call(this, ...arguments)
 // //   cache.set(key, result);
 // //   return result
@@ -1412,7 +1381,7 @@
 // //   alert(x);
 // // }
 // // function delay(func, time) {
-  
+
 // //   return function(...args) {
 
 // //     setTimeout(() => func.apply(this, args), time);
@@ -1559,26 +1528,26 @@
 // // console.log(bed.glasses)
 // // let hamster = {
 // //     //stomach: [],
-  
+
 // //     eat(food) {
 // //       this.stomach.push(food);
 // //     }
 // //   };
-  
+
 // //   let speedy = {
 // //       stomach:[],
 // //     __proto__: hamster
 // //   };
-  
+
 // //   let lazy = {
 // //     stomach:[],
 // //     __proto__: hamster
 // //   };
-  
+
 // //   // This one found the food
 // // speedy.eat("apple");
 // // console.log( speedy.stomach ); // apple
-  
+
 // //   // This one also has it, why? fix please.
 // // console.log( lazy.stomach ); // apple；
 
@@ -1631,7 +1600,7 @@
 //     __proto__: animal,
 //     jumps: true
 //   };
-  
+
 // alert( rabbit.jumps ); // true (1)
 
 // delete rabbit.jumps;
@@ -1644,39 +1613,39 @@
 // let head = {
 //     glasses: 1
 //   };
-  
+
 //   let table = {
 //     pen: 3,
 //     __proto__: head
 //   };
-  
+
 //   let bed = {
 //     sheet: 1,
 //     pillow: 2,
 //     __proto__: table
 //   };
-  
+
 //   let pockets = {
 //     money: 2000,
 //     __proto__: bed
 //   };
 // let hamster = {
 //     stomach: [],
-  
+
 //     eat(food) {
 //       this.stomach = [];
 //       this.stomach.push(food);
 //     }
 //   };
-  
+
 //   let speedy = {
 //     __proto__: hamster
 //   };
-  
+
 //   let lazy = {
 //     __proto__: hamster
 //   };
-  
+
 //   // 这只仓鼠找到了食物
 // speedy.eat("apple");
 // alert( speedy.stomach ); // apple
@@ -1689,7 +1658,7 @@
 //     return function (...args) {
 //         setTimeout(() => f.apply(this, args), ms)
 //     }
-    
+
 // }
 
 // function f(a, b) {
@@ -1705,7 +1674,7 @@
 
 // let rabbit = {
 //     color: 'white',
-//     __proto__: animal    
+//     __proto__: animal
 // }
 
 // console.log(rabbit.eats);
@@ -1748,7 +1717,7 @@
 // Rabbit.prototype.sayHi = function() {
 //     alert(this.name);
 // // };
-  
+
 // // let rabbit = new Rabbit("Rabbit");
 
 // // rabbit.sayHi();
@@ -1782,7 +1751,7 @@
 // //         if (value.length < 4) {
 // //             console.log("Too short");
 // //             return;
-// //         } 
+// //         }
 
 // //         this._name = value;
 // //     }
@@ -1805,7 +1774,7 @@
 // //       alert(`${this.name} stands still.`);
 // //     }
 // //   }
-  
+
 // // let animal = new Animal("My animal");
 
 // // class Rabbit extends Animal {
@@ -1883,9 +1852,9 @@
 // //     constructor(name) {
 // //       this.name = name;
 // //     }
-  
+
 // //   }
-  
+
 // // class Rabbit extends Animal {
 // //     constructor(name) {
 // //         super(name);
@@ -1900,31 +1869,31 @@
 //     constructor({ template }) {
 //       this.template = template;
 //     }
-  
+
 //     render() {
 //       let date = new Date();
-  
+
 //       let hours = date.getHours();
 //       if (hours < 10) hours = '0' + hours;
-  
+
 //       let mins = date.getMinutes();
 //       if (mins < 10) mins = '0' + mins;
-  
+
 //       let secs = date.getSeconds();
 //       if (secs < 10) secs = '0' + secs;
-  
+
 //       let output = this.template
 //         .replace('h', hours)
 //         .replace('m', mins)
 //         .replace('s', secs);
-  
+
 //       console.log(output);
 //     }
-  
+
 //     stop() {
 //       clearInterval(this.timer);
 //     }
-  
+
 //     start() {
 //       this.render();
 //       this.timer = setInterval(() => this.render(), 1000);
@@ -1941,7 +1910,7 @@
 // testClock = new extendedClock('hms');
 // testClock.start(100);
 
-//  
+//
 // class Article {
 //     constructor(title, date) {
 //         this.title = title;
@@ -1985,12 +1954,10 @@
 // class CoffeeMachine {
 //     _waterAmount = 0;
 
-
 //     constructor(power) {
 //         this._power = power;
 //         // console.log(`Created a coffee-machine, power: ${power}`);
 //     }
-
 
 //     set waterAmount(value) {
 //         if (value < 0) {
@@ -2007,7 +1974,6 @@
 //     get power() {
 //         return this._power;
 //     }
-
 
 // }
 
@@ -2039,7 +2005,7 @@
 // // console.log(filteredArr.isEmpty());
 
 // console.log(filteredArr instanceof Array);
-// class 
+// class
 // function Rabbit() {}
 // let rabbit = new Rabbit();
 
@@ -2117,7 +2083,6 @@
 
 // menu.choose('123')
 
-
 // setTimeout(function() {try {
 //     no
 // } catch(err) {
@@ -2130,7 +2095,7 @@
 
 // try {
 //     let user = JSON.parse(json);
-    
+
 //     if (!user.name) {
 //         throw new SyntaxError("Incomplete data: no name");
 //     }
@@ -2161,7 +2126,7 @@
 
 // function readData() {
 //     let json = '{ "age": 30 }';
-  
+
 //     try {
 //       // ...
 //       let user = JSON.parse(json);
@@ -2176,7 +2141,7 @@
 //       }
 //     }
 //   }
-  
+
 //   try {
 //     readData();
 //   } catch (err) {
@@ -2239,7 +2204,6 @@
 //     }
 // }
 
-
 // function test() {
 //     throw new ValidationError("Whoops!");
 // }
@@ -2267,8 +2231,6 @@
 //     }
 // }
 
-
- 
 // function readUser(json) {
 //     let user = JSON.parse(json);
 
@@ -2281,7 +2243,6 @@
 //     }
 
 //     return user;
-
 
 // }
 
@@ -2309,7 +2270,7 @@
 //     }
 // }
 
-// class 
+// class
 
 // function loadScript(src, callback) {
 //     let script = document.createElement('script');
@@ -2320,7 +2281,34 @@
 //     document.head.append(script);
 // }
 
-let promise = new Promise(function(resolve, reject) {
+// let promise = new Promise(function (resolve, reject) {
+//   setTimeout(() => resolve("done"), 1000);
+// });
 
-    setTimeout(() => resolve("done"), 1000)
-}) 
+// promise.then(
+//   (result) => console.log(result),
+//   (error) => console.log(error)
+// );
+// console.log(1);
+// function loadScript(src, callback) {
+//   let script = document.createElement("script");
+//   script.src = src;
+
+//   script.onload = () => callback(null script);
+//   script.onerror = () => callback(new Error(`Script load error for ${src}`));
+
+//   document.head.append(script);
+// }
+
+// loadScript(
+//   "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js",
+//   (script) => {
+//     alert(`酷，脚本 ${script.src} 加载完成`);
+//     alert(_); // _ 是所加载的脚本中声明的一个函数
+//   }
+// );
+
+showCircle(150, 150, 100).then((div) => {
+  div.classList.add("message-ball");
+  div.append("Hello, world!");
+});
