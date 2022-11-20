@@ -167,11 +167,6 @@ const renderCountry = function (data, className = '') {
 // lotterPromise.then(res => console.log(res)).catch(err => console.error(err));
 
 // Promisifying setTimeout
-// const wait = function (seconds) {
-//   return new Promise(function (resolve) {
-//     setTimeout(resolve, seconds * 1000);
-//   });
-// };
 
 // wait(2)
 //   .then(() => {
@@ -197,42 +192,86 @@ const getPosition = function () {
 //   err => console.log(err)
 // );
 
-const whereAmI = function () {
-  //     const lat;
-  //   const lng;
-  getPosition()
-    .then(pos => {
-      console.log(pos.coords.latitude);
-      const { latitude: lat, longitude: lng } = pos.coords;
-      const geocodingAPI = '498707668562872975323x55949';
-      const url = `https://geocode.xyz/${lat},${lng}?geoit=json&auth=${geocodingAPI}`;
-      return fetch(url);
-    })
+// const whereAmI = function () {
+//   //     const lat;
+//   //   const lng;
+//   getPosition()
+//     .then(pos => {
+//       console.log(pos.coords.latitude);
+//       const { latitude: lat, longitude: lng } = pos.coords;
+//       const geocodingAPI = '498707668562872975323x55949';
+//       const url = `https://geocode.xyz/${lat},${lng}?geoit=json&auth=${geocodingAPI}`;
+//       return fetch(url);
+//     })
 
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Too Fast ${response.status}`);
-      }
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error(`Too Fast ${response.status}`);
+//       }
 
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      console.log(`You are in ${data.city}, ${data.country}`);
-      return data;
-    })
-    .then(function (data) {
-      const countrAb = data.prov;
-      getJSON(`https://restcountries.com/v3.1/alpha/${countrAb}`).then(data => {
-        console.log(data);
-        renderCountry(data[0]);
-      });
-    })
-    .catch(err => console.log(err));
+//       return response.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//       console.log(`You are in ${data.city}, ${data.country}`);
+//       return data;
+//     })
+//     .then(function (data) {
+//       const countrAb = data.prov;
+//       getJSON(`https://restcountries.com/v3.1/alpha/${countrAb}`).then(data => {
+//         console.log(data);
+//         renderCountry(data[0]);
+//       });
+//     })
+//     .catch(err => console.log(err));
+// };
+
+// // whereAmI([59.508, 13.381]);
+// // getPosition().then(pos => {
+// //   console.log(pos.coords.latitude);
+// // });
+// whereAmI();
+
+// code challenage 2
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
 };
 
-// whereAmI([59.508, 13.381]);
-// getPosition().then(pos => {
-//   console.log(pos.coords.latitude);
-// });
-whereAmI();
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const imageContainer = document.querySelector('.images');
+    const imgEL = document.createElement('img');
+    imgEL.src = imgPath;
+
+    imgEL.addEventListener('load', function () {
+      imageContainer.append(imgEL);
+      resolve(imgEL);
+    });
+
+    imgEL.addEventListener('error', function () {
+      reject(new Error('Image not found'));
+    });
+  });
+};
+
+let currentImg;
+
+createImage('img/img-1.jpg')
+  .then(img => {
+    currentImg = img;
+    return wait(2);
+  })
+  .then(() => {
+    currentImg.style.display = 'none';
+    return createImage('img/img-2.jpg');
+  })
+  .then(img => {
+    currentImg = img;
+    return wait(2);
+  })
+  .then(() => {
+    currentImg.style.display = 'none';
+  })
+  .catch(err => console.error(err));
