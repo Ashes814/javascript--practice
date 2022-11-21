@@ -177,15 +177,15 @@ const renderCountry = function (data, className = '') {
 
 // console.log('Getting positon');
 
-const getPosition = function () {
-  return new Promise(function (resolve, reject) {
-    // navigator.geolocation.getCurrentPosition(
-    //   position => resolve(position),
-    //   err => reject(err)
-    // );
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-};
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     // navigator.geolocation.getCurrentPosition(
+//     //   position => resolve(position),
+//     //   err => reject(err)
+//     // );
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
 
 // getPosition().then(
 //   pos => console.log(pos),
@@ -233,45 +233,67 @@ const getPosition = function () {
 // whereAmI();
 
 // code challenage 2
-const wait = function (seconds) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, seconds * 1000);
-  });
-};
+// const wait = function (seconds) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, seconds * 1000);
+//   });
+// };
 
-const createImage = function (imgPath) {
+// const createImage = function (imgPath) {
+//   return new Promise(function (resolve, reject) {
+//     const imageContainer = document.querySelector('.images');
+//     const imgEL = document.createElement('img');
+//     imgEL.src = imgPath;
+
+//     imgEL.addEventListener('load', function () {
+//       imageContainer.append(imgEL);
+//       resolve(imgEL);
+//     });
+
+//     imgEL.addEventListener('error', function () {
+//       reject(new Error('Image not found'));
+//     });
+//   });
+// };
+
+// let currentImg;
+
+// createImage('img/img-1.jpg')
+//   .then(img => {
+//     currentImg = img;
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('img/img-2.jpg');
+//   })
+//   .then(img => {
+//     currentImg = img;
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//   })
+//   .catch(err => console.error(err));
+
+const getPosition = function () {
   return new Promise(function (resolve, reject) {
-    const imageContainer = document.querySelector('.images');
-    const imgEL = document.createElement('img');
-    imgEL.src = imgPath;
-
-    imgEL.addEventListener('load', function () {
-      imageContainer.append(imgEL);
-      resolve(imgEL);
-    });
-
-    imgEL.addEventListener('error', function () {
-      reject(new Error('Image not found'));
-    });
+    navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 };
 
-let currentImg;
+const whereAmI = async function (country) {
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+  const geocodingAPI = '498707668562872975323x55949';
+  const url = `https://geocode.xyz/${lat},${lng}?geoit=json&auth=${geocodingAPI}`;
+  const loc = await fetch(url);
+  const dataGeo = await loc.json();
+  console.log(dataGeo);
+  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
 
-createImage('img/img-1.jpg')
-  .then(img => {
-    currentImg = img;
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = 'none';
-    return createImage('img/img-2.jpg');
-  })
-  .then(img => {
-    currentImg = img;
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = 'none';
-  })
-  .catch(err => console.error(err));
+  const data = await res.json();
+  renderCountry(data[0]);
+};
+whereAmI(`portugal`);
+console.log('FIRST');
