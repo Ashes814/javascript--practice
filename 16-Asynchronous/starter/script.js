@@ -283,17 +283,24 @@ const getPosition = function () {
 };
 
 const whereAmI = async function (country) {
-  const pos = await getPosition();
-  const { latitude: lat, longitude: lng } = pos.coords;
-  const geocodingAPI = '498707668562872975323x55949';
-  const url = `https://geocode.xyz/${lat},${lng}?geoit=json&auth=${geocodingAPI}`;
-  const loc = await fetch(url);
-  const dataGeo = await loc.json();
-  console.log(dataGeo);
-  const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+  try {
+    const pos = await getPosition();
+    const { latitude: lat, longitude: lng } = pos.coords;
+    const geocodingAPI = '498707668562872975323x55949';
+    const url = `https://geocode.xyz/${lat},${lng}?geoit=json&auth=${geocodingAPI}`;
+    const loc = await fetch(url);
+    if (!los.ok) {
+      throw new Error('baka');
+    }
+    const dataGeo = await loc.json();
+    console.log(dataGeo);
+    const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
 
-  const data = await res.json();
-  renderCountry(data[0]);
+    const data = await res.json();
+    renderCountry(data[0]);
+  } catch (err) {
+    console.log(err);
+  }
 };
+
 whereAmI(`portugal`);
-console.log('FIRST');
