@@ -2308,7 +2308,34 @@
 //   }
 // );
 
-showCircle(150, 150, 100).then((div) => {
-  div.classList.add("message-ball");
-  div.append("Hello, world!");
-});
+// showCircle(150, 150, 100).then((div) => {
+//   div.classList.add("message-ball");
+//   div.append("Hello, world!");
+// });
+
+// let urls = [
+//   "https://api.github.com/users/iliakan",
+//   "https://api.github.com/users/remy",
+//   "https://api.github.com/users/jeresig",
+// ];
+
+// let requests = urls.map((url) => fetch(url));
+
+// Promise.all(requests).then((responses) =>
+//   responses.forEach((response) => alert(`${response.url}: ${response.status}`))
+// );
+
+let cache = new Map();
+
+function loadCached(url) {
+  if (cache.has(url)) {
+    return Promise.resolve(cache.get(url));
+  }
+
+  return fetch(url)
+    .then((response) => response.text())
+    .then((text) => {
+      cache.set(url, text);
+      return text;
+    });
+}
