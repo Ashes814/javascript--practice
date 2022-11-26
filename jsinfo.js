@@ -2325,17 +2325,52 @@
 //   responses.forEach((response) => alert(`${response.url}: ${response.status}`))
 // );
 
-let cache = new Map();
+// let cache = new Map();
 
-function loadCached(url) {
-  if (cache.has(url)) {
-    return Promise.resolve(cache.get(url));
-  }
+// function loadCached(url) {
+//   if (cache.has(url)) {
+//     return Promise.resolve(cache.get(url));
+//   }
 
-  return fetch(url)
-    .then((response) => response.text())
-    .then((text) => {
-      cache.set(url, text);
-      return text;
+//   return fetch(url)
+//     .then((response) => response.text())
+//     .then((text) => {
+//       cache.set(url, text);
+//       return text;
+//     });
+// }
+function loadScript(src, callback) {
+  let script = document.createElement("script");
+  script.src = src;
+
+  script.onload = () => callback(null, script);
+  script.onerror = () => callback(new Error(`Script load error for ${src}`));
+
+  document.head.append(script);
+}
+
+let loadScriptPromise = function (src) {
+  return new Promise((resolve, reject) => {
+    loadScript(src, (err, script) => {
+      if (err) reject(err);
+      else resolve(script);
     });
+  });
+};
+
+function promisify(f) {
+  return function (...args) {
+    return new Promise((resolve, reject) => {
+      function callback(err, result) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      }
+
+      args.push(callback);
+      f.call(this, ...args);
+    });
+  };
 }
