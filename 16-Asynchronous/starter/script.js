@@ -233,28 +233,28 @@ const renderCountry = function (data, className = '') {
 // whereAmI();
 
 // code challenage 2
-// const wait = function (seconds) {
-//   return new Promise(function (resolve) {
-//     setTimeout(resolve, seconds * 1000);
-//   });
-// };
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
 
-// const createImage = function (imgPath) {
-//   return new Promise(function (resolve, reject) {
-//     const imageContainer = document.querySelector('.images');
-//     const imgEL = document.createElement('img');
-//     imgEL.src = imgPath;
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const imageContainer = document.querySelector('.images');
+    const imgEL = document.createElement('img');
+    imgEL.src = imgPath;
 
-//     imgEL.addEventListener('load', function () {
-//       imageContainer.append(imgEL);
-//       resolve(imgEL);
-//     });
+    imgEL.addEventListener('load', function () {
+      imageContainer.append(imgEL);
+      resolve(imgEL);
+    });
 
-//     imgEL.addEventListener('error', function () {
-//       reject(new Error('Image not found'));
-//     });
-//   });
-// };
+    imgEL.addEventListener('error', function () {
+      reject(new Error('Image not found'));
+    });
+  });
+};
 
 // let currentImg;
 
@@ -303,4 +303,22 @@ const whereAmI = async function (country) {
   }
 };
 
-whereAmI(`portugal`);
+// whereAmI(`portugal`);
+
+const loadNPause = async function () {
+  try {
+    // load img 1
+    let img = await createImage('img/img-1.jpg');
+    console.log('Image 1 loaded');
+    await wait(2);
+    img.stylt.display = 'none';
+
+    // load img 2
+    img = await createImage('img/img-2.jpg');
+    console.log('Image 2 loaded');
+    await wait(2);
+    img.stylt.display = 'none';
+  } catch (err) {
+    alert(err);
+  }
+};
