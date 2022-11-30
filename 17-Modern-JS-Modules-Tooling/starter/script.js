@@ -62,3 +62,11 @@ const state = {
 
 const stateClone = Object.assign({}, state);
 console.log(stateClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+import 'core-js/stable';
+
+import 'regenerator-runtime/runtime';

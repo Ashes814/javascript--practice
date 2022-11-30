@@ -4,7 +4,7 @@
   "description": "This branch of the repo contains starter files and final code for all sections and projects of the course, **exactly as shown in the videos**.",
   "main": "alert.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel 17-Modern-JS-Modules-Tooling/starter/index.html"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Ashes814/javascript--practice#readme",
   "dependencies": {
+    "core-js": "^3.26.1",
     "leaflet": "^1.9.3",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "parcel": "^2.8.0"
   }
 }
