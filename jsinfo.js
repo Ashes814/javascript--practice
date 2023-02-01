@@ -2375,6 +2375,6 @@
 //   };
 // }
 // alert("1");
-import { default as def, aaa } from "./alert.js";
+import def from "./alert.js";
 console.log(def);
-console.log(aaa);
+// console.log(aaa);
