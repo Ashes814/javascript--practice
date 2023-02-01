@@ -1,9 +1,7 @@
-
 // alert("I'm JavaScript!"); alert("I Love Fitness!!");
 // alert(3+
 //     2+
 //     1);
-
 
 // alert("Hello");
 
@@ -20,7 +18,7 @@ comment
 // my_first_js_variable = "Super Idol"
 
 // alert(my_first_js_variable)
-"use strict"
+"use strict";
 // let num = 5;
 // const code= 10087;
 // alert(num + code);
@@ -78,7 +76,7 @@ comment
 // }
 // let jsName = prompt("enter name", 'ECMAScript');
 
-// (jsName == 'ECMAScript') ? 
+// (jsName == 'ECMAScript') ?
 //     alert('Right') : alert("You don't know Javascript?")
 // let a = +prompt("a", )
 // let b = +prompt("b", )
@@ -87,7 +85,7 @@ comment
 
 // let message;
 // let login = prompt("Enter login", )
-// message = (login == 'Employee') ? "Hello" : 
+// message = (login == 'Employee') ? "Hello" :
 //     (login == 'Director') ? "Greetings" :
 //     (login == '') ? "No login" : ''
 
@@ -165,7 +163,7 @@ comment
 
 // if (browser == 'Edge') {
 //     alert("You've got the Edge!");
-// } else if (browser == 'Chrome' ||  browser == 'Firefox' 
+// } else if (browser == 'Chrome' ||  browser == 'Firefox'
 // || browser == 'Safari' || browser == 'Opera') {
 //     alert("Okay we support these browsers too");
 // } else {
@@ -204,17 +202,13 @@ comment
 
 // alert(pow(x, n))
 
-// let welcome; 
+// let welcome;
 
 // welcome = (18 > 19) ? function() {alert('18' > '19')} :
 //                       function() {alert('18' < '19')};
-                    
+
 // alert(welcome());
 
-let ask = (question, yes, no) => confirm(question) ? yes() : no();
-ask(
-    "Do you agree",
-    function() { alert("You agreed."); },
-    function() { alert("You canceled the execution."); }
-)
-let b = 10086; a = 222
+export default [1, 2];
+
+export const aaa = [3, 4];

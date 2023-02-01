@@ -2339,38 +2339,42 @@
 //       return text;
 //     });
 // }
-function loadScript(src, callback) {
-  let script = document.createElement("script");
-  script.src = src;
+// function loadScript(src, callback) {
+//   let script = document.createElement("script");
+//   script.src = src;
 
-  script.onload = () => callback(null, script);
-  script.onerror = () => callback(new Error(`Script load error for ${src}`));
+//   script.onload = () => callback(null, script);
+//   script.onerror = () => callback(new Error(`Script load error for ${src}`));
 
-  document.head.append(script);
-}
+//   document.head.append(script);
+// }
 
-let loadScriptPromise = function (src) {
-  return new Promise((resolve, reject) => {
-    loadScript(src, (err, script) => {
-      if (err) reject(err);
-      else resolve(script);
-    });
-  });
-};
+// let loadScriptPromise = function (src) {
+//   return new Promise((resolve, reject) => {
+//     loadScript(src, (err, script) => {
+//       if (err) reject(err);
+//       else resolve(script);
+//     });
+//   });
+// };
 
-function promisify(f) {
-  return function (...args) {
-    return new Promise((resolve, reject) => {
-      function callback(err, result) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(result);
-        }
-      }
+// function promisify(f) {
+//   return function (...args) {
+//     return new Promise((resolve, reject) => {
+//       function callback(err, result) {
+//         if (err) {
+//           reject(err);
+//         } else {
+//           resolve(result);
+//         }
+//       }
 
-      args.push(callback);
-      f.call(this, ...args);
-    });
-  };
-}
+//       args.push(callback);
+//       f.call(this, ...args);
+//     });
+//   };
+// }
+// alert("1");
+import { default as def, aaa } from "./alert.js";
+console.log(def);
+console.log(aaa);
