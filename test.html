@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <body>
+    <script>
+      function arrayDiff(a, b) {
+        let newArr;
+        if (b.length == 0) return a;
+        for (let i = 0; i < b.length; i++) {
+          let curB = b[i];
+          a = a.filter((item) => {
+            return item !== curB;
+          });
+        }
 
-<body>
+        return a;
+      }
 
-  <script src="jsinfo.js"></script>
-
-</body>
-
+      debugger;
+      console.log(arrayDiff([1, 2, 3], [1, 2]));
+    </script>
+  </body>
 </html>
