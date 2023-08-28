@@ -1,11 +1,5 @@
-function Foo() {
-  var i = 0;
-  return function () {
-    console.log(i++);
-  };
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, 1000 * i);
 }
-var f1 = Foo();
-var f2 = Foo();
-f1();
-f1();
-f2();
