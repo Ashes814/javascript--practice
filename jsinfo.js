@@ -1,5 +1,10 @@
-for (var i = 0; i < 5; i++) {
-  setTimeout(function () {
-    console.log(i);
-  }, 1000 * i);
+var a = 2;
+function fn() {
+  b();
+  return;
+  var a = 1;
+  function b() {
+    console.log(a);
+  }
 }
+fn();
